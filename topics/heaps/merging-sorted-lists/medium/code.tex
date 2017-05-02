@@ -1,0 +1,96 @@
+\question Write \texttt{merge}, a procedure that merges $K$ sorted lists of length $N$ into a single sorted list in $O(NK \log K)$ time.
+
+\ifprintanswers
+\else
+\begin{lstlisting}
+public class ListIterator<T extends Comparable<T>> implements Iterator<T>,
+                                                              Comparable<ListIterator<T>> {
+    private List<T> list;
+    private int index;
+    public ListIterator(List<T> list) {
+        this.list = list;
+    }
+    public boolean hasNext() {
+        return index < list.size();
+    }
+    public T next() {
+        T value = list.get(index);
+        index += 1;
+        return return value;
+    }
+    public T peek() {
+        return list.get(index);
+    }
+    public int compareTo(ListIterator<T> other) {
+        return this.peek().compareTo(other.peek());
+    }
+    public static <T extends Comparable<T>> List<T> merge(List<T>[] lists) {
+        List<T> result = new ArrayList<>();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class ListIterator<T extends Comparable<T>> implements Iterator<T>,
+                                                              Comparable<ListIterator<T>> {
+    private List<T> list;
+    private int index;
+    public ListIterator(List<T> list) {
+        this.list = list;
+    }
+    public boolean hasNext() {
+        return index < list.size();
+    }
+    public T next() {
+        T value = list.get(index);
+        index += 1;
+        return value;
+    }
+    public T peek() {
+        return list.get(index);
+    }
+    public int compareTo(ListIterator<T> other) {
+        return this.peek().compareTo(other.peek());
+    }
+    public static <T extends Comparable<T>> List<T> merge(List<T>[] lists) {
+        List<T> result = new ArrayList<>();
+        PriorityQueue<ListIterator<T>> remaining = new PriorityQueue<>();
+        for (List<T> list : lists) {
+            ListIterator<T> iterator = new ListIterator<>(list);
+            if (iterator.hasNext()) {
+                remaining.offer(iterator);
+            }
+        }
+        while (!remaining.isEmpty()) {
+            ListIterator<T> iterator = remaining.poll();
+            result.add(iterator.next());
+            if (iterator.hasNext()) {
+                remaining.offer(iterator);
+            }
+        }
+        return result;
+    }
+}
+\end{lstlisting}
+\end{solution}

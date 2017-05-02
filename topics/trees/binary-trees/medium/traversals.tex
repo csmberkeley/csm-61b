@@ -1,0 +1,55 @@
+\question \begin{lstlisting}
+public class BinaryTree<T> {
+    protected Node root;
+    protected class Node {
+        public T value;
+        public Node left;
+        public Node right;
+    }
+    public void treeTraversal(Fringe<Node> fringe) {
+        fringe.add(root);
+        while (!fringe.isEmpty()) {
+            Node node = fringe.remove();
+            System.out.println(node.value);
+            if (node.left != null) {
+                fringe.add(node.left);
+            }
+            if (node.right != null) {
+                fringe.add(node.right);
+            }
+        }
+    }
+}
+\end{lstlisting}
+
+\marginpar{\subimport{../}{example-tree.tex}}
+
+What will Java display?
+
+\begin{parts}
+\part \texttt{tree.traversal(new Queue<Node>());}
+\begin{solution}[1.25in]
+\begin{verbatim}
+1
+2
+7
+5
+9
+3
+4
+\end{verbatim}
+\end{solution}
+
+\part \texttt{tree.traversal(new Stack<Node>());}
+\begin{solution}[1.25in]
+\begin{verbatim}
+1
+7
+3
+4
+2
+9
+5
+\end{verbatim}
+\end{solution}
+\end{parts}

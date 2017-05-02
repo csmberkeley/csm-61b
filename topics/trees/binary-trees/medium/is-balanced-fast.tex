@@ -1,0 +1,44 @@
+\question Design an algorithm to more efficiently compute whether a tree is balanced or not. \textit{Hint: What part of the naive \texttt{isBalanced} solution was expensive and how can we make it less expensive?}
+
+\ifprintanswers
+\else
+\begin{lstlisting}
+private boolean isBalanced(Node node) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{lstlisting}
+\fi
+
+\begin{solution}
+Since the \texttt{height} calls are expensive, use an \texttt{int} return type to carry more information about the state of the tree when performing the recursive step.
+
+\begin{lstlisting}
+private boolean isBalanced(Node node) {
+    return isBalancedFast(node) > -2;
+}
+private int isBalancedFast(Node node) {
+    if (node == null) {
+        return -1;
+    }
+    int leftResult = isBalancedFast(node.left);
+    int rightResult = isBalancedFast(node.right);
+    if (leftResult < -1 || rightResult < -1 || Math.abs(leftResult - rightResult) > 1) {
+        return -2;
+    }
+    return 1 + Math.max(leftResult, rightResult);
+}
+\end{lstlisting}
+\end{solution}

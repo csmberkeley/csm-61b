@@ -1,0 +1,42 @@
+\question Define a procedure, \texttt{sumUp}, which returns \texttt{true} if any two values in the \texttt{array} sum up to \texttt{n}.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public static boolean sumUp(int[] array, int n) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public static boolean sumUp(int[] array, int n) { 
+    Set<Integer> seen = new HashSet<>();
+    for (int value : array) {
+        if (seen.contains(n - value)) {
+            return true;
+        }
+        seen.add(value);
+    }
+    return false;
+}
+\end{lstlisting}
+\end{solution}

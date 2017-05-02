@@ -1,0 +1,47 @@
+\question Given a linked list of length $N$, provide the runtime bound for each operation. Recall that \texttt{IntList} is the naive linked list implementation, \texttt{SLList} is an encapsulated singly-linked list with a front sentinel, and \texttt{LinkedList} is Java's encapsulated doubly-linked list implementation with pointers to the first and last node.
+
+\ifprintanswers
+{
+\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{16pt}
+\begin{tabularx}{\textwidth}{Xccc}
+Operation                       & \texttt{IntList}       & \texttt{SLList}        & \texttt{LinkedList}    \\\hline
+\texttt{size()}                 & $\color{red}\Theta(N)$ & $\color{red}\Theta(1)$ & $\color{red}\Theta(1)$ \\
+\texttt{get(int index)}         & $\color{red}O(N)$      & $\color{red}O(N)$      & $\color{red}O(N)$      \\
+\texttt{addFirst(E e)}          & $\color{red}\Theta(1)$ & $\color{red}\Theta(1)$ & $\color{red}\Theta(1)$ \\
+\texttt{addLast(E e)}           & $\color{red}\Theta(N)$ & $\color{red}\Theta(N)$ & $\color{red}\Theta(1)$ \\
+\texttt{addBefore(E e, Node n)} & $\color{red}O(N)$      & $\color{red}O(N)$      & $\color{red}\Theta(1)$ \\
+\texttt{remove(int index)}      & $\color{red}O(N)$      & $\color{red}O(N)$      & $\color{red}O(N)$      \\
+\texttt{remove(Node n)}         & $\color{red}O(N)$      & $\color{red}O(N)$      & $\color{red}\Theta(1)$ \\
+\texttt{reverse()}              & $\color{red}\Theta(N)$ & $\color{red}\Theta(N)$ & $\color{red}\Theta(N)$ \\
+\end{tabularx}
+\else
+\begin{tabularx}{\textwidth}{Xccc}
+Operation                       & \texttt{IntList} & \texttt{SLList} & \texttt{LinkedList} \\ \hline
+\texttt{size()}                 &                  &                 &                     \\
+\texttt{get(int index)}         &                  &                 &                     \\
+\texttt{addFirst(E e)}          &                  &                 &                     \\
+\texttt{addLast(E e)}           &                  &                 &                     \\
+\texttt{addBefore(E e, Node n)} &                  &                 &                     \\
+\texttt{remove(int index)}      &                  &                 &                     \\
+\texttt{remove(Node n)}         &                  &                 &                     \\
+\texttt{reverse()}              &                  &                 &                     \\
+\end{tabularx}
+}
+\fi
+
+\begin{parts}
+\part Give the runtime of \texttt{addAll(Collection<E> c)} assuming an empty linked list and \texttt{c} of size $N$. Assume \texttt{addAll} is implemented by calling \texttt{addLast} repeatedly.
+
+\begin{solution}[1in]
+\texttt{IntList}: $\Theta(N^2)$ \\
+\texttt{SLList}: $\Theta(N^2)$ \\
+\texttt{LinkedList}: $\Theta(N)$
+\end{solution}
+
+\part How can we do better?
+
+\begin{solution}[1in]
+Instead of calling \texttt{addLast}, keep track of the last node and append each new element in constant time to the end of the list.
+\end{solution}
+\end{parts}

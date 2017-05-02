@@ -1,0 +1,55 @@
+\documentclass{exam}
+\usepackage{../commonheader}
+
+\discnumber{10}
+\title{Hashing \& Heaps}
+\date{March 20, 2017}
+
+\begin{document}
+\maketitle
+
+\section{Motivation}
+\begin{questions}
+\subimport{../topics/hashing/easy/}{motivation.tex}
+\end{questions}
+
+\clearpage
+
+\section{Hash Table Basics}
+\subimport{../topics/hashing/basics/}{map.tex}
+\begin{questions}
+\subimport{../topics/hashing/basics/}{put.tex}
+\subimport{../topics/hashing/basics/}{diagram.tex}
+\end{questions}
+
+\clearpage
+
+\section{Hash Codes}
+\begin{questions}
+\subimport{../topics/hashing/easy/}{valid-hashcodes.tex}
+\end{questions}
+
+\clearpage
+
+\section{Min-Heapify This}
+\marginpar{\subimport{../topics/heaps/}{example-tree.tex}}
+\begin{questions}
+\subimport{../topics/heaps/easy/}{min-heapify.tex}
+\end{questions}
+
+\clearpage
+
+\section{\extra{Merging Sorted Lists}}
+\begin{questions}
+\subimport{../topics/heaps/merging-sorted-lists/medium/}{main-idea.tex}
+\subimport{../topics/heaps/merging-sorted-lists/medium/}{code.tex}
+\end{questions}
+
+\clearpage
+
+\section{\extra{Caching}}
+\begin{questions}
+\subimport{../topics/hashing/medium/}{caching.tex}
+\end{questions}
+
+\end{document}

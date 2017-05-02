@@ -1,0 +1,27 @@
+\question What is wrong with this definition of \texttt{swap}? How can we fix it?
+
+\begin{lstlisting}
+class SimpleSwap {
+    public static void swap(int a, int b) {
+        int temp = b;
+        b = a;
+        a = temp;
+    }
+    public static void main(String[] args) {
+        int x = 2;
+        int y = 5;
+        System.out.println("x: " + x + ", y: " + y);
+        swap(x, y);
+        System.out.println("x: " + x + ", y: " + y);
+    }
+}
+\end{lstlisting}
+
+\begin{solution}[0.25in]
+\begin{verbatim}
+x: 2, y: 5
+x: 2, y: 5
+\end{verbatim}
+In the main method, \texttt{x} and \texttt{y} won't actually be swapped.
+Within \texttt{swap}, we can change what \texttt{a} and \texttt{b} point to, but we can't change the variables that were declared in \texttt{main}. We can fix this by either in-lining the \texttt{swap} functionality in the \texttt{main} method or returning and reassigning the swapped values using an object.
+\end{solution}

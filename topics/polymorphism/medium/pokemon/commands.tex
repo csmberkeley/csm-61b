@@ -1,0 +1,29 @@
+\ifprintanswers\else
+\begin{lstlisting}
+Pikachu p = new Pikachu();
+Pokemon a = p;
+p = a;
+a.eat();
+a = new Squirtle();
+a.attack();
+((Squirtle) a).attack();
+Pokemon z = new Pikachu();
+Squirtle s = (Squirtle) z;
+((Pokemon) p).attack(z);
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+Pikachu p = new Pikachu();
+Pokemon a = p;
+// p = a;
+a.eat();
+a = new Squirtle();
+// a.attack();
+((Squirtle) a).attack();
+Pokemon z = new Pikachu();
+// Squirtle s = (Squirtle) z;
+((Pokemon) p).attack(z);
+\end{lstlisting}
+\end{solution}

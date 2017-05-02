@@ -1,0 +1,66 @@
+\question Which of the following \texttt{hashCodes} are valid?
+
+\begin{lstlisting}
+class Point {
+    private int x;
+    private int y;
+    private static count = 0;
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+        count += 1;
+    }
+\end{lstlisting}
+
+\begin{parts}
+\part
+\begin{lstlisting}
+public void hashCode() {
+    System.out.print(this.x + this.y);
+}
+\end{lstlisting}
+\begin{solution}[0.5in]
+Invalid. Return type should be \texttt{int}.
+\end{solution}
+
+\part
+\begin{lstlisting}
+public int hashCode() {
+    Random random = new Random();
+    return random.nextInt();
+}
+\end{lstlisting}
+\begin{solution}[0.5in]
+Invalid. Not deterministic.
+\end{solution}
+
+\part
+\begin{lstlisting}
+public int hashCode() {
+    return this.x + this.y;
+}
+\end{lstlisting}
+\begin{solution}[0.5in]
+Valid, but certain inputs may cause a significant number of collisions.
+\end{solution}
+
+\part
+\begin{lstlisting}
+public int hashCode() {
+    return count;
+}
+\end{lstlisting}
+\begin{solution}[0.5in]
+Invalid. Not consistent.
+\end{solution}
+
+\part
+\begin{lstlisting}
+public int hashCode() {
+    return 4;
+}
+\end{lstlisting}
+\begin{solution}[0.5in]
+Valid, but causes collisions on any input.
+\end{solution}
+\end{parts}

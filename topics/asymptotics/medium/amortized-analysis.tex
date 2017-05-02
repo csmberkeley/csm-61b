@@ -1,0 +1,15 @@
+\question Mallory is designing a resizing \texttt{ArrayList} implementation. She needs to decide the amount to resize by. Help her figure out which option provides the best runtime.
+
+Assuming Mallory resizes her \texttt{ArrayList} when it's full, what is the average runtime of adding an element to the \texttt{ArrayList}?
+
+\begin{parts}
+\part When full, increase the size of array by 10,000 elements.
+\begin{solution}[1in]
+This would still be in $\Theta(N)$ since the constant, 10,000, does not scale with the size of the array. We're resizing the array every 10,000 inputs, regardless of the size of the array which could be much larger than 10,000.
+\end{solution}
+
+\part When full, double the size of the array.
+\begin{solution}[1in]
+This would be in $\Theta(1)$ since at any given length, $N$, we can insert $N/2$ elements before having to resize.
+\end{solution}
+\end{parts}

@@ -1,0 +1,5 @@
+\question Given a dictionary of words, describe a procedure for checking if a new word can be created out of the concatenation of two words in the dictionary. For example, if our dictionary contains the words, \texttt{"news"}, \texttt{"paper"}, \texttt{"new"}, and \texttt{"ape"}, we should be able to discover the new word, \texttt{"newspaper"}.
+
+\begin{solution}[0.75in]
+We can put all of the words in the dictionary into a trie. Then we can check a prefix of the word and see if the remainder of the word is in the trie as well.
+\end{solution}

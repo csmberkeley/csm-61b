@@ -1,0 +1,50 @@
+\begin{lstlisting}
+public class Pokemon {
+    protected int hp;
+    public String cry;
+    private String secret;
+    private int power;
+
+    public Pokemon() {
+        hp = 50;
+        cry = "Poke?";
+    }
+    public Pokemon(String c) {
+        this(c, 50);
+    } 
+    public Pokemon(String c, int hp) {
+        cry = c;
+        this.hp = hp;
+    }
+    public void attack(Pokemon p) {
+        p.hp -= power;
+    }
+    public void talk() {
+        System.out.println(cry);
+    }
+    public void eat() {
+        System.out.println("nom nom");
+    }
+}
+
+public class Pikachu extends Pokemon {
+    public Pikachu() {
+        hp = 100;
+    }
+    public Pikachu(int hp) {
+        super("Pika pika pikachu", hp);
+    }
+    public void attack(Pokemon p) {
+        p.hp = 0;
+    }
+    public void eat() {
+        System.out.println("nom Pika nom");
+    }
+}
+
+public class Squirtle extends Pokemon {
+    public void attack() {
+        System.out.println("Water gun!!");
+    }
+}
+\end{lstlisting}

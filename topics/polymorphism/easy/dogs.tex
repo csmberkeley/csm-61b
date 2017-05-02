@@ -1,0 +1,64 @@
+\question
+\begin{lstlisting}
+class Dog {
+    public void walk() {
+        System.out.println("The dog is walking");
+    }
+}
+class Beagle extends Dog {
+    @Override
+    public void walk() {
+        System.out.println("The beagle is walking");
+    }
+}
+\end{lstlisting}
+
+What would Java display?
+
+\begin{parts}
+\part
+\begin{verbatim}
+Dog fido = new Dog();
+fido.walk();
+\end{verbatim}
+\begin{solution}[0.75in]
+\begin{verbatim}
+The dog is walking
+\end{verbatim}
+\end{solution}
+
+\part
+\begin{verbatim}
+Beagle fido = new Beagle();
+fido.walk();
+\end{verbatim}
+\begin{solution}[0.75in]
+\begin{verbatim}
+The beagle is walking
+\end{verbatim}
+\end{solution}
+
+\part
+\begin{verbatim}
+Beagle fido = new Dog();
+fido.walk();
+\end{verbatim}
+\begin{solution}[0.75in]
+Compile-time error.
+
+A container meant for \texttt{Beagle}s can't contain \texttt{Dog}s.
+\end{solution}
+
+\part
+\begin{verbatim}
+Dog fido = new Beagle();
+fido.walk();
+\end{verbatim}
+\begin{solution}[0.75in]
+\begin{verbatim}
+The beagle is walking
+\end{verbatim}
+
+A container for \texttt{Dog}s can contain \texttt{Beagle}s. At compile time, \texttt{fido.walk()} is linked to \texttt{Dog.walk()} but at runtime, this method is overridden by \texttt{Beagle.walk()}.
+\end{solution}
+\end{parts}

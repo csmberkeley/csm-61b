@@ -1,0 +1,43 @@
+\question Define \texttt{VoteIterator}, an iterator that takes in an \texttt{int[] array} of vote counts and iterates over the votes. The input array contains the number of votes each candidate received.
+
+\begin{lstlisting}
+int[] array = { 0, 2, 1, 0, 1, 0 };
+\end{lstlisting}
+
+Each candidate, represented by their index, \texttt{i}, should be returned from each call to \texttt{next()} \texttt{array[i]} times in total. Given the input above, calls to \texttt{next()} would eventually return \texttt{1} \textit{twice}, \texttt{2} \textit{once}, and \texttt{4} \textit{once}.
+
+\begin{solution}[3in]
+\begin{lstlisting}
+public class VoteIterator implements Iterator<Integer> {
+    private int[] votes;
+    private int index, current;
+    public VoteIterator(int[] votes) {
+        this.votes = votes;
+        this.index = this.current = 0;
+    }
+    public boolean hasNext() {
+        if (current < votes[index]) {
+            return true;
+        }
+        for (int i = index + 1; i < votes.length; i++) {
+            if (votes[i] > 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public Integer next() {
+        while (current == votes[index]) {
+            index += 1;
+            current = 0;
+        }
+        current += 1;
+        return index;
+    }
+    public void remove() {
+        votes[index] -= 1;
+        current -= 1;
+    }
+}
+\end{lstlisting}
+\end{solution}

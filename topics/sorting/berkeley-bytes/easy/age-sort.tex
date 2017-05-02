@@ -1,0 +1,57 @@
+\question Now, for taxes, you need to submit a list of the ages of your customers in sorted order. Define a procedure, \texttt{ageSort}, which takes an \texttt{int[] array} of all customers' ages and returns a sorted array. Assume customers are less than 150 years old.
+
+\ifprintanswers
+\else
+\begin{lstlisting}
+public class BerkeleyBytes {
+    public static int[] histogram(int[] ages) {
+        int[] ageCounts = new int[150];
+        for (int age : ages) {
+            ageCounts[age - 1] += 1;
+        }
+        return ageCounts;
+    }
+    public static int[] ageSort(int[] ages) {
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class BerkeleyBytes {
+    private static int maxAge = 150;
+    public static int[] histogram(int[] ages) {
+        int[] ageCounts = new int[maxAge];
+        for (int age : ages) {
+            ageCounts[age - 1] += 1;
+        }
+        return ageCounts;
+    }
+    public static int[] ageSort(int[] ages) {
+        int[] ageCounts = histogram(ages);
+        int[] result = new int[ages.length];
+        int index = 0;
+        for (int age = 0; age < maxAge; age++) {
+            for (int count = 0; count < ageCounts[age]; count++) {
+                result[index] = age + 1;
+                index += 1;
+            }
+        }
+        return result;
+    }
+}
+\end{lstlisting}
+\end{solution}

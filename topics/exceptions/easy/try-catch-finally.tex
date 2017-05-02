@@ -1,0 +1,39 @@
+\question
+\begin{lstlisting}
+try {
+    doSomething();
+} catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("caught array index exception");
+} catch (Exception e) {
+    System.out.println("caught an exception");
+    throw(e);
+} finally {
+    System.out.println("in finally block");
+}
+\end{lstlisting}
+
+\begin{parts}
+\part What will print if \texttt{doSomething()} throws a \texttt{NullPointerException}?
+\begin{solution}[0.75in]
+\begin{verbatim}
+caught an exception
+in finally block
+NullPointerException
+\end{verbatim}
+\end{solution}
+
+\part What if \texttt{doSomething()} throws an \texttt{ArrayIndexOutOfBoundsException}?
+\begin{solution}[0.75in]
+\begin{verbatim}
+caught array index exception
+in finally block
+\end{verbatim}
+\end{solution}
+
+\part What if \texttt{doSomething()} doesn't error?
+\begin{solution}[0.75in]
+\begin{verbatim}
+in finally block
+\end{verbatim}
+\end{solution}
+\end{parts}

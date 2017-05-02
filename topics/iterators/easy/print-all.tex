@@ -1,0 +1,11 @@
+\question Define a method, \texttt{printAll}, that prints every element in an iterator regardless of how the iterator is implemented.
+
+\begin{solution}[1in]
+\begin{lstlisting}
+public static void printAll(Iterator<E> iter) {
+    while (iter.hasNext()) {
+        System.out.println(iter.next());
+    }
+}
+\end{lstlisting}
+\end{solution}

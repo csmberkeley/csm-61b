@@ -1,0 +1,64 @@
+\question Given a node in a binary search tree (with parent pointers), write a \texttt{successor} method which returns the next node in the in-order traversal of the BST. If there is no successor, simply return null.
+
+\ifprintanswers
+\else
+\begin{lstlisting}
+public class BinarySearchTree<T extends Comparable<T>> {
+    protected Node root;
+    protected class Node {
+        public T value;
+        public Node parent;
+        public Node left;
+        public Node right;
+    }
+    private Node successor(Node node) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class BinarySearchTree<T extends Comparable<T>> {
+    protected Node root;
+    protected class Node {
+        public T value;
+        public Node parent;
+        public Node left;
+        public Node right;
+    }
+    private Node successor(Node node) {
+        if (node.right != null) {
+            node = node.right;
+            while (node.left != null) {
+                node = node.left;
+            }
+            return node;
+        } else {
+            Node parent = node.parent;
+            while (parent != null && parent.right == node) {
+                node = parent;
+                parent = parent.parent;
+            }
+            return parent;
+        }
+    }
+}
+\end{lstlisting}
+\end{solution}

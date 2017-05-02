@@ -1,0 +1,62 @@
+\question Define a procedure, \texttt{isPermutation}, which returns \texttt{true} if a string \texttt{s1} is a permutation of \texttt{s2}. For example, \texttt{"atc"} and \texttt{"tac"} are permutations of \texttt{"cat"}.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public static boolean isPermutation(String s1, String s2) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public static boolean isPermutation(String s1, String s2) {
+    Map<Character,Integer> characterCounts = new HashMap<>();
+    for (char c : s1.toCharArray()) {
+        int count = 0;
+        if (characterCounts.containsKey(c)) {
+            count = characterCounts.get(c);
+        }
+        characterCounts.put(c, count + 1);
+    }
+    for (char c : s2.toCharArray()) {
+        int count = 0;
+        if (characterCounts.containsKey(c)) {
+            count = characterCounts.get(c);
+        }
+        characterCounts.put(c, count - 1);
+    }
+    for (char c : characterCounts.keySet()) {
+        if (characterCounts.get(c) != 0 ) {
+            return false;
+        }
+    }
+    return true;
+}
+\end{lstlisting}
+\end{solution}

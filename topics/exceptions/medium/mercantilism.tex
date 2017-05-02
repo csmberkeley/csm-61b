@@ -1,0 +1,62 @@
+\question Let's model a feudal society where managers, merchants, and workers cooperate to deliver goods. What happens when we call \texttt{new Manager().work()}?
+
+\begin{lstlisting}[numbers=left]
+class Manager {
+    Merchant merchant = new Merchant();
+    Worker worker = new Worker();
+    String[] goods = new String[1];
+    void work() {
+        try {
+            merchant.trade(goods);
+        } catch (RuntimeException e) {
+            worker.produce("apple pie", goods);
+            merchant.trade(goods);
+            worker.produce("cornbread", goods);
+        } catch (Exception e) {
+            merchant.trade(goods);
+        } finally {
+            System.out.println("All in a day's work");
+        }
+    }
+}
+class Merchant {
+    void trade(String[] goods) {
+        try {
+            for (String good : goods) {
+                if (good != null) {
+                    System.out.println("Traded 1 " + good);
+                    return;
+                }
+            }
+            throw new RuntimeException("Not enough goods");
+        } catch (Exception e) {
+            System.out.println("Oops");
+            throw e;
+        } finally {
+            System.out.println("I love trading");
+        }
+    }
+}
+class Worker {
+    void produce(String item, String[] goods) {
+        int i = 0;
+        while (goods[i] != null) {
+            i += 1;
+        }
+        goods[i] = item;
+        System.out.println("Done making 1 " + item);
+    }
+}
+\end{lstlisting}
+
+\begin{solution}
+\begin{verbatim}
+Oops
+I love trading
+Done making 1 apple pie
+Traded 1 apple pie
+I love trading
+All in a day's work
+ArrayIndexOutOfBoundsException
+\end{verbatim}
+\end{solution}

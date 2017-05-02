@@ -1,0 +1,36 @@
+\documentclass{exam}
+\usepackage{../commonheader}
+
+\discnumber{9}
+\title{Binary Trees}
+\date{March 13, 2017}
+
+\begin{document}
+\maketitle
+
+\section{Binary Trees}
+\subimport{../topics/trees/binary-trees/}{binary-tree.tex}
+\marginpar{\subimport{../topics/trees/binary-trees/}{example-tree.tex}}
+\begin{questions}
+\subimport{../topics/trees/binary-trees/easy/}{height.tex}
+\subimport{../topics/trees/binary-trees/easy/}{is-balanced.tex}
+\clearpage
+\marginpar{\subimport{../topics/trees/binary-trees/medium/}{is-symmetric-tree.tex}}\vspace*{-2em}
+\subimport{../topics/trees/binary-trees/medium/}{is-symmetric.tex}
+\end{questions}
+
+\clearpage
+
+\section{Binary Search Trees}
+\begin{questions}
+\subimport{../topics/trees/binary-search-trees/medium/}{from-sorted-array.tex}
+\end{questions}
+
+\clearpage
+
+\section{\extra{Successor}}
+\begin{questions}
+\subimport{../topics/trees/binary-search-trees/hard/}{successor.tex}
+\end{questions}
+
+\end{document}

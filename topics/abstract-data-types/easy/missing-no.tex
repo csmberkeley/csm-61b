@@ -1,0 +1,54 @@
+\question An \texttt{array} contains all the numbers from $0$ to $n$ except for some number, $k$. Define a procedure, \texttt{missingNo}, which returns $k$ given the input \texttt{array}.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public static int missingNo(int[] array) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public static int missingNo(int[] array) {
+    Set<Integer> seen = new HashSet<>();
+    for (int value : array) {
+        seen.add(value);
+    }
+    for (int i = 0; i <= array.length; i++) {
+        if (!seen.contains(i)) {
+            return i;
+        }
+    }
+    return -1;
+}
+\end{lstlisting}
+
+Or, using the sum of the arithmetic series.
+
+\begin{lstlisting}
+public static int missingNo(int[] array) {
+    int sum = 0;
+    for (int value : array) {
+        sum += value;
+    }
+    int expectedSum = (array.length * (array.length + 1)) / 2;
+    return expectedSum - sum;
+}
+\end{lstlisting}
+\end{solution}

@@ -1,0 +1,43 @@
+\question Run MSD and LSD radix sort on the following DNA sequence such that the output is sorted in alphabetical order ($A < C < G < T$).
+
+\ifprintanswers\else
+\begin{verbatim}
+ACAG
+CTAG
+ACAA
+TGAG
+CCTC
+GAGT
+\end{verbatim}
+
+\begin{verbatim}
+ACAG
+CTAG
+ACAA
+TGAG
+CCTC
+GAGT
+\end{verbatim}
+\fi
+
+\begin{solution}
+Most-significant digit.
+\begin{verbatim}
+ACAG ACAG ACAG ACAG ACAA
+CTAG ACAA ACAA ACAA ACAG
+ACAA CTAG CCTC CCTC CCTC
+TGAG CCTC CTAG CTAG CTAG
+CCTC GAGT GAGT GAGT GAGT
+GAGT TGAG TGAG TGAG TGAG
+\end{verbatim}
+
+Least-significant digit.
+\begin{verbatim}
+ACAG ACAA ACAA GAGT ACAA
+CTAG CCTC ACAG ACAA ACAG
+ACAA ACAG CTAG ACAG CCTC
+TGAG CTAG TGAG CCTC CTAG
+CCTC TGAG GAGT TGAG GAGT
+GAGT GAGT CCTC CTAG TGAG
+\end{verbatim}
+\end{solution}

@@ -1,0 +1,38 @@
+\question
+\begin{parts}
+\part In the worst case, how long does it take to index into a linked list?
+\begin{solution}[0.75in]
+$\Theta(N)$
+\end{solution}
+
+\part In the worst case, how long does it take to index into an array?
+\begin{solution}[0.75in]
+$\Theta(1)$
+\end{solution}
+
+\part In the worst case, how long does it take to insert into a linked list?
+\begin{solution}[0.75in]
+$\Theta(N)$, where $N$ is the length of the linked list.
+\end{solution}
+
+\part Assuming there's space, how long does it take to put a element in an array?
+\begin{solution}[0.75in]
+$\Theta(1)$
+\end{solution}
+
+\part What if we assume there is no more space in the array?
+\begin{solution}[0.75in]
+$\Theta(N)$ to copy over $N$ elements into the new array.
+\end{solution}
+
+\part Given what we know about linked lists and arrays, when would we choose to use one data structure over the other?
+\begin{solution}[1.25in]
+If you know in advance how large your data structure is, arrays are faster than linked lists in insertion, mutation, etc.
+However, if the array needs to expand frequently then things get expensive.
+But there are ways to amortize the cost of resizing with \texttt{ArrayLists}, for example.
+\begin{itemize}
+\item Objects with rows and columns (like a chessboard) where we wish to randomly index into exact position and where the board is of a fixed size
+\item Arguments to a java program: \texttt{String[] args}. Using a resizing \texttt{List} in this scenario doesn't necessarily make things better since the arguments to a program don't change once we start the program.
+\end{itemize}
+\end{solution}
+\end{parts}

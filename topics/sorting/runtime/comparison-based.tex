@@ -1,0 +1,31 @@
+\ifprintanswers\else
+{
+\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{12pt}
+\begin{tabularx}{\textwidth}{Xlll}
+Algorithm         & Best-case & Worst-case & Stable \\\hline
+Selection Sort    &           &            &        \\
+Insertion Sort    &           &            &        \\
+Merge Sort        &           &            &        \\
+Quicksort         &           &            &        \\
+Heapsort          &           &            &        
+\end{tabularx}
+}
+\fi
+
+\begin{solution}
+{
+\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{12pt}
+\begin{tabularx}{\textwidth}{Xlll}
+Algorithm         & Best-case          & Worst-case          & Stable \\\hline
+Selection Sort    & $\Theta(N^2)$      & $\Theta(N^2)$       & Depends\\
+Insertion Sort    & $\Theta(N)$        & $\Theta(N^2)$       & Yes    \\
+Merge Sort        & $\Theta(N \log N)$ & $\Theta(N \log N)$  & Yes    \\
+Quicksort         & $\Theta(N)$        & $\Theta(N^2)$       & Depends\\
+Heapsort          & $\Theta(N)$        & $\Theta(N \log N)$  & Hard
+\end{tabularx}
+}
+\end{solution}
+
+\vspace{\parskip}

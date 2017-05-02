@@ -1,0 +1,36 @@
+\question Define a procedure, \texttt{isBalanced}, which takes a \texttt{Node} and outputs whether or not the tree is balanced. A tree is \define{balanced} if the left and right branches differ in height by at most one and are themselves balanced.
+
+\ifprintanswers
+\else
+\begin{lstlisting}
+private boolean isBalanced(Node node) {
+
+
+
+
+
+
+
+
+
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+private boolean isBalanced(Node node) {
+    if (node == null) {
+        return true;
+    } else if (Math.abs(height(node.left) - height(node.right)) <= 1) {
+        return isBalanced(node.left) && isBalanced(node.right);
+    }
+    return false;
+}
+\end{lstlisting}
+\end{solution}
+
+What is the runtime of \texttt{isBalanced}?
+\begin{solution}[0.25in]
+$\Theta(N)$ in the best case, $\Theta(N \log N)$ in the worst case, and $\Omega(N), O(N \log N)$ overall.
+\end{solution}

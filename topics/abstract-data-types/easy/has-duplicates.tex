@@ -1,0 +1,42 @@
+\question Define a procedure, \texttt{hasDuplicates}, which returns \texttt{true} when the given \texttt{array} contains duplicates.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public static boolean hasDuplicates(int[] array) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public static boolean hasDuplicates(int[] array) {
+    Set<Integer> seen = new HashSet<>();
+    for (int value : array) {
+        if (seen.contains(value)) {
+            return true;
+        }
+        seen.add(value);
+    }
+    return false;
+}
+\end{lstlisting}
+\end{solution}

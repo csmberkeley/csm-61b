@@ -1,0 +1,29 @@
+\question How is this implementation of \texttt{swap} different?
+
+\begin{lstlisting}
+class Point {
+    int x;
+    int y;
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+class SwapObject {
+    public static void swap(Point p) {
+        int temp = p.x;
+        p.x = p.y;
+        p.y = temp;
+    }
+    public static void main(String[] args) {
+        Point p = new Point(2, 5);
+        System.out.println("p.x: " + p.x + ", p.y: " + p.y);
+        swap(p);
+        System.out.println("p.x: " + p.x + ", p.y: " + p.y);
+    }
+}
+\end{lstlisting}
+
+\begin{solution}[0.25in]
+When calling \texttt{swap} with a \texttt{Point} object, we're passing a reference to the original \texttt{Point} object. The object's instance variables can be changed from within \texttt{swap} and will remain changed after we exit from the function.
+\end{solution}

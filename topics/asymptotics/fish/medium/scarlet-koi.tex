@@ -1,0 +1,22 @@
+\question
+\begin{lstlisting}
+public static boolean scarletKoi(int[] sortedArray, int x) {
+    int N = sortedArray.length;
+    return scarletKoi(sortedArray, x, 0, N);
+}
+
+private static boolean scarletKoi(int[] sortedArray, int x, int start, int end) {
+    if (start == end || start == end - 1) {
+        return sortedArray[start] == x;
+    }
+    int mid = end + ((start - end) / 2);
+    return sortedArray[mid] == x ||
+           scarletKoi(sortedArray, x, start, mid) ||
+           scarletKoi(sortedArray, x, mid, end);
+}
+\end{lstlisting}
+\begin{solution}[0.25in]
+$O(N)$
+
+This method is a trap, as it seems like a binary search. But in the recursive case, we make recursive calls on both the left and right sides, \textit{without taking advantage of the sorted array}. We can craft an input that requires exploring the entire array in linear time.
+\end{solution}

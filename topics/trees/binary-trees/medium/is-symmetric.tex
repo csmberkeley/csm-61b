@@ -1,0 +1,50 @@
+\question Define \texttt{isSymmetric} which checks whether the binary tree is a mirror of itself.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public boolean isSymmetric() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public boolean isSymmetric() {
+    if (root == null) {
+        return true;
+    }
+    return isSymmetric(root.left, root.right);
+}
+
+private boolean isSymmetric(Node left, Node right) {
+    if (left == null) {
+        return right == null;
+    } else if (right == null) {
+        return false;
+    } else if (!left.value.equals(right.value)) {
+        return false;
+    } else {
+        return isSymmetric(left.right, right.left) &&
+               isSymmetric(left.left, right.right);
+    }
+}
+\end{lstlisting}
+\end{solution}

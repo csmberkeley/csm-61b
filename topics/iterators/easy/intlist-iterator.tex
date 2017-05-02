@@ -1,0 +1,20 @@
+\question Define an \texttt{IntListIterator} class that adheres to the \texttt{Iterator} interface.
+
+\begin{solution}[5in]
+\begin{lstlisting}
+public class IntListIterator implements Iterator<Integer> {
+    private IntList node;
+    public IntListIterator(IntList list) {
+        node = list;
+    }
+    public boolean hasNext() {
+        return node != null;
+    }
+    public Integer next() {
+        Integer value = node.first;
+        node = node.rest;
+        return value;
+    }
+}
+\end{lstlisting}
+\end{solution}

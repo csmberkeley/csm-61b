@@ -1,0 +1,41 @@
+\question Design a \texttt{hashCode} for binary strings which contain only the characters \texttt{0} or \texttt{1}.
+
+\ifprintanswers
+\else
+\begin{lstlisting}
+public class BinString {
+    private String value;
+    public int hashCode() {
+
+
+
+
+
+
+
+
+
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class BinString {
+    private String value;
+    public int hashCode() {
+        int hash = 0;
+        for (char c : value.toCharArray()) {
+            hash = 2 * hash + (c - '0');
+        }
+        return hash;
+    }
+}
+\end{lstlisting}
+
+This \texttt{hashCode} implementation returns the decimal value represented by the binary string.
+For example, the hash code of \texttt{010} is 2 and the hash code of \texttt{11111} is 31.
+
+Caveat: This \texttt{hashCode} is not perfect.
+Leading zeros aren't taken into account: \texttt{1}, \texttt{001}, and \texttt{0000000001} all have a \texttt{hashCode} of 3.
+One possible solution is to simply prepend a \texttt{1} to each string.
+\end{solution}

@@ -1,0 +1,23 @@
+\question Give a tight runtime bound for \texttt{mystery} as a function of $N$, the length of the input array.
+
+\begin{lstlisting}
+public static int[] mystery(int[] array) {
+    boolean done = false;
+    while (!done) {
+        done = true;
+        for (int i = 1; i < array.length; i++) {
+            if (array[i-1] > array[i]) {
+                done = false;
+                int tmp = array[i-1];
+                array[i-1] = array[i]
+                array[i] = tmp;
+            }
+        }
+    }
+    return array;
+}
+\end{lstlisting}
+
+\begin{solution}[0.5in]
+This is bubble sort, an $O(N^2)$ sorting algorithm.
+\end{solution}
