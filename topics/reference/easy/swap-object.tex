@@ -2,8 +2,7 @@
 
 \begin{lstlisting}
 class Point {
-    int x;
-    int y;
+    int x, y;
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
@@ -24,6 +23,6 @@ class SwapObject {
 }
 \end{lstlisting}
 
-\begin{solution}[0.25in]
+\begin{solution}[1em]
 When calling \texttt{swap} with a \texttt{Point} object, we're passing a reference to the original \texttt{Point} object. The object's instance variables can be changed from within \texttt{swap} and will remain changed after we exit from the function.
 \end{solution}
