@@ -1,0 +1,19 @@
+\define{Arrays} are ordered sequences of fixed length. Arrays in Java are proper objects but you'll probably find only one field useful: \texttt{length}.
+
+Unlike Python lists, the \texttt{length} of an array must be known when creating an array.
+
+\begin{lstlisting}
+int[] a = new int[3];
+int[] b = {1, 2, 3}; // shorthand for: int[] b = new int[]{1, 2, 3};
+\end{lstlisting}
+
+Uninitialized values have a default value like \texttt{0}, \texttt{false}, or \texttt{null}.
+
+\begin{lstlisting}
+String[] c = new String[1];
+c[0] == null;
+\end{lstlisting}
+
+Practical tip: Use \href{https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html}{\texttt{java.util.Arrays}} to do cool things with arrays like sorting!
+
+\textit{Food for thought}: Why is every method in \texttt{java.util.Arrays} declared \texttt{static}?

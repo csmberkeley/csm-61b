@@ -1,0 +1,41 @@
+\question Write a method \texttt{flatten} that takes in a two-dimensional array \texttt{data} and returns a one-dimensional array that contains all of the arrays in \texttt{data} concatenated together.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public static int[] flatten(int[][] data) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public static int[] flatten(int[][] data) {
+    int size = 0;
+    for (int[] row : data) {
+        size += row.length;
+    }
+    int[] result = new int[size];
+    int i = 0;
+    for (int[] row : data) {
+        for (int value : row) {
+            result[i] = value;
+            i += 1;
+        }
+    }
+    return result;
+}
+\end{lstlisting}
+\end{solution}

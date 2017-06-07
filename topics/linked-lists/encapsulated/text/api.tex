@@ -1,0 +1,7 @@
+An \define{API}, or application programming interface, is a set of methods and fields that define how we communicate with other software. \texttt{SLList} is our first dive into APIs which define \textbf{what an object can do} rather than \textbf{how that object does it}.
+
+Notice that we define methods like \texttt{SLList.addFirst} and \texttt{SLList.addLast} in \texttt{SLList} but not in \texttt{IntList}. We can say that \texttt{SLList} has a view of the entire list, rather than an individual node in the list. The \texttt{size} field only makes sense in \texttt{SLList} because we think of \texttt{SLList}, the list itself, as an object.
+
+It doesn't make sense to include a \texttt{size} field in \texttt{IntList} because \texttt{IntList} never has a complete view of the list. We can never be certain that a node in the list is really the `front' of the list because any other node's \texttt{rest} field may refer to it.
+
+\define{Encapsulation} is the means by which we separate the concerns of the \textit{functionality} of a class from its \textit{use}, or \define{API}. This is the central principle of how we \textit{design} data structures.
