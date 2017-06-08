@@ -1,0 +1,23 @@
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=30pt]
+\node[vertex]{$8$}
+child {
+    node[vertex]{$6$}
+    child {
+        node[vertex]{$3$}
+    }
+    child {
+        node[vertex]{$7$}
+    }
+}
+child {
+    node[vertex]{$14$}
+    child {
+        node[vertex]{$10$}
+    }
+    child[sibling distance=15mm] {
+        node[vertex,ellipse]{$15 \; 16$}
+    }
+};
+\end{tikzpicture}
+\end{center}

@@ -1,0 +1,89 @@
+\question Given the following binary trees, determine if each is a binary search tree, and whether the height of the tree is the same as the height of the optimal binary search tree containing the given elements.
+
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=30pt]
+\node[vertex]{$6$}
+child {
+    node[vertex]{$5$}
+    child {
+        node[vertex]{$2$}
+        child { edge from parent[draw=none] }
+        child {
+            node[vertex]{$3$}
+            child { edge from parent[draw=none] }
+            child {
+                node[vertex]{$4$}
+            }
+        }
+    }
+    child { edge from parent[draw=none] }
+}
+child {
+    node[vertex]{$9$}
+    child {
+        node[vertex]{$7$}
+    }
+    child {
+        node[vertex]{$10$}
+    }
+};
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=30pt]
+\node[vertex]{$10$}
+child {
+    node[vertex]{$6$}
+    child {
+        node[vertex]{$3$}
+        child[sibling distance=10mm] {
+            node[vertex]{$1$}
+        }
+        child[sibling distance=10mm] {
+            node[vertex]{$7$}
+        }
+    }
+    child { edge from parent[draw=none] }
+}
+child {
+    node[vertex]{$12$}
+    child {
+        node[vertex]{$11$}
+    }
+    child { edge from parent[draw=none] }
+};
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=30pt]
+\node[vertex]{$9$}
+child {
+    node[vertex]{$7$}
+    child {
+        node[vertex]{$5$}
+        child[sibling distance=10mm] {
+            node[vertex]{$3$}
+        }
+        child[sibling distance=10mm] {
+            node[vertex]{$8$}
+        }
+    }
+    child {
+        node[vertex]{$8$}
+    }
+}
+child {
+    node[vertex]{$11$}
+    child { edge from parent[draw=none] }
+    child {
+        node[vertex]{$13$}
+    }
+};
+\end{tikzpicture}
+\end{center}
+
+\begin{solution}[0.5in]
+\begin{enumerate}
+\item Valid but not balanced
+\item Invalid and not balanced
+\item Invalid but balanced
+\end{enumerate}
+\end{solution}

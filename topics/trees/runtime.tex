@@ -1,0 +1,27 @@
+\question Provide tight asymptotic runtime bounds in terms of $N$, the number of nodes in the tree, for the following operations and data structures.
+
+\ifprintanswers\else
+{
+\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{16pt}
+\begin{tabularx}{\textwidth}{Xp{1in}p{1in}}
+Operations                      & BST & Red-black tree \\\hline
+\texttt{boolean contains(T o);} &     &                \\
+\texttt{void insert(T o);}      &     &                \\
+\texttt{T get(int i);}          &     &
+\end{tabularx}
+}
+\fi
+
+\begin{solution}
+{
+\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{16pt}
+\begin{tabularx}{\textwidth}{Xll}
+Operations                      & BST               & Red-black tree         \\\hline
+\texttt{boolean contains(T o);} & $\Omega(1)\; O(N)$ & $\Omega(1)\; O(\log N)$ \\
+\texttt{void insert(T o);}      & $\Omega(1)\; O(N)$ & $\Theta(\log N)$       \\
+\texttt{T get(int i);}          & $\Omega(1)\; O(N)$ & $\Omega(1)\; O(\log N)$
+\end{tabularx}
+}
+\end{solution}
