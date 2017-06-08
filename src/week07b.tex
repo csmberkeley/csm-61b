@@ -1,15 +1,15 @@
 \documentclass{exam}
 \usepackage{../commonheader}
 
-\discnumber{13}
+\discnumber{7B}
 \title{Sorting Algorithms}
-\date{April 18, 2017}
+\date{July 31, 2017}
 
 \begin{document}
 \maketitle
 
 \section{Asymptotics Potpourri}
-\subimport{../topics/sorting/runtime/}{comparison-based.tex}
+\subimport{../topics/sorting/runtime/}{all.tex}
 
 \section{Vertigo}
 \begin{questions}
@@ -28,14 +28,19 @@
 
 \clearpage
 
-\section{Pivotal Choice}
+\section{Sorting Mechanics}
 \begin{questions}
-\subimport{../topics/sorting/medium/}{pivot-choice.tex}
+\subimport{../topics/sorting/hard/}{sorting-mechanics.tex}
 \end{questions}
 
 \clearpage
 
-\section{\extra{Showdown}}
+\section{Getting to Know You}
+\begin{questions}
+\subimport{../topics/sorting/medium/}{dna-sorting.tex}
+\end{questions}
+
+\section{Showdown}
 \begin{questions}
 \subimport{../topics/sorting/medium/}{quicksort-vs-merge-sort.tex}
 \end{questions}
