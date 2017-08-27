@@ -1,17 +1,12 @@
 \begin{lstlisting}
 public class Pokemon {
-    protected int hp;
+    public int hp, power;
     public String cry;
-    private String secret;
-    private int power;
-
+    public String secret;
     public Pokemon() {
         hp = 50;
         cry = "Poke?";
     }
-    public Pokemon(String c) {
-        this(c, 50);
-    } 
     public Pokemon(String c, int hp) {
         cry = c;
         this.hp = hp;
@@ -19,14 +14,10 @@ public class Pokemon {
     public void attack(Pokemon p) {
         p.hp -= power;
     }
-    public void talk() {
-        System.out.println(cry);
-    }
     public void eat() {
         System.out.println("nom nom");
     }
 }
-
 public class Pikachu extends Pokemon {
     public Pikachu() {
         hp = 100;
@@ -41,7 +32,6 @@ public class Pikachu extends Pokemon {
         System.out.println("nom Pika nom");
     }
 }
-
 public class Squirtle extends Pokemon {
     public void attack() {
         System.out.println("Water gun!!");

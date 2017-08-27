@@ -1,10 +1,11 @@
 \question For each of the following scenarios, describe what you think caused each error.
 
 \begin{parts}
+\begin{blocksection}
 \part
 \begin{verbatim}
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 55 
-        at Sum.sum(Test.java:15) 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 55
+        at Sum.sum(Test.java:15)
         at Sum.main(Test.java:28)
 \end{verbatim}
 
@@ -17,7 +18,9 @@ total += nums[i];
 \begin{solution}[0.75in]
 \texttt{i} was incremented beyond the length of the array (\texttt{i >= nums.length}).
 \end{solution}
+\end{blocksection}
 
+\begin{blocksection}
 \part
 \begin{verbatim}
 Exception in thread "main" java.lang.NullPointerException
@@ -34,7 +37,9 @@ nextNode = currNode.next;
 \begin{solution}[0.75in]
 Forgot to add a null check: \texttt{currNode} might be null.
 \end{solution}
+\end{blocksection}
 
+\begin{blocksection}
 \part
 \begin{verbatim}
 Test.java:67: error: non-static variable name cannot be referenced
@@ -46,4 +51,5 @@ from a static context
 \begin{solution}[0.75in]
 \texttt{name}, an instance variable (non-static), was referenced from a static method.
 \end{solution}
+\end{blocksection}
 \end{parts}
