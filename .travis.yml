@@ -1,0 +1,13 @@
+install:
+ - source ./.texlive.sh
+
+cache:
+  directories:
+    - /tmp/texlive
+    - $HOME/.texlive
+
+script:
+ - make src
+
+notifications:
+  email: false

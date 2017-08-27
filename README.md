@@ -1,4 +1,4 @@
-# csm-61b
+# csm-61b [![Build Status](https://travis-ci.org/csmberkeley/csm-61b.svg?branch=master)](https://travis-ci.org/csmberkeley/csm-61b)
 
 The central repository for CSM 61B worksheets.
 
