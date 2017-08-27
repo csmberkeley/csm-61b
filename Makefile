@@ -19,6 +19,8 @@ HANDOUT_SOL = $(addsuffix _sol, $(HANDOUT))
 
 all: $(RELEASED) $(addsuffix _sol, $(SOLUTIONS))
 
+src: $(HANDOUT) $(HANDOUT_SOL)
+
 clean:
 	find . -name "deps" -type d -prune -exec rm -rf {} \;
 	find . -name "*.pyc" -exec rm -rf {} \;
