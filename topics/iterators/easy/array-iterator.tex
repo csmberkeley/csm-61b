@@ -1,4 +1,5 @@
-\question Consider the following code that demonstrates the \texttt{ArrayIterator}.
+\question Consider the following code that demonstrates the
+\lstinline$ArrayIterator$.
 
 \begin{lstlisting}
 Integer[] arr = {1, 2, 3, 4, 5, 6};
@@ -14,9 +15,9 @@ while (iter.hasNext()) {
 }
 \end{lstlisting}
 
-Define an \texttt{ArrayIterator} class that works as described above.
+Define an \lstinline$ArrayIterator$ class that works as described above.
 
-\begin{solution}[5in]
+\begin{solution}[3in]
 \begin{lstlisting}
 public class ArrayIterator<E> implements Iterator<E> {
     private int index;

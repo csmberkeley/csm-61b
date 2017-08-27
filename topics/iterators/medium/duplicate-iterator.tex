@@ -1,19 +1,11 @@
-\question Fill out \texttt{DuplicateIterator} so that it works as used in the example main method. When given two sorted input iterators, the \texttt{DuplicateIterator} returns the elements that are within both iterators. Assume that \texttt{findNextElement} is correctly implemented.
+\question Fill out \lstinline$DuplicateIterator$ so that it works as used in
+the example main method. When given two sorted input iterators, the
+\lstinline$DuplicateIterator$ returns the elements that are within both
+iterators.  Assume that \lstinline$findNextElement$ is correctly implemented.
 
 \ifprintanswers\else
 \begin{lstlisting}
 public class DuplicateIterator<T extends Comparable<? super T>> implements Iterator<T> {
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -60,11 +52,9 @@ public class DuplicateIterator<T extends Comparable<? super T>> implements Itera
         this.iter2 = iter2;
         findNextElement();
     }
-
     public boolean hasNext() {
         return nextElement != null;
     }
-
     public T next() {
         T next = nextElement;
         findNextElement();

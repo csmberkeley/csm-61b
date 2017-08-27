@@ -1,13 +1,6 @@
 \question How is this implementation of \texttt{swap} different?
 
 \begin{lstlisting}
-class Point {
-    int x, y;
-    public Point(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-}
 class SwapObject {
     public static void swap(Point p) {
         int temp = p.x;
@@ -23,6 +16,6 @@ class SwapObject {
 }
 \end{lstlisting}
 
-\begin{solution}[1em]
+\begin{solution}
 When calling \texttt{swap} with a \texttt{Point} object, we're passing a reference to the original \texttt{Point} object. The object's instance variables can be changed from within \texttt{swap} and will remain changed after we exit from the function.
 \end{solution}

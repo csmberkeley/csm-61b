@@ -1,7 +1,9 @@
-\question Provide a descriptive name for each of the following methods. Assume that \texttt{values} contains at least one element.
+\begin{blocksection}
+\question Provide a descriptive name for each of the following methods. Assume
+that \lstinline$values$ contains at least one element.
 
 \begin{lstlisting}
-private static boolean ___________________________ (int[] values) {
+private static boolean ___________________________(int[] values) {
     int k = 0;
     while (k < values.length - 1) {
         if (values[k] > values[k + 1]) {
@@ -18,7 +20,7 @@ private static boolean ___________________________ (int[] values) {
 \end{solution}
 
 \begin{lstlisting}
-private static void ______________________________ (int[] values) {
+private static void ______________________________(int[] values) {
     int k = 0;
     while (k < values.length / 2) {
         int temp = values[k];
@@ -32,3 +34,4 @@ private static void ______________________________ (int[] values) {
 \begin{solution}
 \texttt{reverse}
 \end{solution}
+\end{blocksection}

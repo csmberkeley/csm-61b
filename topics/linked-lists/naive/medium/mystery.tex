@@ -1,5 +1,5 @@
 \begin{blocksection}
-\question What does \texttt{mystery} do? Draw the box-and-pointer diagram that results from calling \lstinline$mystery$ on the \lstinline$IntList$ of elements 2, 3, 4, 5.
+\question What does \lstinline$mystery$ do? Draw the box-and-pointer diagram!
 
 \begin{lstlisting}
 public class IntList {
@@ -19,10 +19,27 @@ public class IntList {
             return x;
         }
     }
+    public String toString() {
+        String result = "";
+        IntList p = this;
+        while (p != null) {
+            result = result + p.first + " ";
+            p = p.tail;
+        }
+        return result;
+    }
+    public static void main(String[] args) {
+        IntList x = new IntList(2, new IntList(3, new IntList(4, new IntList(5, null))));
+        System.out.println(x);
+        IntList y = mystery(x);
+        System.out.println(x);
+        System.out.println(y);
+    }
 }
 \end{lstlisting}
 
 \begin{solution}
-\lstinline$mystery$ reverses the \lstinline$IntList$ in-place and returns the front of the reversed list.
+\lstinline$mystery$ reverses the \lstinline$IntList$ in-place and returns the
+front of the reversed list.
 \end{solution}
 \end{blocksection}
