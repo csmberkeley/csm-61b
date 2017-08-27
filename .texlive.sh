@@ -58,6 +58,7 @@ tlmgr install \
     paralist \
     parskip \
     pgf \
+    preprint \
     tikz-qtree \
     upquote \
     url \
