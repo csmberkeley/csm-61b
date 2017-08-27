@@ -7,7 +7,7 @@ SRC = src
 
 DEPEND = python make_dependency.py
 TEX = pdflatex
-TEX_FLAGS = -halt-on-error -output-directory ../$(DST)
+TEX_FLAGS = -interaction=nonstopmode -halt-on-error -output-directory ../$(DST)
 
 SOURCES = $(wildcard $(SRC)/*.tex)
 HANDOUT = $(SOURCES:$(SRC)/%.tex=%)
@@ -18,6 +18,8 @@ HANDOUT_SOL = $(addsuffix _sol, $(HANDOUT))
 #################################################################
 
 all: $(RELEASED) $(addsuffix _sol, $(SOLUTIONS))
+
+src: $(HANDOUT) $(HANDOUT_SOL)
 
 clean:
 	find . -name "deps" -type d -prune -exec rm -rf {} \;
