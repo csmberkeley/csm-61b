@@ -7,7 +7,7 @@ SRC = src
 
 DEPEND = python make_dependency.py
 TEX = pdflatex
-TEX_FLAGS = -halt-on-error -output-directory ../$(DST)
+TEX_FLAGS = -interaction=nonstopmode -halt-on-error -output-directory ../$(DST)
 
 SOURCES = $(wildcard $(SRC)/*.tex)
 HANDOUT = $(SOURCES:$(SRC)/%.tex=%)
