@@ -42,7 +42,6 @@
 \tikzstyle{vertex}=[draw,circle,minimum size=18pt,inner sep=0pt]
 % Fonts
 \usepackage[varqu]{inconsolata}
-\linespread{1.05}
 
 % Define solution style
 \unframedsolutions
@@ -72,9 +71,10 @@
 \textwidth=5in
 \voffset=-0.5in
 \hoffset=-0.25in
-\headsep=0.25in
-\marginparsep=0.25in
-\marginparwidth=1.75in
+\headsep=1em
+\marginparsep=1em
+\marginparwidth=2in
+\footskip=2em
 \renewcommand{\baselinestretch}{1.2}
 \font\dunhd=cmdunh10 scaled \magstep5
 \font\dunhc=cmdunh10 scaled \magstep4
@@ -92,14 +92,14 @@
  \newpage
  \vspace*{-\topskip}
  \hrule height1pt width\textwidth
- \vskip 0.5em
+ \vskip 0.25em
  \makebox[1.6in][l]{\dunhb \coursenumber}
  {\dunhb \hfill \disctitle}
  \vskip 0em
  \makebox[1.6in][l]{\dunhb \semester}
  {\dunhb \hfill \dunhs \ifdefined\discnum Week \discnum: \fi\@date}
- \vskip 1em
- \hrule height1pt width\textwidth \par \vskip .5em
+ \vskip 0.75em
+ \hrule height1pt width\textwidth \par \vskip 0.5em
 }
 
 % Define section and subsection styles
@@ -162,7 +162,7 @@ to\hsize{\hfil\box\@tempboxa\hfil}
 
 % Define lstlisting styles
 \lstset{language=Java,
-        basicstyle=\ttfamily\small,
+        basicstyle=\ttfamily,
         showstringspaces=false,
         breaklines=true,
         linewidth=7in,
