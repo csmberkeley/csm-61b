@@ -1,15 +1,16 @@
-\question Which of the following \texttt{hashCodes} are valid?
+\begin{blocksection}
+\question Which of the following \lstinline$hashCodes$ are valid?
 
 \begin{lstlisting}
 class Point {
-    private int x;
-    private int y;
-    private static count = 0;
+    private int x, y;
+    private static int count = 0;
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
         count += 1;
     }
+}
 \end{lstlisting}
 
 \begin{parts}
@@ -19,8 +20,8 @@ public void hashCode() {
     System.out.print(this.x + this.y);
 }
 \end{lstlisting}
-\begin{solution}[0.5in]
-Invalid. Return type should be \texttt{int}.
+\begin{solution}[0.25in]
+Invalid. Return type should be \lstinline$int$.
 \end{solution}
 
 \part
@@ -30,7 +31,7 @@ public int hashCode() {
     return random.nextInt();
 }
 \end{lstlisting}
-\begin{solution}[0.5in]
+\begin{solution}[0.25in]
 Invalid. Not deterministic.
 \end{solution}
 
@@ -40,7 +41,7 @@ public int hashCode() {
     return this.x + this.y;
 }
 \end{lstlisting}
-\begin{solution}[0.5in]
+\begin{solution}[0.25in]
 Valid, but certain inputs may cause a significant number of collisions.
 \end{solution}
 
@@ -50,7 +51,7 @@ public int hashCode() {
     return count;
 }
 \end{lstlisting}
-\begin{solution}[0.5in]
+\begin{solution}[0.25in]
 Invalid. Not consistent.
 \end{solution}
 
@@ -60,7 +61,8 @@ public int hashCode() {
     return 4;
 }
 \end{lstlisting}
-\begin{solution}[0.5in]
+\begin{solution}[0.25in]
 Valid, but causes collisions on any input.
 \end{solution}
 \end{parts}
+\end{blocksection}

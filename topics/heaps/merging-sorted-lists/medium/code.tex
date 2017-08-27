@@ -1,4 +1,6 @@
-\question Write \texttt{merge}, a procedure that merges $K$ sorted lists of length $N$ into a single sorted list in $O(NK \log K)$ time.
+\begin{blocksection}
+\question Write \lstinline$merge$, a procedure that merges $K$ sorted lists of
+length $N$ into a single sorted list in $O(NK \log K)$ time.
 
 \ifprintanswers
 \else
@@ -26,14 +28,6 @@ public class ListIterator<T extends Comparable<T>> implements Iterator<T>,
     }
     public static <T extends Comparable<T>> List<T> merge(List<T>[] lists) {
         List<T> result = new ArrayList<>();
-
-
-
-
-
-
-
-
 
 
 
@@ -94,3 +88,4 @@ public class ListIterator<T extends Comparable<T>> implements Iterator<T>,
 }
 \end{lstlisting}
 \end{solution}
+\end{blocksection}

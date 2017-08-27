@@ -1,4 +1,6 @@
-\question Consider \texttt{BadHashMap}'s \texttt{put} implementation which assumes no collisions or negative hash codes.
+\begin{blocksection}
+\question Consider \lstinline$BadHashMap$'s \lstinline$put$ implementation
+which assumes no collisions or negative hash codes.
 
 \begin{lstlisting}
 public class BadHashMap<K, V> implements Map<K, V> {
@@ -10,18 +12,28 @@ public class BadHashMap<K, V> implements Map<K, V> {
 \end{lstlisting}
 
 \begin{parts}
-\part Why do we use the \texttt{\%} (modulo) operator?
+\part Why do we use the \lstinline$\%$ (modulo) operator?
 \begin{solution}[0.5in]
-Allows us to take a large \texttt{int} and turn it into an index into the \texttt{array}.
+Allows us to take a large \lstinline$int$ and turn it into an index into the
+\lstinline$array$.
 \end{solution}
 
 \part What are collisions? What data structure can we use to address them?
-\begin{solution}[1in]
-Collisions occur when two keys map to the same bucket, or index, in the \texttt{array}. We can use external chaining with a linked list, for example, to resolve the conflicts. Each bucket can be associated with more than one key.
+\begin{solution}[0.5in]
+Collisions occur when two keys map to the same bucket, or index, in the
+\lstinline$array$. We can use external chaining with a linked list, for
+example, to resolve the conflicts. Each bucket can be associated with more than
+one key.
 \end{solution}
 
-\part Describe an implementation for \texttt{get} and \texttt{containsKey} assuming you applied the changes for handling collisions.
-\begin{solution}[1in]
-An implementation for \texttt{get} might select the appropriate bucket, then iterate through the external chain, and return the value for the matching key if it exists. If no matching key exists, return null. Then, \texttt{containsKey} can just return whether \texttt{get(key) != null}.
+\part Describe an implementation for \lstinline$get$ and
+\lstinline$containsKey$ assuming you applied the changes for handling
+collisions.
+\begin{solution}[0.5in]
+An implementation for \lstinline$get$ might select the appropriate bucket, then
+iterate through the external chain, and return the value for the matching key
+if it exists. If no matching key exists, return null. Then,
+\lstinline$containsKey$ can just return whether \lstinline$get(key) != null$.
 \end{solution}
 \end{parts}
+\end{blocksection}
