@@ -62,7 +62,7 @@ tlmgr install \
     tikz-qtree \
     upquote \
     url \
-    wasy2 \
+    wasy \
     wasy2-ps \
     wasysym \
     wrapfig \
