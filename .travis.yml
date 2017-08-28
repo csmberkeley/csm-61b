@@ -9,6 +9,9 @@ cache:
 script:
   - make src
 
+before_deploy:
+  - cp README.md published/README.md
+
 deploy:
   provider: pages
   local_dir: published
