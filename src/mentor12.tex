@@ -1,9 +1,9 @@
 \documentclass[11pt]{exam}
 \usepackage{../commonheader}
 
-\discnumber{11}
+\discnumber{12}
 \title{Graphs \& Searches}
-\date{April 4, 2017}
+\date{November 13, 2017}
 
 \begin{document}
 \maketitle
@@ -11,17 +11,19 @@
 \section{Traversals}
 \begin{questions}
 \subimport{../topics/trees/binary-trees/medium/}{traversals.tex}
-\end{questions}
-
-\section{Directed Graphs}
-\begin{questions}
-\subimport{../topics/graphs/easy/}{searches.tex}
+\subimport{../topics/graphs/easy/}{traversals.tex}
 \end{questions}
 
 \clearpage
 
+\section{Searches}
+\begin{questions}
+\subimport{../topics/graphs/medium/}{searches.tex}
+\end{questions}
+
 \section{Elephants}
 \subimport{../topics/graphs/elephants/text/}{elephants.tex}
+\marginpar{\subimport{../topics/graphs/elephants/text/}{puzzle.tex}}
 \begin{questions}
 \subimport{../topics/graphs/elephants/easy/}{bfs-or-dfs.tex}
 \subimport{../topics/graphs/elephants/medium/}{solve.tex}
