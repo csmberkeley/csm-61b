@@ -1,6 +1,8 @@
-\question Suppose we need to design a telephone network connecting all the residents, labeled $A$ through $G$, in a neighborhood. How can we create a network that guarantees connectivity between all subscribers at the least possible cost?
-
-\vspace{\parskip}
+\begin{blocksection}
+\question Suppose we need to design a telephone network connecting all the
+residents, labeled $A$ through $G$, in a neighborhood. How can we create a
+network that guarantees connectivity between all subscribers at the least
+possible cost?
 
 \begin{center}
 \begin{tikzpicture}[scale=0.15]
@@ -47,18 +49,24 @@
 \end{center}
 
 \begin{parts}
-\part In a graph with $N$ vertices and $M$ edges, how many edges form a minimum spanning tree?
+\part In a graph with $N$ vertices and $M$ edges, how many edges form a minimum
+spanning tree?
 \begin{solution}[0.5in]
 $N-1$, or 6 edges in the above graph.
 \end{solution}
 
-\part Will the new graph contain any cycles? Describe the structure of the graph.
+\part Will the new graph contain any cycles? Describe the structure of the
+graph.
 \begin{solution}[1in]
-The resulting graph is a tree which implies that it contains no cycles. If the tree reaches every node in the graph, then it is a \define{spanning tree}. A graph may have many spanning trees, but we are particularly interested in \define{minimum spanning trees}, or spanning trees that minimize the total weight of the tree.
+The resulting graph is a tree which implies that it contains no cycles. If the
+tree reaches every node in the graph, then it is a \define{spanning tree}.
+A graph may have many spanning trees, but we are particularly interested in
+\define{minimum spanning trees}, or spanning trees that minimize the total
+weight of the tree.
 \end{solution}
 
 \part Run Kruskal's Algorithm to find the minimum spanning tree.
-\begin{solution}[2in]
+\begin{solution}[1in]
 \begin{center}
 \begin{tikzpicture}[scale=0.15]
 \tikzstyle{every node}+=[inner sep=0pt]
@@ -92,3 +100,4 @@ The resulting graph is a tree which implies that it contains no cycles. If the t
 \end{center}
 \end{solution}
 \end{parts}
+\end{blocksection}

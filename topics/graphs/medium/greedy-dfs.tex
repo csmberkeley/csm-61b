@@ -1,9 +1,15 @@
-\question Is this algorithm for computing the shortest path between two vertices correct?
+\begin{blocksection}
+\question Is this algorithm for computing the shortest path between two
+vertices correct?
 
-Given a starting vertex, $s$, and an ending vertex, $v$, compute the shortest path between $s$ and $v$ by running DFS, but at each node exploring the shortest outgoing edge first until $v$ is reached. Return the $s$ to $v$ path in the DFS tree.
+Given a starting vertex, $s$, and an ending vertex, $v$, compute the shortest
+path between $s$ and $v$ by running DFS, but at each node exploring the
+shortest outgoing edge first until $v$ is reached. Return the $s$ to $v$ path
+in the DFS tree.
 
 \begin{solution}[2in]
-Incorrect. Consider the graph below whose true shortest path is $s - v$ but whose greedy DFS path is $s - t - v$.
+Incorrect. Consider the graph below whose true shortest path is $s - v$ but
+whose greedy DFS path is $s - t - v$.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.1]
@@ -26,3 +32,4 @@ Incorrect. Consider the graph below whose true shortest path is $s - v$ but whos
 \end{tikzpicture}
 \end{center}
 \end{solution}
+\end{blocksection}
