@@ -1,0 +1,24 @@
+\begin{blocksection}
+\question You have been hired by Alan to help design a priority queue
+implementation for \emph{Kelp}, the new seafood review startup, ordered on the
+timestamp of each \lstinline$Review$.
+
+Describe a data structure that supports the following operations.
+
+\begin{itemize}
+\item \lstinline$insert(Review r)$ a \lstinline$Review$ in $O(\log N)$.
+\item \lstinline$edit(int id, String body)$ any one \lstinline$Review$ in
+$\Theta(1)$.
+\item \lstinline$sixtyOne()$: return the sixty-first latest \lstinline$Review$
+in $\Theta(1)$.
+\item \lstinline$pollSixtyOne()$: remove and return the sixty-first latest
+\lstinline$Review$ in $O(\log N)$.
+\end{itemize}
+
+\begin{solution}[1.5in]
+Maintain a max-heap called \lstinline$firstSixtyOne$ with 61
+\lstinline$Reviews$, a min-heap called \lstinline$olderReviews$ with all the
+rest, and a \lstinline$HashMap$ mapping any given integer \lstinline$id$ to its
+corresponding \lstinline$Review$.
+\end{solution}
+\end{blocksection}
