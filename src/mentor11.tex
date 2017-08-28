@@ -2,29 +2,35 @@
 \usepackage{../commonheader}
 
 \discnumber{11}
-\title{Graphs \& Searches}
-\date{April 4, 2017}
+\title{Balanced Search}
+\date{November 6, 2017}
 
 \begin{document}
 \maketitle
 
-\section{Traversals}
+\section{2-3-Forever}
+\marginpar{\subimport{../topics/trees/balanced-search-trees/}{example-2-3-tree.tex}}
 \begin{questions}
-\subimport{../topics/trees/binary-trees/medium/}{traversals.tex}
+\subimport{../topics/trees/balanced-search-trees/easy/}{2-3-tree-insertion.tex}
 \end{questions}
 
-\section{Directed Graphs}
+\section{Unbalanced Search Trees}
 \begin{questions}
-\subimport{../topics/graphs/easy/}{searches.tex}
+\subimport{../topics/trees/balanced-search-trees/easy/}{bst-valid-balanced.tex}
+\subimport{../topics/trees/}{runtime.tex}
+\end{questions}
+
+\section{New World Order}
+\begin{questions}
+\subimport{../topics/trees/tries/easy/}{prefix.tex}
+\subimport{../topics/trees/tries/medium/}{newspaper.tex}
 \end{questions}
 
 \clearpage
 
-\section{Elephants}
-\subimport{../topics/graphs/elephants/text/}{elephants.tex}
+\section{\extra{Sorting Mechanics}}
 \begin{questions}
-\subimport{../topics/graphs/elephants/easy/}{bfs-or-dfs.tex}
-\subimport{../topics/graphs/elephants/medium/}{solve.tex}
+\subimport{../topics/sorting/hard/}{sorting-mechanics.tex}
 \end{questions}
 
 \end{document}
