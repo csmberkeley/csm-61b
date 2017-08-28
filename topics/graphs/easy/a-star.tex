@@ -1,4 +1,6 @@
-\question Find the path from the start, $S$, to the goal, $G$, when running each of the following algorithms.
+\begin{blocksection}
+\question Find the path from the start, $S$, to the goal, $G$, when running
+each of the following algorithms.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.15]
@@ -48,34 +50,45 @@
 \end{tikzpicture}
 \end{center}
 
-\vspace{\parskip}
-
 \begin{solution}
-Note that uniform cost search and greedy search are not a part of the course. The algorithms for all 3 of these searches are extremely similar, the only difference being the priority given to a key and whether or not we need the cumulative distance to a vertex.
+Note that uniform cost search and greedy search are not a part of the course.
+The algorithms for all 3 of these searches are extremely similar, the only
+difference being the priority given to a key and whether or not we need the
+cumulative distance to a vertex.
 \end{solution}
 
 \begin{parts}
 \part Which path does uniform cost search return?
-\begin{solution}[1.5in]
+\begin{solution}[1in]
 $S - A - D - G$
 
-From the starting node, choose the path that has the least cost, go to that node, and repeat until we reach the goal node. We choose the lowest \textit{backward cost}.
+From the starting node, choose the path that has the least cost, go to that
+node, and repeat until we reach the goal node. We choose the lowest
+\emph{backward cost}.
 
-Note that this is very similar to Dijkstra's, just a little more general. We keep a priority-queue fringe that keeps track of paths. At each step, we remove the shortest path from the fringe and add its children to the fringe, trying all paths in increasing cost order until we reach G.
+Note that this is very similar to Dijkstra's, just a little more general. We
+keep a priority-queue fringe that keeps track of paths. At each step, we remove
+the shortest path from the fringe and add its children to the fringe, trying
+all paths in increasing cost order until we reach G.
 \end{solution}
 
 \part Which path does greedy search return?
-\begin{solution}[1.5in]
+\begin{solution}[1in]
 $S - A - E - D - G$ or $S - A - D - G$ depending on tie-breaking behavior.
 
-From the starting node, travel to the next node with the lowest value returned by the heuristic function until we reach the goal node. We choose the path with the lowest \textit{forward cost}.
+From the starting node, travel to the next node with the lowest value returned
+by the heuristic function until we reach the goal node. We choose the path with
+the lowest \emph{forward cost}.
 \end{solution}
 
 \part Which path does A* search return?
-\begin{solution}[1.5in]
+\begin{solution}[1in]
 $S - A - D - G$
 
-At each node, we choose the next node that has the lowest sum of the path cost and $h(\cdot)$ value. This is essentially uniform cost search and greedy search combined.
+At each node, we choose the next node that has the lowest sum of the path cost
+and $h(\cdot)$ value. This is essentially uniform cost search and greedy search
+combined.
 
 \end{solution}
 \end{parts}
+\end{blocksection}

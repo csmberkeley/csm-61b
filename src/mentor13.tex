@@ -1,9 +1,9 @@
 \documentclass[11pt]{exam}
 \usepackage{../commonheader}
 
-\discnumber{12}
-\title{MSTs \& Graph Algorithms}
-\date{April 11, 2017}
+\discnumber{13}
+\title{Graph Algorithms}
+\date{November 20, 2017}
 
 \begin{document}
 \maketitle
@@ -13,22 +13,15 @@
 \subimport{../topics/graphs/easy/}{network.tex}
 \end{questions}
 
-\clearpage
-
 \section{A* Search}
 \begin{questions}
 \subimport{../topics/graphs/easy/}{a-star.tex}
 \end{questions}
 
-\clearpage
-
-\section{Searches}
+\section{\extra{Algorithms}}
 \begin{questions}
-\subimport{../topics/graphs/medium/}{searches.tex}
-\end{questions}
-
-\section{\extra{Shortest Paths Algorithms}}
-\begin{questions}
+\subimport{../topics/graphs/medium/}{greedy-dfs.tex}
+\subimport{../topics/graphs/medium/}{weight-constrained-mst.tex}
 \subimport{../topics/graphs/hard/}{bfs-dijkstras.tex}
 \end{questions}
 
