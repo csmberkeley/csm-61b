@@ -1,35 +1,30 @@
 \documentclass[11pt]{exam}
 \usepackage{../commonheader}
 
-\discnumber{12}
-\title{MSTs \& Graph Algorithms}
-\date{April 11, 2017}
+\discnumber{11}
+\title{Graphs \& Searches}
+\date{April 4, 2017}
 
 \begin{document}
 \maketitle
 
-\section{Networking}
+\section{Traversals}
 \begin{questions}
-\subimport{../topics/graphs/easy/}{network.tex}
+\subimport{../topics/trees/binary-trees/medium/}{traversals.tex}
+\end{questions}
+
+\section{Directed Graphs}
+\begin{questions}
+\subimport{../topics/graphs/easy/}{searches.tex}
 \end{questions}
 
 \clearpage
 
-\section{A* Search}
+\section{Elephants}
+\subimport{../topics/graphs/elephants/text/}{elephants.tex}
 \begin{questions}
-\subimport{../topics/graphs/easy/}{a-star.tex}
-\end{questions}
-
-\clearpage
-
-\section{Searches}
-\begin{questions}
-\subimport{../topics/graphs/medium/}{searches.tex}
-\end{questions}
-
-\section{\extra{Shortest Paths Algorithms}}
-\begin{questions}
-\subimport{../topics/graphs/hard/}{bfs-dijkstras.tex}
+\subimport{../topics/graphs/elephants/easy/}{bfs-or-dfs.tex}
+\subimport{../topics/graphs/elephants/medium/}{solve.tex}
 \end{questions}
 
 \end{document}
