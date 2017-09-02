@@ -2,8 +2,12 @@
 \question Provide a descriptive name for each of the following methods. Assume
 that \lstinline$values$ contains at least one element.
 
+\bigskip
+
+\begin{parts}
+\part
 \begin{lstlisting}
-private static boolean ___________________________(int[] values) {
+public static boolean ________________________(int[] values) {
     int k = 0;
     while (k < values.length - 1) {
         if (values[k] > values[k + 1]) {
@@ -16,11 +20,14 @@ private static boolean ___________________________(int[] values) {
 \end{lstlisting}
 
 \begin{solution}
-\texttt{isIncreasing}
+\lstinline$isIncreasing$
 \end{solution}
 
+\bigskip
+
+\part
 \begin{lstlisting}
-private static void ______________________________(int[] values) {
+public static void __________________________(int[] values) {
     int k = 0;
     while (k < values.length / 2) {
         int temp = values[k];
@@ -32,6 +39,7 @@ private static void ______________________________(int[] values) {
 \end{lstlisting}
 
 \begin{solution}
-\texttt{reverse}
+\lstinline$reverse$
 \end{solution}
+\end{parts}
 \end{blocksection}
