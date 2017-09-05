@@ -1,6 +1,6 @@
 # You should only have to modify RELEASED and SOLUTIONS.
-RELEASED =
-SOLUTIONS =
+RELEASED = mentor03
+SOLUTIONS = mentor03
 
 DST = published
 SRC = src

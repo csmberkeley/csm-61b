@@ -1,14 +1,24 @@
 \question How is this implementation of \texttt{swap} different?
 
 \begin{lstlisting}
+class Coordinate {
+    int x, y;
+    Coordinate(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+\end{lstlisting}
+
+\begin{lstlisting}
 class SwapObject {
-    public static void swap(Point p) {
+    public static void swap(Coordinate p) {
         int temp = p.x;
         p.x = p.y;
         p.y = temp;
     }
     public static void main(String[] args) {
-        Point p = new Point(2, 5);
+        Coordinate p = new Coordinate(2, 5);
         System.out.println("p.x: " + p.x + ", p.y: " + p.y);
         swap(p);
         System.out.println("p.x: " + p.x + ", p.y: " + p.y);
@@ -17,5 +27,7 @@ class SwapObject {
 \end{lstlisting}
 
 \begin{solution}
-When calling \texttt{swap} with a \texttt{Point} object, we're passing a reference to the original \texttt{Point} object. The object's instance variables can be changed from within \texttt{swap} and will remain changed after we exit from the function.
+When calling \texttt{swap} with a \texttt{Coordinate} object, we're passing a reference to the original \texttt{Coordinate} object. The object's instance variables can be changed from within \texttt{swap} and will remain changed after we exit from the function.
+
+\textbf{Meta:} It can be useful to mention that Java stores only the address of an object in a variable of non-primitive type, and so when passed to a function, the address of the original object gets passed around. 
 \end{solution}
