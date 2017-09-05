@@ -1,4 +1,5 @@
-\question What is wrong with this definition of \texttt{swap}? How can we fix it?
+\begin{blocksection}
+\question What is wrong with this definition of \lstinline$swap$? How can we fix it?
 
 \begin{lstlisting}
 class SimpleSwap {
@@ -21,9 +22,18 @@ class SimpleSwap {
 x: 2, y: 5
 x: 2, y: 5
 \end{verbatim}
-In the main method, \texttt{x} and \texttt{y} won't actually be swapped.
-Within \texttt{swap}, we can change what \texttt{a} and \texttt{b} point to, but we can't change the variables that were declared in \texttt{main}. We can fix this by either in-lining the \texttt{swap} functionality in the \texttt{main} method or returning and reassigning the swapped values using an object.
+In the main method, \lstinline$x$ and \lstinline$y$ won't actually be swapped.
+Within \lstinline$swap$, we can change what \lstinline$a$ and \lstinline$b$
+point to, but we can't change the variables that were declared in
+\lstinline$main$. We can fix this by either in-lining the \lstinline$swap$
+functionality in the \lstinline$main$ method or returning and reassigning the
+swapped values using an object.
 
-\textbf{Meta:} Emphasize ``Golden Rule of Equals`` (pass-by-value). The bits are copied over.
-It is helpful to talk about the 8 types of primitive variable types (\lstinline$byte$, \lstinline$short$, \lstinline$int$, \lstinline$long$, \lstinline$float$, \lstinline$double$, \lstinline$boolean$, \lstinline$char$), and that Java stores the actual value in the variable. So when a primitive variable is passed to a function, its value itself is copied over. 
+\textbf{Meta:} Emphasize ``Golden Rule of Equals'' (pass-by-value). The bits
+are copied over.  It is helpful to talk about the 8 types of primitive variable
+types (\lstinline$byte$, \lstinline$short$, \lstinline$int$, \lstinline$long$,
+\lstinline$float$, \lstinline$double$, \lstinline$boolean$, \lstinline$char$),
+and that Java stores the actual value in the variable. So when a primitive
+variable is passed to a function, its value itself is copied over.
 \end{solution}
+\end{blocksection}

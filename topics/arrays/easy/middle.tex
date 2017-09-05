@@ -1,12 +1,11 @@
 \begin{blocksection}
 \question Implement \lstinline$middle$, which takes in \lstinline$int[]$ and
 returns the middle element. If no element is in the exact middle, return the
-element to the left of the middle.
+element to the left middle.
 
 \ifprintanswers\else
 \begin{lstlisting}
 public static int middle(int[] data) {
-
 
 
 
@@ -21,6 +20,8 @@ public static int middle(int[] data) {
     return data[(data.length - 1) / 2];
 }
 \end{lstlisting}
-\textbf{Meta:} It is helpful here to review the fact that length is a field and not a method. 
+
+\textbf{Meta:} It is helpful here to review the fact that length is a field and
+not a method.
 \end{solution}
 \end{blocksection}
