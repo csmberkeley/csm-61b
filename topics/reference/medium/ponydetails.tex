@@ -1,0 +1,38 @@
+\question What would Java display? 
+\begin{lstlisting}
+public class Pony {
+    String name;
+    int age;
+    public Pony(String s, int a) {
+        name = s;
+        age = a;
+    }
+    public void getDeTails() {
+            String name = "getInfo";
+            System.out.println("My name is ", name);
+            System.out.println("My age is ", age);
+    }
+    public static void main(String[] args) {
+        Pony pony = new Pony("Jerry", 300);
+        pony.getDeTails();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+\end{lstlisting}
+
+\begin{solution}[1.5in]
+\begin{verbatim}
+My name is getInfo
+My age is 300
+\end{verbatim}
+\end{solution}
