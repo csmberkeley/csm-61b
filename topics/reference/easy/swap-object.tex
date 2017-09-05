@@ -27,7 +27,7 @@ class SwapObject {
 \end{lstlisting}
 
 \begin{solution}
-When calling \texttt{swap} with a \texttt{Coordinate} object, we're passing a reference to the original \texttt{Coordinate} object. The object's instance variables can be changed from within \texttt{swap} and will remain changed after we exit from the function.
+When calling \lstinline$swap$ with a \lstinline$Coordinate$ object, we're passing a reference to the original \lstinline$Coordinate$ object. The object's instance variables can be changed from within \lstinline$swap$ and will remain changed after we exit from the function.
 
 \textbf{Meta:} It can be useful to mention that Java stores only the address of an object in a variable of non-primitive type, and so when passed to a function, the address of the original object gets passed around. 
 \end{solution}

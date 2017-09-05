@@ -24,6 +24,6 @@ x: 2, y: 5
 In the main method, \texttt{x} and \texttt{y} won't actually be swapped.
 Within \texttt{swap}, we can change what \texttt{a} and \texttt{b} point to, but we can't change the variables that were declared in \texttt{main}. We can fix this by either in-lining the \texttt{swap} functionality in the \texttt{main} method or returning and reassigning the swapped values using an object.
 
-\textbf{Meta:} Emphasize "Golden Rule of Equals" (pass-by-value). The bits are copied over.
-It is helpful to talk about the 8 types of primitive variable types (byte, short, int, long, float, double, boolean, char), and that Java stores the actual value in the variable. So when a primitive variable is passed to a function, its value itself is copied over. 
+\textbf{Meta:} Emphasize ``Golden Rule of Equals`` (pass-by-value). The bits are copied over.
+It is helpful to talk about the 8 types of primitive variable types (\lstinline$byte$, \lstinline$short$, \lstinline$int$, \lstinline$long$, \lstinline$float$, \lstinline$double$, \lstinline$boolean$, \lstinline$char$), and that Java stores the actual value in the variable. So when a primitive variable is passed to a function, its value itself is copied over. 
 \end{solution}
