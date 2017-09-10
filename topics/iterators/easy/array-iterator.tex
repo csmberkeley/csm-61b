@@ -1,29 +1,31 @@
+\begin{blocksection}
 \question Consider the following code that demonstrates the
-\lstinline$ArrayIterator$.
+\lstinline$IntArrayIterator$.
 
 \begin{lstlisting}
-Integer[] arr = {1, 2, 3, 4, 5, 6};
-Iterator iter = new ArrayIterator(arr);
+int[] arr = {1, 2, 3, 4, 5, 6};
+IntIterator iter = new IntArrayIterator(arr);
 
-System.out.println(iter.hasNext());  // true
-if(iter.hasNext()) {
-  System.out.println(iter.next());   // 1
+System.out.println(iter.hasNext());      // true
+if (iter.hasNext()) {
+    System.out.println(iter.next());     // 1
 }
-if(iter.hasNext()) {
-  System.out.println(iter.next() + 3); // 5
+if (iter.hasNext()) {
+    System.out.println(iter.next() + 3); // 5
 }
 while (iter.hasNext()) {
-    System.out.println(iter.next()); // 3 4 5 6
+    System.out.println(iter.next());     // 3 4 5 6
 }
 \end{lstlisting}
-Define an \lstinline$ArrayIterator$ class that works as described above.
+
+Define an \lstinline$IntArrayIterator$ class that works as described above.
+
 \begin{solution}[3in]
-\begin{blocksection}
 \begin{lstlisting}
-public class ArrayIterator implements Iterator {
+public class IntArrayIterator implements IntIterator {
     private int index;
     private int[] array;
-    public ArrayIterator(int[] arr) {
+    public IntArrayIterator(int[] arr) {
         array = arr;
         index = 0;
     }
@@ -37,5 +39,5 @@ public class ArrayIterator implements Iterator {
     }
 }
 \end{lstlisting}
-\end{blocksection}
 \end{solution}
+\end{blocksection}
