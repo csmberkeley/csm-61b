@@ -19,8 +19,8 @@ What would Java display?
 \begin{parts}
 \part
 \begin{verbatim}
-Dog fido = new Dog();
-fido.walk();
+Dog fido1 = new Dog();
+fido1.walk();
 \end{verbatim}
 \begin{solution}[0.7in]
 \begin{verbatim}
@@ -30,8 +30,8 @@ The dog is walking
 
 \part
 \begin{verbatim}
-Beagle fido = new Beagle();
-fido.walk();
+Beagle fido2 = new Beagle();
+fido2.walk();
 \end{verbatim}
 \begin{solution}[0.7in]
 \begin{verbatim}
@@ -41,8 +41,8 @@ The beagle is walking
 
 \part
 \begin{verbatim}
-Beagle fido = new Dog();
-fido.walk();
+Beagle fido3 = new Dog();
+fido3.walk();
 \end{verbatim}
 \begin{solution}[0.7in]
 Compile-time error.
@@ -52,8 +52,8 @@ A container meant for \lstinline$Beagle$s can't contain \lstinline$Dog$s.
 
 \part
 \begin{verbatim}
-Dog fido = new Beagle();
-fido.walk();
+Dog fido4 = new Beagle();
+fido4.walk();
 \end{verbatim}
 \begin{solution}[0.7in]
 \begin{verbatim}
@@ -66,3 +66,12 @@ runtime, this method is overridden by \lstinline$Beagle.walk()$.
 \end{solution}
 \end{parts}
 \end{blocksection}
+
+\begin{solution}
+\textbf{Meta:} It can be useful to talk about the static types of variables as
+boxes with labels and the dynamic type of an object as what you place in the
+box. So long as what you place in the box fits the label (i.e. a
+\lstinline$Beagle$ is a \lstinline$Dog$, so a dynamic \lstinline$Beagle$ can be
+placed in a static \lstinline$Dog$) then no compiler errors occur. Remember to
+mention dynamic method lookup.
+\end{solution}

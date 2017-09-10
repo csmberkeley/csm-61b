@@ -1,0 +1,13 @@
+\question Define a method, \lstinline$printAll$, that prints every element in
+an \lstinline$IntIterator$ \textbf{regardless of how the iterator is
+implemented.}
+
+\begin{solution}[1in]
+\begin{lstlisting}
+public static void printAll(IntIterator iter) {
+    while (iter.hasNext()) {
+        System.out.println(iter.next());
+    }
+}
+\end{lstlisting}
+\end{solution}

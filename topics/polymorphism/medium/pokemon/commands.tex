@@ -17,12 +17,15 @@ Squirtle s = (Squirtle) z;
 \begin{lstlisting}
 Pikachu p = new Pikachu();
 Pokemon a = p;
+// (1)
 // p = a;
 a.eat();
 a = new Squirtle();
+// (2)
 // a.attack();
 ((Squirtle) a).attack();
 Pokemon z = new Pikachu();
+// (3)
 // Squirtle s = (Squirtle) z;
 ((Pokemon) p).attack(z);
 \end{lstlisting}
