@@ -17,13 +17,20 @@ Squirtle s = (Squirtle) z;
 \begin{lstlisting}
 Pikachu p = new Pikachu();
 Pokemon a = p;
-// p = a;
+// p = a; (1)
 a.eat();
 a = new Squirtle();
-// a.attack();
+// a.attack(); (2)
 ((Squirtle) a).attack();
 Pokemon z = new Pikachu();
-// Squirtle s = (Squirtle) z;
+// Squirtle s = (Squirtle) z; (3)
 ((Pokemon) p).attack(z);
 \end{lstlisting}
+(1) is a compiler-time error since you can't assign a static type Pokemon to
+a variable who has a static type Pikachu. Can be solved with a cast.
+\\
+(2) is a compiler-time error because Pokemon does not have a method with the signature attack().
+\\
+(3) is a run-time error because the dynamic type of z (Pikachu) cannot be cast
+to a Squirtle.
 \end{solution}

@@ -3,37 +3,39 @@
 
 \begin{lstlisting}
 Integer[] arr = {1, 2, 3, 4, 5, 6};
-Iterator<Integer> iter = new ArrayIterator<>(arr);
+Iterator iter = new ArrayIterator(arr);
 
 System.out.println(iter.hasNext());  // true
-System.out.println(iter.next());     // 1
-
-System.out.println(iter.next() + 3); // 5
-
+if(iter.hasNext()) {
+  System.out.println(iter.next());   // 1
+}
+if(iter.hasNext()) {
+  System.out.println(iter.next() + 3); // 5
+}
 while (iter.hasNext()) {
     System.out.println(iter.next()); // 3 4 5 6
 }
 \end{lstlisting}
-
 Define an \lstinline$ArrayIterator$ class that works as described above.
-
 \begin{solution}[3in]
+\begin{blocksection}
 \begin{lstlisting}
-public class ArrayIterator<E> implements Iterator<E> {
+public class ArrayIterator implements Iterator {
     private int index;
-    private E[] array;
-    public ArrayIterator(E[] arr) {
+    private int[] array;
+    public ArrayIterator(int[] arr) {
         array = arr;
         index = 0;
     }
     public boolean hasNext() {
         return index < array.length;
     }
-    public E next() {
-        E value = array[index];
+    public int next() {
+        int value = array[index];
         index += 1;
         return value;
     }
 }
 \end{lstlisting}
+\end{blocksection}
 \end{solution}

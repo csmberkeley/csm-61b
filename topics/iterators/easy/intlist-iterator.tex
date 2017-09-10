@@ -3,7 +3,7 @@
 
 \begin{solution}[3in]
 \begin{lstlisting}
-public class IntListIterator implements Iterator<Integer> {
+public class IntListIterator implements Iterator {
     private IntList node;
     public IntListIterator(IntList list) {
         node = list;
@@ -11,11 +11,13 @@ public class IntListIterator implements Iterator<Integer> {
     public boolean hasNext() {
         return node != null;
     }
-    public Integer next() {
-        Integer value = node.first;
+    public int next() {
+        int value = node.first;
         node = node.rest;
         return value;
     }
 }
 \end{lstlisting}
+\textbf{Meta:} This can be gone through and explained faster since the students
+just implemented ArrayIterator
 \end{solution}
