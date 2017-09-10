@@ -1,0 +1,11 @@
+\begin{solution}
+\lstinline$(1)$ is a compile-time error since you can't assign a static type
+\lstinline$Pokemon$ to a variable who has a static type \lstinline$Pikachu$.
+Can be solved with a cast.
+
+\lstinline$(2)$ is a compile-time error because \lstinline$Pokemon$ does not
+have a method with the signature \lstinline$attack()$.
+
+\lstinline$(3)$ is a run-time error because the dynamic type of \lstinline$z$
+(\lstinline$Pikachu$) cannot be cast to a \lstinline$Squirtle$.
+\end{solution}
