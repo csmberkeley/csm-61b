@@ -26,11 +26,14 @@ Pokemon z = new Pikachu();
 // Squirtle s = (Squirtle) z; (3)
 ((Pokemon) p).attack(z);
 \end{lstlisting}
-(1) is a compiler-time error since you can't assign a static type Pokemon to
-a variable who has a static type Pikachu. Can be solved with a cast.
-\\
-(2) is a compiler-time error because Pokemon does not have a method with the signature attack().
-\\
-(3) is a run-time error because the dynamic type of z (Pikachu) cannot be cast
-to a Squirtle.
+
+(1) is a compile-time error since you can't assign a static type
+\lstinline$Pokemon$ to a variable who has a static type \lstinline$Pikachu$.
+Can be solved with a cast.
+
+(2) is a compile-time error because \lstinline$Pokemon$ does not have a method
+with the signature \lstinline$attack()$.
+
+(3) is a run-time error because the dynamic type of \lstinline$z$
+(\lstinline$Pikachu$) cannot be cast to a \lstinline$Squirtle$.
 \end{solution}
