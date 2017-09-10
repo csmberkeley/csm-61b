@@ -1,5 +1,7 @@
 \begin{blocksection}
-\question Consider the following class definitions. What would each call in \lstinline$Poodle.main$ print? If a line would cause an error, determine if it is a compile-error or runtime-error.
+\question Consider the following class definitions. What would each call in
+\lstinline$Poodle.main$ print? If a line would cause an error, determine if it
+is a compile-error or runtime-error.
 
 \begin{lstlisting}
 class Dog {
@@ -42,15 +44,15 @@ class Poodle extends Dog {
 
 \begin{solution}
 \begin{lstlisting}
-        dog.play(dog)           Compile-error
-        dog.play(poodle)        Compile-error
-        poodle.play(dog)        no
-        poodle.play(poodle)     bowwow
+        dog.play(dog)         // Compile-error
+        dog.play(poodle)      // Compile-error
+        poodle.play(dog)      // no
+        poodle.play(poodle)   // bowwow
 
-        poodle.bark(dog)        woof
-        poodle.bark(poodle)     yap
-        dog.bark(dog)           woof
-        dog.bark(poodle)        woof
+        poodle.bark(dog)      // woof
+        poodle.bark(poodle)   // yap
+        dog.bark(dog)         // woof
+        dog.bark(poodle)      // woof
 \end{lstlisting}
 \end{solution}
 
@@ -58,10 +60,11 @@ class Poodle extends Dog {
     }
 }
 \end{lstlisting}
+
 \begin{solution}
-\textbf{Meta:} This question will require a walkthrough \\
-First set up the initial rules: dynamic method lookup, method overriding,
-static and dynamic types, and compile-time vs run-time errors.
-Give students a chance to work on their own, then clear up misconceptions
+\textbf{Meta:} This question will require a walkthrough. First set up the
+ground rules: dynamic method lookup, method overriding, static and dynamic
+types, and compile-time vs run-time errors. Give students a chance to work on
+their own, then clear up misconceptions.
 \end{solution}
 \end{blocksection}
