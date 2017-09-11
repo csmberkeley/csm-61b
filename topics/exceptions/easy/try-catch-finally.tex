@@ -6,7 +6,9 @@ try {
     System.out.println("caught array index exception");
 } catch (Exception e) {
     System.out.println("caught an exception");
-    throw(e);
+    throw e;
+} catch (NullPointerException e) {
+    System.out.println("caught null pointer exception");
 } finally {
     System.out.println("in finally block");
 }
