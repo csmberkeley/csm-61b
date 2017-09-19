@@ -1,11 +1,16 @@
-\question Define a procedure, \texttt{nearestDuplicate}, that accepts a \texttt{String[] array} and returns the string closest to its duplicate. For example, if given the following input:
+\begin{blocksection}
+\question Define a procedure, \lstinline$nearestDuplicate$, that accepts a
+\lstinline$String[] array$ and returns the string closest to its duplicate. For
+example, if given the following input:
 
 \begin{verbatim}
 { "all", "work", "and", "no", "play", "makes", "for", "no", "work",
   "no", "fun", "and", "no", "results" }
 \end{verbatim}
 
-\texttt{nearestDuplicate} would return \texttt{no} because the second and third \texttt{no}'s are the closest. This function should run in $O(N)$ time, where $N$ is the size of the array.
+\lstinline$nearestDuplicate$ would return \lstinline$no$ because the second and
+third \lstinline$no$'s are the closest. This function should run in $O(N)$
+time, where $N$ is the size of the array.
 
 \ifprintanswers
 \else
@@ -47,3 +52,4 @@ public static String nearestDuplicate(String[] array) {
 }
 \end{lstlisting}
 \end{solution}
+\end{blocksection}
