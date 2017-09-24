@@ -11,6 +11,6 @@ public static int pinkTrout(int a) {
 \end{lstlisting}
 
 \begin{solution}
-$\Theta(1)$
+$\Theta(1)$. If $a$ is a multiple of 7, this function will return immediately. If not, it will call pinkTrout on $a-1$ and add one to its result. We know that at most it will take 6 calls until pinkTrout is called on a multiple of 7, and thus the function takes constant time. 
 \end{solution}
 \end{blocksection}
