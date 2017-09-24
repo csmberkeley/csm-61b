@@ -17,5 +17,16 @@ public static boolean containsZero(int[] array) {
 \begin{solution}
 $\Theta(1)$ in the best case, $\Theta(N)$ in the worst case, and $\Omega(1),
 O(N)$ overall.
+
+Asymptotic analysis is always concerned with what happens as our input grows to
+infinity. In this case, we'd like to describe the order of growth of
+\lstinline$containsZero$ as a function of the \emph{size} of the input array,
+but that doesn't say anything about the contents of the input array.
+
+We could find a zero at the beginning of the array: this is the best case as
+we can terminate in $\Theta(1)$. Or there could be no zeroes in the array at
+all: this is the worst case, which terminates $\Theta(N)$. We can then describe
+the overall runtime of the function taking into account all possible cases from
+spanning from best to worst: hence, the overall runtime is $\Omega(1), O(N)$.
 \end{solution}
 \end{blocksection}
