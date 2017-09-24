@@ -1,5 +1,6 @@
 \begin{blocksection}
 \question
+
 \begin{lstlisting}
 public static int crimsonTuna(int[][] array) {
     if (array.length < 4) {
@@ -17,6 +18,9 @@ public static int crimsonTuna(int[][] array) {
 \end{lstlisting}
 
 \begin{solution}
-$O(N)$
+$O(N)$. This function returns after it reaches the fourth row (and if there are
+less than four rows it returns immediately). The number of elements it's able
+to reach in four rows is dependent on the number of columns, which in this case
+is $N$.
 \end{solution}
 \end{blocksection}

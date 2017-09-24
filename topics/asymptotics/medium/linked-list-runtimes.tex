@@ -1,51 +1,88 @@
-\question Given a linked list of length $N$, provide the runtime bound for each operation. Recall that \texttt{IntList} is the naive linked list implementation, \texttt{SLList} is an encapsulated singly-linked list with a front sentinel, and \texttt{LinkedList} is Java's encapsulated doubly-linked list implementation with pointers to the first and last node.
+\marginpar{\subimport{../../linked-lists/naive/}{code.tex}
+           \subimport{../../linked-lists/encapsulated/}{singly-linked.tex}
+           \subimport{../../linked-lists/encapsulated/}{doubly-linked.tex}}
+\begin{blocksection}
+\question
 
-\ifprintanswers
-{
+Given a linked list of length $N$, give a tight asymptotic runtime
+bound for each operation. Recall that \lstinline$IntList$ is a naive linked
+list, \lstinline$SLList$ is an encapsulated singly-linked list with a front
+sentinel, and \lstinline$DLList$ is an encapsulated doubly-linked list with
+front and back pointers.
+\end{blocksection}
+
+\ifprintanswers\else
 \renewcommand{\arraystretch}{2}
 \setlength{\tabcolsep}{16pt}
 \begin{tabularx}{\textwidth}{Xccc}
-Operation                       & \texttt{IntList}       & \texttt{SLList}        & \texttt{LinkedList}    \\\hline
-\texttt{size()}                 & $\color{red}\Theta(N)$ & $\color{red}\Theta(1)$ & $\color{red}\Theta(1)$ \\
-\texttt{get(int index)}         & $\color{red}O(N)$      & $\color{red}O(N)$      & $\color{red}O(N)$      \\
-\texttt{addFirst(E e)}          & $\color{red}\Theta(1)$ & $\color{red}\Theta(1)$ & $\color{red}\Theta(1)$ \\
-\texttt{addLast(E e)}           & $\color{red}\Theta(N)$ & $\color{red}\Theta(N)$ & $\color{red}\Theta(1)$ \\
-\texttt{addBefore(E e, Node n)} & $\color{red}O(N)$      & $\color{red}O(N)$      & $\color{red}\Theta(1)$ \\
-\texttt{remove(int index)}      & $\color{red}O(N)$      & $\color{red}O(N)$      & $\color{red}O(N)$      \\
-\texttt{remove(Node n)}         & $\color{red}O(N)$      & $\color{red}O(N)$      & $\color{red}\Theta(1)$ \\
-\texttt{reverse()}              & $\color{red}\Theta(N)$ & $\color{red}\Theta(N)$ & $\color{red}\Theta(N)$ \\
+Operation                          & \lstinline$IntList$ & \lstinline$SLList$ & \lstinline$DLList$ \\ \hline
+\lstinline$size()$                 &                     &                    &                    \\
+\lstinline$get(int index)$         &                     &                    &                    \\
+\lstinline$addFirst(E e)$          &                     &                    &                    \\
+\lstinline$addLast(E e)$           &                     &                    &                    \\
+\lstinline$addBefore(E e, Node n)$ &                     &                    &                    \\
+\lstinline$remove(int index)$      &                     &                    &                    \\
+\lstinline$remove(Node n)$         &                     &                    &                    \\
 \end{tabularx}
-}
-\else
-{
-\renewcommand{\arraystretch}{2}
-\setlength{\tabcolsep}{16pt}
-\begin{tabularx}{\textwidth}{Xccc}
-Operation                       & \texttt{IntList} & \texttt{SLList} & \texttt{LinkedList} \\ \hline
-\texttt{size()}                 &                  &                 &                     \\
-\texttt{get(int index)}         &                  &                 &                     \\
-\texttt{addFirst(E e)}          &                  &                 &                     \\
-\texttt{addLast(E e)}           &                  &                 &                     \\
-\texttt{addBefore(E e, Node n)} &                  &                 &                     \\
-\texttt{remove(int index)}      &                  &                 &                     \\
-\texttt{remove(Node n)}         &                  &                 &                     \\
-\texttt{reverse()}              &                  &                 &                     \\
-\end{tabularx}
-}
 \fi
 
+\begin{solution}
+\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{16pt}
+\begin{tabularx}{\textwidth}{Xccc}
+Operation                          & \lstinline$IntList$    & \lstinline$SLList$     & \lstinline$DLList$     \\ \hline
+\lstinline$size()$                 & $\color{red}\Theta(N)$ & $\color{red}\Theta(1)$ & $\color{red}\Theta(1)$ \\
+\lstinline$get(int index)$         & $\color{red}O(N)$      & $\color{red}O(N)$      & $\color{red}O(N)$      \\
+\lstinline$addFirst(E e)$          & $\color{red}\Theta(1)$ & $\color{red}\Theta(1)$ & $\color{red}\Theta(1)$ \\
+\lstinline$addLast(E e)$           & $\color{red}\Theta(N)$ & $\color{red}\Theta(N)$ & $\color{red}\Theta(1)$ \\
+\lstinline$addBefore(E e, Node n)$ & $\color{red}O(N)$      & $\color{red}O(N)$      & $\color{red}\Theta(1)$ \\
+\lstinline$remove(int index)$      & $\color{red}O(N)$      & $\color{red}O(N)$      & $\color{red}O(N)$      \\
+\lstinline$remove(Node n)$         & $\color{red}O(N)$      & $\color{red}O(N)$      & $\color{red}\Theta(1)$ \\
+\end{tabularx}
+
+\lstinline$size()$: \lstinline$SLList$ and \lstinline$DLList$ both save size as
+a field, whereas \lstinline$IntList$ has to iterate through the whole list to
+find the size.
+
+\lstinline$addBefore(E e, Node n)$: \lstinline$DLList$ has a pointer from each
+node to the next node and to the previous node, so adding before is constant
+time. \lstinline$IntList$ and \lstinline$SLList$ have to iterate through the
+list from the start to find the node before the current node.
+
+\lstinline$remove(Node n)$: Because \lstinline$DLList$ has a pointer to the
+previous node and next node, it can easily remove the node and point the
+previous node to the next node (and point the next node point to the previous
+node). However, \lstinline$IntList$ and \lstinline$SLList$ have to iterate
+through the list to find the node before the current one.
+\end{solution}
+
 \begin{parts}
-\part Give the runtime of \texttt{addAll(Collection<E> c)} assuming an empty linked list and \texttt{c} of size $N$. Assume \texttt{addAll} is implemented by calling \texttt{addLast} repeatedly.
+\part Give the runtime of \lstinline$addAll(Collection<E> c)$ assuming an empty
+linked list and \lstinline$c$ of size $N$. Assume \lstinline$addAll$ just calls
+\lstinline$addLast$ repeatedly.
 
 \begin{solution}[1in]
-\texttt{IntList}: $\Theta(N^2)$ \\
-\texttt{SLList}: $\Theta(N^2)$ \\
-\texttt{LinkedList}: $\Theta(N)$
+\lstinline$IntList$: $\Theta(N^2)$ \\
+\lstinline$SLList$: $\Theta(N^2)$
+
+\lstinline$IntList$ and \lstinline$SLList$ both take $\Theta(N)$ time to
+\lstinline$addLast(E e)$, where \lstinline$N$ is number of items currently in
+the list. The trick here is to notice that we start adding to an empty list and
+add until we fill the list to size \lstinline$N$. So every addition takes
+variable time since the size of the list is different at each addition. We can
+calculate the size of the list before each addition as follows:
+
+$$0 + 1 + 2 + \cdots + N-1 = \frac{N(N-1)}{2}$$
+
+Therefore, it takes $\Theta(N^2)$ time.
+
+\lstinline$DLList$: $\Theta(N)$
 \end{solution}
 
 \part How can we do better?
 
 \begin{solution}[1in]
-Instead of calling \texttt{addLast}, keep track of the last node and append each new element in constant time to the end of the list.
+Instead of calling \lstinline$addLast$, keep track of the last node and append
+each new element in constant time to the end of the list.
 \end{solution}
 \end{parts}
