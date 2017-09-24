@@ -1,6 +1,9 @@
 \begin{blocksection}
-\question Give a $O(\cdot)$ runtime bound as a function of $N$,
+\question \begin{parts}
+
+\part Give a $O(\cdot)$ runtime bound as a function of $N$,
 \lstinline$sortedArray.length$.
+
 \begin{lstlisting}
 private static boolean scarletKoi(int[] sortedArray, int x, int start, int end) {
     if (start == end || start == end - 1) {
@@ -16,12 +19,21 @@ private static boolean scarletKoi(int[] sortedArray, int x, int start, int end) 
 \begin{solution}
 $O(N)$
 
-This method is a trap, as it seems like a binary search. But in the recursive case, we make recursive calls on both the left and right sides, \textit{without taking advantage of the sorted array}. We can craft an input that requires exploring the entire array in linear time.
+This method is a trap, as it seems like a binary search. But in the recursive
+case, we make recursive calls on both the left and right sides, \emph{without
+taking advantage of the sorted array}. We can craft an input that requires
+exploring the entire array in linear time.
 \end{solution}
 
-Why can we only give a $O(\cdot)$ runtime and not a  $\Theta(\cdot)$ runtime?
+\part Why can we only give a $O(\cdot)$ runtime and not a $\Theta(\cdot)$
+runtime?
+
 \begin{solution}
-In the best case, the middle element will be equal to x, in which case the runtime will be $\Theta(1)$. Thus, overall, the function is $\Omega(1)$, $O(N)$ and there's no $\Theta(\cdot)$ runtime because the $\Omega$ and $O$ runtimes don't match. 
+In the best case, the middle element will be equal to \lstinline$x$, in which
+case the runtime will be $\Theta(1)$. Thus, overall, the runtime of the
+function is in $\Omega(1), O(N)$ and there's no $\Theta(\cdot)$ runtime because
+the $\Omega(\cdot)$ and $O(\cdot)$ runtimes don't match.
 \end{solution}
 
+\end{parts}
 \end{blocksection}
