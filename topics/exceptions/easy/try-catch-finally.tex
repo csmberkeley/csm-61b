@@ -16,6 +16,15 @@ try {
 }
 \end{lstlisting}
 
+\begin{solution}
+Note that the code is a trick. Java doesn't like ambiguity or unreachable code,
+so the \lstinline$catch (NullPointerException e)$ causes a compile-time error
+as \lstinline$NullPointerException$ is a subclass of \lstinline$Exception$.
+
+The rest of the questions run assuming that the catch block for the
+\lstinline$NullPointerException$ is not present.
+\end{solution}
+
 \begin{parts}
 \part What will print if \lstinline$doSomething()$ throws a
 \lstinline$NullPointerException$?
