@@ -17,12 +17,10 @@ try {
 \end{lstlisting}
 
 \begin{solution}
-Note that the code is a trick. Java doesn't like ambiguity or unreachable code,
-so the \lstinline$catch (NullPointerException e)$ causes a compile-time error
-as \lstinline$NullPointerException$ is a subclass of \lstinline$Exception$.
-
-The rest of the questions run assuming that the catch block for the
-\lstinline$NullPointerException$ is not present.
+The code is a trick! Java doesn't like ambiguity or unreachable code, so
+\lstinline$catch (NullPointerException e)$ is a compile-time error as
+\lstinline$NullPointerException$ is a subclass of \lstinline$Exception$. Assume
+the catch block is removed.
 \end{solution}
 
 \begin{parts}
@@ -39,6 +37,7 @@ NullPointerException
 \part What if \lstinline$doSomething()$ throws an
 \lstinline$ArrayIndexOutOfBoundsException$?
 \begin{solution}[0.75in]
+\vspace{-2em}
 \begin{verbatim}
 caught array index exception
 in finally block
