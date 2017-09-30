@@ -54,5 +54,7 @@ public static Set<Integer> findDuplicatesWithinK(int[] array, int k) {
     return duplicates;
 }
 \end{lstlisting}
+
+The question is asking for all duplicates in all ``sliding windows'' of k values in the array.The solution keeps track of all duplicates in the set ``duplicates''. The Map ``seen'' changes while iterating through the array. Before processing index i, its keys are the elements in the array seen before index i, and its keys' corresponding values are the number of times a key has been seen at and after the index i-k.At every index in the iteration, we check if the value of the key corresponding to the element of the array we are currently looking at is greater than 0. If it is, then it indicates that it was previously seen within the current k-element sliding window, and we would therefore need to add that element to our set ``duplicates''. We then decrement the value of the key corresponding to the i-kth element in the array by one before moving on to the next index.
 \end{solution}
 \end{blocksection}
