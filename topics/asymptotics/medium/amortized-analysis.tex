@@ -23,14 +23,28 @@ regardless of the size of the array which could be much larger than 10,000.
 \end{solution}
 
 \part When full, double the size of the array.
-\begin{solution}[1.5in]
-This would be in $\Theta(1)$ since at any given length, $N$, we can insert
-$N/2$ elements before having to resize.
+\begin{solution}[2.5in]
+This would be in $\Theta(1)$.
 
-Longer explanation: Given a full array of size $\frac{N}{2}$, the runtime of
-resizing it would be in $\Theta(N)$. This new array of size $N$ would allow us
-to insert $\frac{N}{2}$ elements before having to resize again. This means the
-runtime of inserting each one of those elements, amortized, is in
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{16pt}
+\begin{tabularx}{\textwidth}{Xlll}
+Operation                     & Elements Added & Cost & Array Usage \\ \hline
+\lstinline$add()$             & 1              & 1    & 1/10        \\
+\lstinline$add()$             & 1              & 1    & 2/10        \\
+\lstinline$add()$ $\times 8$  & 8              & 8    & 10/10       \\
+\lstinline$add()$             & 1              & 11   & 11/20       \\
+\lstinline$add()$ $\times 9$  & 9              & 9    & 20/20       \\
+\lstinline$add()$             & 1              & 20   & 21/40       \\
+\lstinline$add()$ $\times 19$ & 19             & 19   & 40/40       \\
+\lstinline$add()$             & 1              & 40   & 41/80       \\
+\lstinline$add()$ $\times 39$ & 39             & 39   & 80/80
+\end{tabularx}
+
+Given a full array of size $\frac{N}{2}$, the runtime of resizing it would be
+in $\Theta(N)$. This new array of size $N$ would allow us to insert
+$\frac{N}{2}$ elements before having to resize again. This means the runtime of
+inserting each one of those elements, amortized, is in
 $\frac{\Theta(N)}{\frac{N}{2}}$, which is in $\Theta(1)$.
 \end{solution}
 \end{parts}
