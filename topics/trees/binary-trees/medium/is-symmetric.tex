@@ -1,4 +1,6 @@
-\question Define \texttt{isSymmetric} which checks whether the binary tree is a mirror of itself.
+\begin{blocksection}
+\question Define \lstinline$isSymmetric$ which checks whether the binary tree
+is a mirror of itself.
 
 \ifprintanswers\else
 \begin{lstlisting}
@@ -23,7 +25,6 @@ private boolean isSymmetric(Node left, Node right) {
 
 
 }
-
 \end{lstlisting}
 \fi
 
@@ -38,17 +39,21 @@ public boolean isSymmetric() {
 
 private boolean isSymmetric(Node left, Node right) {
     if (left == null) {
-        return right == null; // if the left is null, the right must also be null
+        return right == null; // if left is null, right must also be null
     } else if (right == null) {
-        return false; // the left is not null but the right is null, so it's not symmetric
+        return false;         // left is not null but right is null, so not symmetric
     } else if (!left.value.equals(right.value)) {
-        return false; // the left value and right value are unequal
+        return false;         // left value and right value are unequal
     } else {
-        return isSymmetric(left.right, right.left) && 
-               isSymmetric(left.left, right.right); // recurse to check subtrees
+        return isSymmetric(left.right, right.left) &&
+               isSymmetric(left.left, right.right);
     }
 }
-
-Meta: We can use a helper function here to create a new method that takes in two parameters, the left and the right branch of the current tree we are rooted at.  This allows us to more easily compare the content of the two branches to see if they are the same.
 \end{lstlisting}
+
+\textbf{Meta}: We can use a helper function here to create a new method that
+takes in two parameters, the left and the right branch of the current tree we
+are rooted at.  This allows us to more easily compare the content of the two
+branches to see if they are the same.
 \end{solution}
+\end{blocksection}

@@ -1,4 +1,8 @@
-\question Define a procedure, \texttt{isBalanced}, which takes a \texttt{Node} and outputs whether or not the tree is balanced. A tree is \define{balanced} if the left and right branches differ in height by at most one and are themselves balanced.
+\begin{blocksection}
+\question Define a procedure, \lstinline$isBalanced$, which takes a
+\lstinline$Node$ and outputs whether or not the tree is balanced. A tree is
+\define{balanced} if the left and right branches differ in height by at most
+one and are themselves balanced.
 
 \ifprintanswers
 \else
@@ -30,11 +34,22 @@ private boolean isBalanced(Node node) {
 \end{lstlisting}
 \end{solution}
 
-What is the runtime of \texttt{isBalanced}?
+What is the runtime of \lstinline$isBalanced$?
 \begin{solution}[0.25in]
-$\Theta(N)$ in the best case, $\Theta(N \log N)$ in the worst case.  This can also be read as $\Omega(N), O(N \log N)$ overall.
+$\Theta(N)$ in the best case, $\Theta(N \log N)$ in the worst case.  This can
+also be read as $\Omega(N), O(N \log N)$ overall.
 
-The best case is if the tree is unbalanced at the root, meaning that the difference in the height of the root's left branch and the root's right branch is greater than one.  In this case, we just call height twice, once on the left branch and once on the right subtree.  After these two calls, we can immediately see that the tree is unbalanced, so we return false.  This leads to a runtime of $\Theta(N)$.
+The best case is if the tree is unbalanced at the root, meaning that the
+difference in the height of the root's left branch and the root's right branch
+is greater than one. In this case, we just call \lstinline$height$ twice, once
+on the left branch and once on the right subtree. After these two calls, we can
+immediately see that the tree is unbalanced, so we return false. This leads to
+a runtime of $\Theta(N)$ in the best case.
 
-The worst case is if the tree is perfectly balanced.  We then have to check isBalanced on every subtree of the original tree.  This means that we have to call height on every level, and there are a total of $\Theta(\log N)$ levels.  This leads to an overall runtime of $\Theta(N \log N)$.
+The worst case is if the tree is perfectly balanced. We then have to call
+\lstinline$isBalanced$ on every subtree of the original tree. This means that
+we have to call \lstinline$height$ on every level, and there are a total of
+$\Theta(\log N)$ levels. This leads to an overall runtime of $\Theta(N \log N)$
+in the worst case.
 \end{solution}
+\end{blocksection}
