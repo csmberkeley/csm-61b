@@ -31,20 +31,22 @@ public boolean isSymmetric() {
     if (root == null) {
         return true;
     }
-    return isSymmetric(root.left, root.right);
+    return isSymmetric(root.left, root.right); // use helper method
 }
 
 private boolean isSymmetric(Node left, Node right) {
     if (left == null) {
-        return right == null;
+        return right == null; // if the left is null, the right must be null
     } else if (right == null) {
-        return false;
+        return false; // the left is not null but the right is null, so it's not symmetric
     } else if (!left.value.equals(right.value)) {
-        return false;
+        return false; // the left value and right value are unequal
     } else {
-        return isSymmetric(left.right, right.left) &&
-               isSymmetric(left.left, right.right);
+        return isSymmetric(left.right, right.left) && 
+               isSymmetric(left.left, right.right); // recurse to check subtrees
     }
 }
+
+Meta: We can use a helper function here to create a new method that takes in two parameters, the left and the right branch of the current tree we are rooted at.  This allows us to more easily compare the content of the two branches to see if they are the same.
 \end{lstlisting}
 \end{solution}

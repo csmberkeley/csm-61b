@@ -35,6 +35,8 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
 \begin{solution}
 \begin{lstlisting}
+Meta: Be sure to explain to your students the difference between a binary tree and a binary search tree.
+
 public class BinarySearchTree<T extends Comparable<T>> {
     protected Node root;
     protected class Node {
@@ -44,18 +46,18 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
     public static BinarySearchTree<Integer> fromSortedArray(int[] values) {
         BinarySearchTree<Integer> bst = new BinarySearchTree<>();
-        bst.root = bst.fromSortedArray(values, 0, values.length - 1);
+        bst.root = bst.fromSortedArray(values, 0, values.length - 1); // setting a new root
         return bst;
     }
     private Node fromSortedArray(int[] values, int lower, int upper) {
        if (lower > upper) {
            return null;
        }
-       int middle = lower + ((upper - lower) / 2);
+       int middle = lower + ((upper - lower) / 2); // middle index of the array
        Node mid = new Node();
        mid.value = values[middle];
-       mid.left = fromSortedArray(values, lower, middle - 1);
-       mid.right = fromSortedArray(values, middle + 1, upper);
+       mid.left = fromSortedArray(values, lower, middle - 1); // recurse on the left half
+       mid.right = fromSortedArray(values, middle + 1, upper); // recurse on the right half
        return mid;
     }
 }

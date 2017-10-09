@@ -18,6 +18,11 @@ private int height(Node node) {
 
 \begin{solution}
 \begin{lstlisting}
+
+Meta: Note that this Binary Tree class is an encapsulated binary tree.  
+This means that in a recursive function, we want to recurse on that 
+particular node.
+
 private int height(Node node) {
     if (node == null) {
         return -1;
@@ -29,5 +34,6 @@ private int height(Node node) {
 
 What is the runtime of \texttt{height}?
 \begin{solution}[0.25in]
-$\Theta(N)$, where $N$ is the number of nodes in the tree.
+$\Theta(N)$, where $N$ is the number of nodes in the tree.  You touch every node once, and at each node, you do a constant amount of work (null check).  The actual "work" is done in the recursion, where we repeatedly step down through every node on the tree.
+
 \end{solution}

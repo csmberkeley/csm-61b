@@ -1,3 +1,7 @@
+\question What is the pre-order, in-order, and post-order traversal of a tree?
+\newline
+\newline
+\newline
 \question Given a node in a binary search tree (with parent pointers), write a \texttt{successor} method which returns the next node in the in-order traversal of the BST. If there is no successor, simply return null.
 
 \ifprintanswers
@@ -43,18 +47,22 @@ public class BinarySearchTree<T extends Comparable<T>> {
         public Node left;
         public Node right;
     }
+    
+The successor of a node will always be either the leftmost branch of the node's right branch, or the node's first ancestor that does not have a parent or does not have a right branch.
+    
     private Node successor(Node node) {
         if (node.right != null) {
-            node = node.right;
+            node = node.right; // node's right branch
             while (node.left != null) {
-                node = node.left;
+                node = node.left; // finding leftmost branch of node's right branch
             }
             return node;
         } else {
             Node parent = node.parent;
-            while (parent != null && parent.right == node) {
+            while (parent != null && parent.right == node) { 
+            // while loop stops when the node doesn't have a parent or a right branch
                 node = parent;
-                parent = parent.parent;
+                parent = parent.parent; 
             }
             return parent;
         }
