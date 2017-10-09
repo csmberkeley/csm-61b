@@ -3,6 +3,13 @@
 \ifprintanswers\else
 \begin{lstlisting}
 public boolean isSymmetric() {
+    if (root == null) {
+        return true;
+    }
+    return isSymmetric(root.left, root.right); // use helper method
+}
+
+private boolean isSymmetric(Node left, Node right) {
 
 
 
@@ -15,12 +22,7 @@ public boolean isSymmetric() {
 
 
 
-
-
-
-
-
-
+}
 
 \end{lstlisting}
 \fi
