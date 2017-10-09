@@ -48,7 +48,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
         public Node right;
     }
     
-The successor of a node will always be either the leftmost branch of the node's right branch, or the node's first ancestor that does not have a parent or does not have a right branch.
+The successor of a node will always be either the leftmost branch of the node's right branch, or the node's first ancestor that either does not have a parent or does not have a right branch.
     
     private Node successor(Node node) {
         if (node.right != null) {

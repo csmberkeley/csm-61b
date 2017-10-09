@@ -36,7 +36,7 @@ public boolean isSymmetric() {
 
 private boolean isSymmetric(Node left, Node right) {
     if (left == null) {
-        return right == null; // if the left is null, the right must be null
+        return right == null; // if the left is null, the right must also be null
     } else if (right == null) {
         return false; // the left is not null but the right is null, so it's not symmetric
     } else if (!left.value.equals(right.value)) {
