@@ -1,5 +1,22 @@
-\begin{blocksection}
-\question Which of the following \lstinline$hashCodes$ are valid?
+\question What does it mean for a hashcode to be valid?
+\begin{solution}[0.75in]
+The general contract of hashCode is:
+\begin{itemize}
+\item Consistency: Whenever it is invoked on the same object more than once,
+the \lstinline$hashCode$ method must consistently returns the same integer if
+nothing about the object changes.
+\item Equality constraint: If two objects are equal according to the
+\lstinline$equals(Object)$ method, then calling the \lstinline$hashCode$ method
+on each of the two objects must produce the same integer result.
+\item It is not required that if two objects are unequal according to the
+\lstinline$equals(Object)$ method, then calling the \lstinline$hashCode$ method
+on each of the two objects must produce distinct integer results. However, the
+programmer should be aware that producing distinct integer results for unequal
+objects may improve the performance of hash tables.
+\end{itemize}
+\end{solution}
+
+\question Which of the following hashcodes are valid? Good?
 
 \begin{lstlisting}
 class Point {
@@ -32,7 +49,7 @@ public int hashCode() {
 }
 \end{lstlisting}
 \begin{solution}[0.25in]
-Invalid. Not deterministic.
+Invalid. Not consistent.
 \end{solution}
 
 \part
@@ -62,7 +79,6 @@ public int hashCode() {
 }
 \end{lstlisting}
 \begin{solution}[0.25in]
-Valid, but causes collisions on any input.
+Valid, but causes collisions on all inputs.
 \end{solution}
 \end{parts}
-\end{blocksection}
