@@ -1,7 +1,9 @@
 \begin{blocksection}
-\question Consider a \lstinline$HashMap<Integer, String>$ with an underlying
-array of size 5. Draw the resulting structure after the following operations.
-\lstinline$Integer::hashCode$ returns the integer's value itself.
+\question
+
+\begin{parts}
+\part Draw the diagram that results from the following operations on a Java
+\lstinline$HashMap$. \lstinline$Integer::hashCode$ returns the integer's value.
 
 \begin{lstlisting}
 put(3, "monument");
@@ -22,10 +24,12 @@ same. Each \lstinline$put$ must iterate through the entire external chain to
 ensure that a key-update is not necessary.
 \end{solution}
 
-\begin{parts}
-\part What happens if you resize the array, double its length, and put everything back in?
-\begin{solution}[1.0in]
-The value of "shrine" and "granary" will move. Specifically, the new length of the array is 10. A key of 8 will force "shrine" to be placed in the 8th index. A key of 5 will move "granary" to the 5th index. Everything else will remain the same.
+\part Suppose a resize occurs, doubling the array to size 10. What changes?
+\begin{solution}[0.5in]
+The value of \lstinline$"shrine"$ and \lstinline$"granary"$ will move.
+Specifically, the new length of the array is 10. A key of 8 will force
+\lstinline$"shrine"$ to be placed in the 8th index. A key of 5 will move
+\lstinline$"granary"$ to the 5th index. Everything else will remain the same.
 \end{solution}
 \end{parts}
 \end{blocksection}

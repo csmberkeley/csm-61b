@@ -1,6 +1,5 @@
 \begin{blocksection}
-\question Consider \lstinline$BadHashMap$'s \lstinline$put$ implementation
-which assumes no collisions or negative hash codes.
+\question
 
 \begin{lstlisting}
 public class BadHashMap<K, V> implements Map<K, V> {
@@ -26,18 +25,11 @@ example, to resolve the conflicts. Each bucket can be associated with more than
 one key.
 \end{solution}
 
-\part Why is this a bad HashMap?
+\part Why is this a bad \lstinline$HashMap$?
 \begin{solution}[0.5in]
-There are no linked lists in this map. If a given key produces a collision, the value will be completely overwritten rather than stored along side the value currently there. 
-\end{solution}
-\part Describe an implementation for \lstinline$get$ and
-\lstinline$containsKey$ assuming you applied the changes for handling
-collisions.
-\begin{solution}[0.5in]
-An implementation for \lstinline$get$ might select the appropriate bucket, then
-iterate through the external chain, and return the value for the matching key
-if it exists. If no matching key exists, return null. Then,
-\lstinline$containsKey$ can just return whether \lstinline$get(key) != null$.
+\lstinline$BadHashMap$ doesn't handle collisions. If a given key produces a
+collision, the value will be completely overwritten rather than stored
+alongside the value currently there.
 \end{solution}
 \end{parts}
 \end{blocksection}

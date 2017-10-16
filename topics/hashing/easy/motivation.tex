@@ -27,14 +27,18 @@ $\Theta(1)$
 $\Theta(N)$ to copy over $N$ elements into the new array.
 \end{solution}
 
-\part Given what we know about linked lists and arrays, how would you build a data structure with constant get AND constant add?
+\part Given what we know about linked lists and arrays, how could we build a
+data structure with efficient access and efficient insertion?
 \begin{solution}[1.25in]
 If you know in advance how large your data structure is, arrays are faster than
-linked lists in insertion, mutation, etc.  However, if the array needs to
-expand frequently then things get expensive.  But there are ways to amortize
-the cost of resizing with \lstinline$ArrayLists$, for example.
+linked lists in insertion, mutation, etc. However, if the array needs to expand
+frequently then things get expensive.  But there are ways to amortize the cost
+of resizing with \lstinline$ArrayLists$, for example.
+
 \begin{itemize}
-\item An array of linked lists will offer constant look up to a certain linked list, and adding to the front of that linked list will also be constant. This is a HashMap.
+\item An array of linked lists will offer constant look up to a certain linked
+list, and adding to the front of that linked list will also be constant. This
+is a \lstinline$HashMap$.
 \item Objects with rows and columns (like a chessboard) where we wish to
 randomly index into exact position and where the board is of a fixed size
 \item Arguments to a java program: \lstinline$String[] args$. Using a resizing
