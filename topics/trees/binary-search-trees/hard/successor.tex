@@ -1,40 +1,20 @@
 \begin{blocksection}
 \question Given a node in a binary search tree (with parent pointers),
 implement \lstinline$successor$ which returns the next node in the in-order
-traversal of the BST. If there is no successor, return null.
+traversal of the BST. If there is no successor, return \lstinline$null$.
 
-\ifprintanswers
-\else
+\ifprintanswers\else
 \begin{lstlisting}
 public class BinarySearchTree<T extends Comparable<T>> {
     protected Node root;
     protected class Node {
         public T value;
-        public Node parent;
-        public Node left;
-        public Node right;
+        public Node parent, left, right;
     }
     private Node successor(Node node) {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \end{lstlisting}
 \fi
+\end{blocksection}
 
 \begin{solution}[2.5in]
 \begin{lstlisting}
@@ -42,21 +22,18 @@ public class BinarySearchTree<T extends Comparable<T>> {
     protected Node root;
     protected class Node {
         public T value;
-        public Node parent;
-        public Node left;
-        public Node right;
+        public Node parent, left, right;
     }
     private Node successor(Node node) {
         if (node.right != null) {
-            node = node.right;          // node's right branch
+            node = node.right;
             while (node.left != null) {
-                node = node.left;       // finding leftmost branch of node's right branch
+                node = node.left;
             }
             return node;
         } else {
             Node parent = node.parent;
             while (parent != null && parent.right == node) {
-                // stop when the node doesn't have a parent or a right branch
                 node = parent;
                 parent = parent.parent;
             }
@@ -66,8 +43,80 @@ public class BinarySearchTree<T extends Comparable<T>> {
 }
 \end{lstlisting}
 
-The successor of a node will always be either the leftmost branch of the node's
-right branch, or the node's first ancestor that either does not have a parent
-or does not have a right branch.
+There are two cases to find the next node in the in-order traversal. Let's
+think about the case specifically for Binary Search Trees. The next node in the
+in-order traversal is the same as the next biggest element in the Binary Search
+Tree.
+
+The first case is when the node passed in has a right branch. If it has a right
+branch, then the next largest element must lie in the sub-tree whose root is
+the right-child of the given node. Let's call this sub-tree $T$. The final
+thing to realize is that the element we are looking for is the smallest element
+in this sub-tree $T$. This is why we traverse left-wards, until we reach the
+left-bottom of $T$, which is the node we need to return.
+
+The second case is when the node passed in has no right branch. To reason about
+this case, first consider a simple case with just 2 nodes.
+
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=30pt]
+\node[vertex]{$3$}
+child {
+    node[vertex]{$2$}
+    child {
+        node[vertex]{$1$}
+    }
+};
+\end{tikzpicture}
+\end{center}
+
+Say that the node passed in is Node 1. Since the node doesn't have a right
+child, the next-largest node must be somewhere above it. In this example, we
+see that the answer is Node 2. As we traverse up from Node 2 to Node 1, we
+realize that the edge between 2 and 1 is a left-edge (1 is a left-child of 2).
+The general argument here is: keep traversing up the parents. As soon as we
+traverse a left-edge, we can stop and return the parent node (in this case,
+Node 2). Let's traverse up the parents, and name the first left-edge we
+encounter $E$, the parent on this edge $P$, and the child $C$. Why can we be
+sure that $P$ is the node to return?
+
+The first thing to note is that as we traverse up the tree, if we don't use a
+left-edge, then the child is greater than the parent. This is not what we want,
+since we want the next largest node. The next thing to notice is that going up
+a left-edge means that the parent is necessarily greater, by the definition of
+a left-edge in a Binary Search Tree. All that's left to argue now is that if
+node $N$ is passed in, then $P>N$, and that there is no other node that is
+smaller than $P$, but greater than $N$. Consider the following example:
+
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=30pt]
+\node[vertex]{$4$}
+child {
+    node[vertex]{$1$}
+    child {edge from parent[draw=none]}
+    child {
+        node[vertex]{$2$}
+    }
+};
+\end{tikzpicture}
+\end{center}
+
+If the node that we're passed in is Node 2, then the first left-edge we will
+traverse while going up would have 4 as the parent. This example helps us see
+that the left-edge's parent will be greater, i.e., $P>N$, since it is
+guaranteed that $N$ lies in the left-subtree of $P$. Note that we don't need to
+consider any of $P$'s ancestors. If $P$ has a parent through a right-edge, then
+that parent is bigger than $P$, which is not what we want. If $P$ has a parent
+through a left-edge, then that parent is smaller than $P$, but it is also
+smaller than $N$, since $N$ would lie in the left-subtree of $P$'s parent.
+
+The final argument is that there is no other node that is smaller than $P$, but
+greater than $N$. Let's look back at the example. First, we look at Node 1.
+Node 1 is smaller than Node 2, since it is a right-edge. In the example, Node 1
+does not have any left-children, but if it did, we can be sure that they would
+all, too, be smaller than Node 2. So, any time we traverse a right-edge, we can
+ignore not only the right-edge's parent, but also be sure that everything in
+the left subtree of the right-edge can be safely ignored. This concludes the
+argument, since we have shown that right-edges or their subtrees do not contain
+any nodes that are smaller than $P$ but larger than $N$.
 \end{solution}
-\end{blocksection}
