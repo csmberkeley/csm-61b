@@ -21,4 +21,11 @@ put(13, "worker");
 same. Each \lstinline$put$ must iterate through the entire external chain to
 ensure that a key-update is not necessary.
 \end{solution}
+
+\begin{parts}
+\part What happens if you resize the array, double its length, and put everything back in?
+\begin{solution}[1.0in]
+The value of "shrine" and "granary" will move. Specifically, the new length of the array is 10. A key of 8 will force "shrine" to be placed in the 8th index. A key of 5 will move "granary" to the 5th index. Everything else will remain the same.
+\end{solution}
+\end{parts}
 \end{blocksection}

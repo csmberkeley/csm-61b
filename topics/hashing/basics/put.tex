@@ -12,7 +12,7 @@ public class BadHashMap<K, V> implements Map<K, V> {
 \end{lstlisting}
 
 \begin{parts}
-\part Why do we use the \lstinline$\%$ (modulo) operator?
+\part Why do we use the \lstinline $%$ (modulo) operator?
 \begin{solution}[0.5in]
 Allows us to take a large \lstinline$int$ and turn it into an index into the
 \lstinline$array$.
@@ -26,6 +26,10 @@ example, to resolve the conflicts. Each bucket can be associated with more than
 one key.
 \end{solution}
 
+\part Why is this a bad HashMap?
+\begin{solution}[0.5in]
+There are no linked lists in this map. If a given key produces a collision, the value will be completely overwritten rather than stored along side the value currently there. 
+\end{solution}
 \part Describe an implementation for \lstinline$get$ and
 \lstinline$containsKey$ assuming you applied the changes for handling
 collisions.
