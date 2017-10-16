@@ -1,3 +1,4 @@
+\begin{blocksection}
 \question What does it mean for a hashcode to be valid?
 \begin{solution}[0.75in]
 The general contract of hashCode is:
@@ -15,7 +16,9 @@ programmer should be aware that producing distinct integer results for unequal
 objects may improve the performance of hash tables.
 \end{itemize}
 \end{solution}
+\end{blocksection}
 
+\begin{blocksection}
 \question Which of the following hashcodes are valid? Good?
 
 \begin{lstlisting}
@@ -82,3 +85,4 @@ public int hashCode() {
 Valid, but causes collisions on all inputs.
 \end{solution}
 \end{parts}
+\end{blocksection}
