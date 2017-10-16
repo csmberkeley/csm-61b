@@ -41,7 +41,7 @@ public void hashCode() {
 }
 \end{lstlisting}
 \begin{solution}[0.25in]
-Invalid. Return type should be \lstinline$int$.
+Invalid. Return type should be \lstinline$int$. This method would try to override Java?s hashCode method, but since it has the same signature with different return types, this would be a Compile Time Error
 \end{solution}
 
 \part
@@ -52,7 +52,7 @@ public int hashCode() {
 }
 \end{lstlisting}
 \begin{solution}[0.25in]
-Invalid. Not consistent.
+Invalid. Not consistent. This method would compile because it does return an int, however, this does not obey the first bullet point in the contract about returning the same integer every time, and so the HashMap would not work as expected. If we store an object at key 1, the next time around the object might have key 2, and we would be unable to find the object.
 \end{solution}
 
 \part
@@ -62,7 +62,7 @@ public int hashCode() {
 }
 \end{lstlisting}
 \begin{solution}[0.25in]
-Valid, but certain inputs may cause a significant number of collisions.
+Valid, but certain inputs may cause a significant number of collisions. This method would work, since it obeys all bullets under the contract. However, this will cause many collisions. All points that sum up to the same number will be mapped to the same hashCode. For instance: (5, 3), (4, 4), (2, 6), (6, 2), (1, 7), (7, 1), etc.
 \end{solution}
 
 \part
@@ -72,7 +72,7 @@ public int hashCode() {
 }
 \end{lstlisting}
 \begin{solution}[0.25in]
-Invalid. Not consistent.
+Invalid. Not consistent. This method would not error, because it does return an int, but it would not obey the first bullet point under the contract. Count is a static method. Consider what happens when we create a `new Point(3, 4)` and call the hashCode method on it the first time. We would get `1`. Next, if we create a `new Point(1, 2)`, calling the hashCode method on the earlier `Point(3, 4)` would now return 2, even though nothing about the Point object changed.
 \end{solution}
 
 \part
@@ -82,7 +82,7 @@ public int hashCode() {
 }
 \end{lstlisting}
 \begin{solution}[0.25in]
-Valid, but causes collisions on all inputs.
+Valid, but causes collisions on all inputs. This method would work according to the contract, however, it causes collisions on any input.
 \end{solution}
 \end{parts}
 \end{blocksection}
