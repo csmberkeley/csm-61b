@@ -1,7 +1,6 @@
 \begin{blocksection}
 \question What does it mean for a hashcode to be valid?
 \begin{solution}[0.75in]
-The general contract of hashCode is:
 \begin{itemize}
 \item Consistency: Whenever it is invoked on the same object more than once,
 the \lstinline$hashCode$ method must consistently returns the same integer if
@@ -18,7 +17,6 @@ objects may improve the performance of hash tables.
 \end{solution}
 \end{blocksection}
 
-\begin{blocksection}
 \question Which of the following hashcodes are valid? Good?
 
 \begin{lstlisting}
@@ -41,7 +39,9 @@ public void hashCode() {
 }
 \end{lstlisting}
 \begin{solution}[0.25in]
-Invalid. Return type should be \lstinline$int$. This method would try to override Java?s hashCode method, but since it has the same signature with different return types, this would be a Compile Time Error
+Invalid. Return type should be \lstinline$int$. The method should override
+Java's \lstinline$hashCode$ method, but since it has the same signature with
+different return types, this would be a compile-time error
 \end{solution}
 
 \part
@@ -52,7 +52,11 @@ public int hashCode() {
 }
 \end{lstlisting}
 \begin{solution}[0.25in]
-Invalid. Not consistent. This method would compile because it does return an int, however, this does not obey the first bullet point in the contract about returning the same integer every time, and so the HashMap would not work as expected. If we store an object at key 1, the next time around the object might have key 2, and we would be unable to find the object.
+Invalid. Not consistent. This method would compile because it does return an
+\lstinline$int$. However, this does not obey the principle of consistency about
+returning the same integer every time, and so the \lstinline$HashMap$ would not
+work as expected. If we store an object at key 1, the next time around the
+object might have key 2, and we would be unable to find the object.
 \end{solution}
 
 \part
@@ -62,7 +66,11 @@ public int hashCode() {
 }
 \end{lstlisting}
 \begin{solution}[0.25in]
-Valid, but certain inputs may cause a significant number of collisions. This method would work, since it obeys all bullets under the contract. However, this will cause many collisions. All points that sum up to the same number will be mapped to the same hashCode. For instance: (5, 3), (4, 4), (2, 6), (6, 2), (1, 7), (7, 1), etc.
+Valid, but certain inputs may cause a significant number of collisions. This
+method would work, since it obeys all bullets under the contract. However, this
+will cause many collisions. All points that sum up to the same number will be
+mapped to the same \lstinline$hashCode$ such as $(5, 3), (4, 4), (2, 6),
+(6, 2), (1, 7), (7, 1), \ldots$
 \end{solution}
 
 \part
@@ -72,7 +80,14 @@ public int hashCode() {
 }
 \end{lstlisting}
 \begin{solution}[0.25in]
-Invalid. Not consistent. This method would not error, because it does return an int, but it would not obey the first bullet point under the contract. Count is a static method. Consider what happens when we create a `new Point(3, 4)` and call the hashCode method on it the first time. We would get `1`. Next, if we create a `new Point(1, 2)`, calling the hashCode method on the earlier `Point(3, 4)` would now return 2, even though nothing about the Point object changed.
+Invalid. Not consistent. This method would not error, because it does return an
+\lstinline$int$, but it does not obey the principle of consistency.
+\lstinline$count$ is a static variable. Consider what happens when we create a
+\lstinline$new Point(3, 4)$ and call the \lstinline$hashCode$ method on it the
+first time. We would get 1. If we then create a \lstinline$new Point(1, 2)$,
+calling the \lstinline$hashCode$ method on the earlier \lstinline$Point(3, 4)$
+would now return 2, even though nothing about the original \lstinline$Point$
+object changed.
 \end{solution}
 
 \part
@@ -82,7 +97,7 @@ public int hashCode() {
 }
 \end{lstlisting}
 \begin{solution}[0.25in]
-Valid, but causes collisions on all inputs. This method would work according to the contract, however, it causes collisions on any input.
+Valid, but causes collisions on all inputs. While this method is valid, it
+collides on any input.
 \end{solution}
 \end{parts}
-\end{blocksection}
