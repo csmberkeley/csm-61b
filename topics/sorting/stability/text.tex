@@ -1,0 +1,21 @@
+\begin{blocksection}
+Stability is a property of some sorting algorithms. Stability essentially means that if we have two elements that are equal, then their relative ordering in the sorted list is the same as the ordering in the unsorted list. For instance, let's say that we had an array of integers. 
+
+\begin{verbatim}
+{ 1, 2, 1, 3, 1, 2, 4 }
+\end{verbatim}
+
+Since we have multiple $1$ and $2$s, let's label these. 
+
+\begin{verbatim}
+{ 1A, 2A, 1B, 3, 1C, 2B, 4 }
+\end{verbatim}
+
+A stable sort would result in the final list being 
+\begin{verbatim}
+{ 1A, 1B, 1C, 2A, 2B, 3, 4 }
+\end{verbatim}
+
+Why is this desirable? Say that we have an Excel spreadsheet where we are recording the names of people who log in to CSM Scheduler. The first column contains the timestamps, and the second column contains their username. The timestamps are already ordered in increasing order. If we wanted to sort the username, so that we could group the list to see when each username logs in, we would want that the timestamps maintain their relative order. This is precisely what a stable sort ensures.
+
+\end{blocksection}

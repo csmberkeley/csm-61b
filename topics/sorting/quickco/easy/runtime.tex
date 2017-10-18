@@ -9,3 +9,25 @@ is on an end of the array, which means it was either the smallest or the
 largest element.
 \end{solution}
 \end{blocksection}
+
+\begin{blocksection}
+\question If the worst-case runtime of Quicksort is $O(n^2)$, then why is it
+such a popular algorithm? 
+
+\begin{solution}[1in]
+In most cases, Quicksort actually performs very well, with an average runtime of 
+$O(n \log n)$. The probability that Quicksort ends up running in $O(n^2)$ is, in reality,
+very, very low. There is a mathematical discussion about this probability \href{https://www.khanacademy.org/computing/computer-science/algorithms/quick-sort/a/analysis-of-quicksort}{here}.
+\end{solution}
+\end{blocksection}
+
+\begin{blocksection}
+\question If the worst-case runtime of Quicksort is $O(n^2)$, while the worst case
+runtime of Mergesort is $O(N \log N)$, why do we ever use Quicksort?
+
+\begin{solution}[1in]
+One reason is that most implementations of MergeSort requires extra space (more arrays to be created). However, there are (more complicated) ways to write a MergeSort algorithm that doesn't require any extra space, and Quicksort is still often preferred when the number of elements being sorted isn't extremely large. 
+
+The general idea for this is that if all the data being sorted fits inside your RAM, then Quicksort is faster, since it doesn't need to access data stored in your Harddisk, which is slower. Just for reference, in a 1GB RAM, we can hold an array of 32 million integers. This means, that for almost all regular purposes, Quicksort is faster. More information about this is available on the first and second answer \href{https://stackoverflow.com/questions/70402/why-is-quicksort-better-than-mergesort}{here}
+\end{solution}
+\end{blocksection}

@@ -5,6 +5,13 @@ famous Quicksort algorithms by making them as slow as possible. Mallory
 succeeded in unlocking the mainframe, but now she needs your help in slowing
 QuickCo's algorithms down to a halt!
 
+For this question, assume that the quicksort algorithm used involves three steps. 
+First, iterating through the array, to count how many elements are smaller than 
+the pivot, larger than the pivot, and equal to the pivot. Second, creating 3 arrays 
+for smaller, larger and equal elements of the correct size, and then in a second
+run through the array, placing the appropriate elements in these arrays. Finally,
+recurse on the smaller and larger arrays.
+
 \begin{lstlisting}
 int[] data = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 \end{lstlisting}
