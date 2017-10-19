@@ -8,7 +8,7 @@ Selection Sort    &           &            &        \\
 Insertion Sort    &           &            &        \\
 Merge Sort        &           &            &        \\
 Heapsort          &           &            &        \\
-Quicksort         &           &            &        
+Quicksort         &           &            &
 \end{tabularx}
 }
 \fi
@@ -26,6 +26,85 @@ Heapsort          & $\Theta(N)$        & $\Theta(N \log N)$  & Hard	  \\
 Quicksort         & $\Theta(N)$        & $\Theta(N^2)$       & Depends
 \end{tabularx}
 }
-\end{solution}
 
-\vspace{\parskip}
+\begin{description}
+\item[Selection Sort]
+In selection sort, we loop through the array to find the smallest element.
+Next, we swap the element at index-0 with the smallest element. Next, we repeat
+this procedure, but only looking at the array starting at index-1.
+
+\begin{itemize}
+\item \textit{Runtime, Best, Worst Case:} Since it takes $O(N)$ time to loop
+through the array, and we loop through the array $N$ times, this algorithm has
+a runtime of $\Theta(N^2)$. Note that even if the array is already sorted, we
+need to iterate through it to find the minimum, and then iterate through it
+again, and again, $N$ times.
+\item \textit{Stability:} Consider an array \lstinline${ 3A, 2, 3B, 1 }$, where
+the $3$s have been labeled to differentiate between them. The algorithm will
+find $1$ to be the smallest, and will swap it with $3A$, pushing $3A$ after
+$3B$, making it not stable. However, it is also possible to make it stable if
+we implement Selection Sort in a different way, which involves creating a new
+array instead of swapping the minimum elements.
+\end{itemize}
+
+\item[Insertion Sort]
+This is the way an adult would normally sort a pack of cards. Iterating through
+the array, swapping each element left-wards.
+
+\begin{itemize}
+\item \textit{Best Case:} Given a sorted array, \lstinline${ 1, 2, 3, 4 }$,
+this algorithm would iterate through the array just once, and do 0 swaps, since
+all elements are already as left-wards as they can be.
+\item \textit{Worst Case:} Given a fully unsorted array,
+\lstinline${ 4, 3, 2, 1 }$, this algorithm would first swap $(3, 4)$, then to
+move 2 left-wards, it needs to do 2 swaps. Finally to move 1 left-wards, it
+needs to do 3 swaps. This is of the ordering of $O(n^2)$ swaps.
+\item \textit{Stability:} Consider an array \lstinline${ 3A, 2, 3B, 1 }$. We
+would get the following steps: \lstinline${ 2, 3A, 3B, 1 }$,
+\lstinline${ 1, 3, 3A, 3B, }$. In general, this algorithm is stable, because
+given a $3A, 3B$, we would never swap them with each other.
+\end{itemize}
+
+\item[Merge Sort]
+Given an array, divide it into two equal halves, and call mergesort recursively
+on each half. Take the recursive leap of faith and assume that each half is now
+sorted. Merge the two sorted halves. Merging takes a single iteration through
+both arrays, and takes $O(N)$ time. The base case is if the input list is just
+1 element long, in which case, we return the list itself.
+
+\begin{itemize}
+\item \textit{Best case, Worst Case, Runtime:} Since the algorithm divides the
+array and recurses down, this takes $\Theta(N \log N)$ time, no matter what.
+\item \textit{Stability:} Merge sort is made stable by being careful during the
+merging step of the algorithm. If deciding between 2 elements that are the
+same, one in the left half and one in the right half, pick the one from the
+left half first.
+\end{itemize}
+
+\item[Heap Sort]
+Place all elements into a heap. Remove elements one by one from the heap, and
+place them in an array.
+
+\begin{itemize}
+\item \textit{Recall:} Creating a heap of $N$ elements takes $N \log N$ time,
+because we have to bubble-up elements. Removing an element from a heap takes
+$\log N$ time, also because of bubbling and sinking.
+\item \textit{Best Case:} Say that all the elements in the input array are
+equal. In this case, creating the heap only takes $O(N)$ time, since there is
+no bubbling-down to be done. Also, removing from the heap takes constant time
+for the same reason. Since we remove $N$ elements, and creating the heap takes
+$O(N)$ time, the overall runtime is $O(N)$.
+\item \textit{Worst Case:} Any general array would require creating the heap
+with bubbling which itself takes $N \log N$ time.
+\end{itemize}
+
+\item[Quicksort]
+Based on some pivot-picking strategy, pick a pivot.  Divide the array up into 3
+groups: elements smaller than the pivot, larger than the pivot and equal to the
+pivot. Recursively sort the first and second group.
+
+\begin{itemize}
+\item \textit{Runtime:} Analyzed in detail in the next question.
+\end{itemize}
+\end{description}
+\end{solution}

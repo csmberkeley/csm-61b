@@ -11,7 +11,7 @@ Quicksort         &           &            &        \\
 Heapsort          &           &            &        \\
 Counting Sort     &           &            &        \\
 LSD Radix Sort    &           &            &        \\
-MSD Radix Sort    &           &            &        
+MSD Radix Sort    &           &            &
 \end{tabularx}
 }
 \fi
@@ -33,9 +33,13 @@ MSD Radix Sort    & $\Theta(N + R)$    & $\Theta(W(N + R))$  & Depends\\
 \end{tabularx}
 }
 
-Where $N$ is the length of the list, $R$ is the size of the alphabet (radix), and $W$ is the length of the longest word.
+Where $N$ is the length of the list, $R$ is the size of the alphabet (radix),
+and $W$ is the length of the longest word.
 
-Stable selection sort can be achieved if an additional data structure is used to keep track of the original positions of each element. The best case for quicksort implies using three-way partitioning. Quicksort stability depends on the partitioning strategy. Heapsort can be made stable with a stable priority queue implementation. MSD radix sort can be made stable with additional space for a buffer.
+Stable selection sort can be achieved if an additional data structure is used
+to keep track of the original positions of each element. The best case for
+quicksort implies using three-way partitioning. Quicksort stability depends on
+the partitioning strategy. Heapsort can be made stable with a stable priority
+queue implementation. MSD radix sort can be made stable with additional space
+for a buffer.
 \end{solution}
-
-\vspace{\parskip}
