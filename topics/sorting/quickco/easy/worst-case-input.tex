@@ -1,12 +1,13 @@
 \begin{blocksection}
 \question Mallory finds an algorithm which always selects the middle element
 but she is unable to gain write access to it. If the array has an even number
-of elements, the algorithm picks the element to the left. However, Mallory discovers
-a way to intercept the incoming data and rearrange it before the algorithm runs.
+of elements, the algorithm picks the element to the left. However, Mallory
+discovers a way to intercept the incoming data and rearrange it before the
+algorithm runs.
 
-Given the \lstinline$int[] data$ of size \lstinline$n$, rearrange the numbers such 
-that the algorithm will run in its worst-case time. Expand out the first few steps
-of the quicksort algorithms in such a case.
+Given the \lstinline$int[] data$ of size \lstinline$n$, rearrange the numbers
+such that the algorithm will run in its worst-case time. Expand out the first
+few steps of the quicksort algorithms in such a case.
 
 \begin{solution}[1in]
 \begin{verbatim}
@@ -22,8 +23,7 @@ Smaller: { 6, 7, 8, 1, 2, 3, 4, 5 }; Equal: { 9 }
 \end{verbatim}
 \ldots
 
-With a similar reasoning as the previous case, this will also take 
-$O(n^2)$ work.
-
+With a similar reasoning as the previous case, this will also take $O(N^2)$
+work.
 \end{solution}
 \end{blocksection}
