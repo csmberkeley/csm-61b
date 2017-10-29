@@ -1,7 +1,6 @@
 \begin{blocksection}
-\question Given the following binary trees, determine if each is a binary
-search tree, and whether the height of the tree is the same as the height
-of the optimal binary search tree containing the given elements.
+\question For each of the following binary trees, determine if the height of
+the tree is the same as the height of the optimal tree with the same elements.
 
 \begin{center}
 \begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=30pt]
@@ -83,11 +82,15 @@ child {
 \end{tikzpicture}
 \end{center}
 
-\begin{solution}
+\begin{solution}[1in]
 \begin{enumerate}
-\item Valid but not balanced
-\item Invalid and not balanced
-\item Invalid but balanced
+\item Not balanced
+\item Not balanced
+\item Balanced
 \end{enumerate}
+
+Intuitively, if we can ``stuff'' all the elements in the lowest level into a
+higher level, then we can reduce the height of the tree and determine that the
+height of the tree is not the same as the height of the optimal binary tree.
 \end{solution}
 \end{blocksection}
