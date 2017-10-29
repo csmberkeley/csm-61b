@@ -9,9 +9,10 @@ Assume customers are less than 150 years old.
 \begin{lstlisting}
 public class BerkeleyBytes {
     public static int[] histogram(int[] ages) {
-        int[] ageCounts = new int[150];
+        private static int maxAge = 149;
+        int[] ageCounts = new int[maxAge + 1];
         for (int age : ages) {
-            ageCounts[age - 1] += 1;
+            ageCounts[age] += 1;
         }
         return ageCounts;
     }
@@ -36,11 +37,11 @@ public class BerkeleyBytes {
 \begin{solution}
 \begin{lstlisting}
 public class BerkeleyBytes {
-    private static int maxAge = 150;
+    private static int maxAge = 149;
     public static int[] histogram(int[] ages) {
-        int[] ageCounts = new int[maxAge];
+        int[] ageCounts = new int[maxAge + 1];
         for (int age : ages) {
-            ageCounts[age - 1] += 1;
+            ageCounts[age] += 1;
         }
         return ageCounts;
     }
@@ -50,7 +51,7 @@ public class BerkeleyBytes {
         int index = 0;
         for (int age = 0; age < maxAge; age++) {
             for (int count = 0; count < ageCounts[age]; count++) {
-                result[index] = age + 1;
+                result[index] = age;
                 index += 1;
             }
         }
