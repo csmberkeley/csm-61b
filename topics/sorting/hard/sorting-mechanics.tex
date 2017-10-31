@@ -1,4 +1,5 @@
-\question Below, the \textbf{leftmost column} is an unsorted list of strings. The \textbf{rightmost column} gives the same strings in sorted order. Each of the remaining columns gives the contents of the list during some intermediate step of one of the algorithms listed below. Match each column with its corresponding algorithm.
+\question Each column below gives the contents of a list at some step during
+sorting. Match each column with its corresponding algorithm.
 
 \begin{inparaitem}[$\cdot$]
 \item Merge sort
@@ -8,30 +9,31 @@
 \item MSD radix sort
 \end{inparaitem}
 
-For quicksort, choose the topmost element as the pivot. Use the recursive (or top-down) implementation for merge sort.
+For quicksort, choose the topmost element as the pivot. Use the recursive
+(top-down) implementation of merge sort.
 
 {
 \renewcommand{\arraystretch}{1.5}
-\setlength{\tabcolsep}{12pt}
+\setlength{\tabcolsep}{11pt}
 \begin{ttfamily}
 \begin{tabular}{r|ccccccc}
-   & A    & B    & C    & D    & E    & F    & G    \\\hline
-1  & 4873 & 1876 & 1874 & 1626 & 9573 & 2212 & 1626 \\
-2  & 1874 & 1874 & 1626 & 1874 & 7121 & 8917 & 1874 \\
-3  & 8917 & 2212 & 1876 & 1876 & 9132 & 7121 & 1876 \\
-4  & 1626 & 1626 & 1897 & 4873 & 6973 & 1626 & 1897 \\
-5  & 4982 & 3492 & 2212 & 4982 & 4982 & 9132 & 2212 \\
-6  & 9132 & 1897 & 3492 & 8917 & 8917 & 6152 & 3492 \\
-7  & 9573 & 4873 & 4873 & 9132 & 6152 & 4873 & 4873 \\
-8  & 1876 & 9573 & 4982 & 9573 & 1876 & 9573 & 4982 \\
-9  & 6973 & 6973 & 6973 & 1897 & 1626 & 6973 & 6152 \\
-10 & 1897 & 9132 & 6152 & 3492 & 1897 & 1874 & 6973 \\
-11 & 9587 & 9587 & 7121 & 6973 & 1874 & 1876 & 7121 \\
-12 & 3492 & 4982 & 8917 & 9587 & 3492 & 9877 & 8917 \\
-13 & 9877 & 9877 & 9132 & 2212 & 4873 & 4982 & 9132 \\
-14 & 2212 & 8917 & 9573 & 6152 & 2212 & 9587 & 9573 \\
-15 & 6152 & 6152 & 9587 & 7121 & 9587 & 3492 & 9587 \\
-16 & 7121 & 7121 & 9877 & 9877 & 9877 & 1897 & 9877
+   & Start & A    & B    & C    & D    & E    & Sorted \\\hline
+1  & 4873  & 1876 & 1874 & 1626 & 9573 & 2212 & 1626   \\
+2  & 1874  & 1874 & 1626 & 1874 & 7121 & 8917 & 1874   \\
+3  & 8917  & 2212 & 1876 & 1876 & 9132 & 7121 & 1876   \\
+4  & 1626  & 1626 & 1897 & 4873 & 6973 & 1626 & 1897   \\
+5  & 4982  & 3492 & 2212 & 4982 & 4982 & 9132 & 2212   \\
+6  & 9132  & 1897 & 3492 & 8917 & 8917 & 6152 & 3492   \\
+7  & 9573  & 4873 & 4873 & 9132 & 6152 & 4873 & 4873   \\
+8  & 1876  & 9573 & 4982 & 9573 & 1876 & 9573 & 4982   \\
+9  & 6973  & 6973 & 6973 & 1897 & 1626 & 6973 & 6152   \\
+10 & 1897  & 9132 & 6152 & 3492 & 1897 & 1874 & 6973   \\
+11 & 9587  & 9587 & 7121 & 6973 & 1874 & 1876 & 7121   \\
+12 & 3492  & 4982 & 8917 & 9587 & 3492 & 9877 & 8917   \\
+13 & 9877  & 9877 & 9132 & 2212 & 4873 & 4982 & 9132   \\
+14 & 2212  & 8917 & 9573 & 6152 & 2212 & 9587 & 9573   \\
+15 & 6152  & 6152 & 9587 & 7121 & 9587 & 3492 & 9587   \\
+16 & 7121  & 7121 & 9877 & 9877 & 9877 & 1897 & 9877
 \end{tabular}
 \end{ttfamily}
 }
