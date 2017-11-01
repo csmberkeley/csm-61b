@@ -1,0 +1,71 @@
+\begin{blocksection}
+\question A normal generic linked list contains objects of only one type. But
+we can imagine a generic linked list where entries alternate between two types.
+
+\begin{lstlisting}
+public class AltList<X,Y> {
+    private X item;
+    private AltList<Y,X> next;
+    AltList(X item, AltList<Y,X> next) {
+        this.item = item;
+        this.next = next;
+    }
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+AltList<Integer, String> list =
+    new AltList<Integer, String>(5,
+        new AltList<String, Integer>("cat",
+            new AltList<Integer, String>(10,
+                new AltList<String, Integer>("dog", null))));
+\end{lstlisting}
+
+This list represents \lstinline$[5, cat, 10, dog]$. In this list, assuming
+indexing begins at 0, all even-index items are \lstinline$Integers$ and all
+odd-index items are \lstinline$Strings$.
+
+Write an instance method called \lstinline$pairsSwapped()$ for the
+\lstinline$AltList$ class that returns a copy of the original list, but with
+adjacent pairs swapped. Each item should only be swapped once. This method
+should be non-destructive: it should not modify the original
+\lstinline$AltList$ instance. Assume that the list has an even, non-zero
+length.
+
+For example, calling \lstinline$pairsSwapped()$ on the list \lstinline$[5, cat,
+10, dog]$ should yield the list \lstinline$[cat, 5, dog, 10]$.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public class AltList<X,Y> {
+    public                 pairsSwapped() {
+
+
+
+
+
+
+
+
+
+
+
+    }
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class AltList<X,Y> {
+    public AltList<Y,X> pairsSwapped() {
+        AltList<Y,X> ret = new AltList<Y,X>(next.item, new AltList<X,Y>(item, null));
+        if (next.next != null) {
+            ret.next.next = next.next.pairsSwapped();
+        }
+        return ret;
+    }
+}
+\end{lstlisting}
+\end{solution}
+\end{blocksection}
