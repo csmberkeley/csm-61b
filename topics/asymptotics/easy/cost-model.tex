@@ -1,0 +1,35 @@
+\begin{blocksection}
+\question Count the operations it takes to execute \lstinline$kviate$ as a
+function of $N = \texttt{a.length}$. Assume each of the following operations
+each take 1 timestep to complete.
+
+\begin{inparaitem}[$\cdot$]
+\item variable declaration
+\item assignment
+\item comparison
+\item array access
+\item increment
+\end{inparaitem}
+
+\begin{lstlisting}
+public static void kviate(int[] a, int k) {
+    int count = 0, N = a.length;
+    for (int i = 0; i < N; i += 1) {
+        if (a[i] == k) {
+            count += 1;
+        }
+    }
+    a[k] += count;
+}
+\end{lstlisting}
+
+\begin{solution}[1.5in]
+\begin{itemize}
+\item Variable declaration: $3$
+\item Assignment: $3$
+\item Comparison: $2N + 1$, $N$ equality comparisons, $N + 1$ less-than comparisons
+\item Array access: $N + 2$, \lstinline$a[k] += count$ requires both read and write
+\item Increment: $N + 1$ to $2N + 1$
+\end{itemize}
+\end{solution}
+\end{blocksection}
