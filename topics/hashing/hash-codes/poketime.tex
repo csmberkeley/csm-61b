@@ -1,0 +1,20 @@
+\question \begin{lstlisting}
+class PokeTime {
+    int startTime;
+    int duration;
+    public int getCurrentTime() {
+        // Gets the current system clock time
+    }
+    public int hashCode() {
+        return 1021 * (startTime + 1021 * duration + getCurrentTime());
+    }
+    public boolean equals(Object o) {
+        PokeTime p = (PokeTime) o;
+        return p.startTime == startTime && p.duration == duration;
+    }
+}
+\end{lstlisting}
+
+\begin{solution}[1em]
+Incorrect: The \lstinline$hashCode()$ is non-deterministic.
+\end{solution}

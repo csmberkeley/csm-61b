@@ -1,0 +1,23 @@
+\question \begin{lstlisting}
+class Phonebook {
+    List<Human> humans;
+    public int hashCode() {
+        int h = 0;
+        for (Human human : humans) {
+            // Assume Human::hashcode is correct
+            h = (h + human.hashCode()) % 509;
+        }
+        return h;
+    }
+    public boolean equals(Object o) {
+        Phonebook p = (Phonebook) o;
+        return p.humans.equals(humans);
+    }
+}
+\end{lstlisting}
+
+\begin{solution}[0.25in]
+Poor distribution: The \lstinline$hashCode()$ only distributes numbers between
+-508 and 508, which is an inefficient use of the full integer range and will
+cause more collisions than necessary.
+\end{solution}
