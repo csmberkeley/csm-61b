@@ -1,0 +1,35 @@
+\begin{blocksection}
+\question Give a tight asymptotic bound for \lstinline$debugBinarySearch$ as a
+function of $N$, the length of the input array, \lstinline$a$. If possible,
+give a $\Theta(\cdot)$ bound for the overall runtime. Otherwise, provide a
+$\Theta(\cdot)$ bound for both the best case and worst case runtime.
+
+\begin{lstlisting}
+boolean debugBinarySearch(int[] a, int target) {
+    int start = 0;
+    int end = a.length - 1;
+
+    while (start <= end) {
+        int mid = ((end - start) / 2) + start;
+        if (a[mid] == target) {
+            return true;
+        } else if (a[mid] < target) {
+            start = mid + 1;
+        } else {
+            end = mid - 1;
+        }
+
+        System.out.print("Searching: [ ");
+        for (int i = start; i <= end; i++) {
+            System.out.print(a[i] + " ");
+        }
+        System.out.println("]");
+    }
+    return false;
+}
+\end{lstlisting}
+
+\begin{solution}[0.5in]
+$\Theta(N)$ in the worst case, $\Theta(1)$ in the best case
+\end{solution}
+\end{blocksection}
