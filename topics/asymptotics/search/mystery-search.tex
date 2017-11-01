@@ -1,0 +1,19 @@
+\begin{blocksection}
+\question Give a tight asymptotic runtime bound for \lstinline$mysterySearch$
+as a function of $N$, the size of the array, in the \emph{best case, worst
+case, and overall}. Assume the array is sorted.
+
+\begin{lstlisting}
+public static boolean mysterySearch(int[] a, int value) {
+    if (Math.random() < 0.5) {
+        return linearSearch(a, value, 0);
+    } else {
+        return binarySearch(a, value, 0, a.length);
+    }
+}
+\end{lstlisting}
+
+\begin{solution}[0.5in]
+$\Theta(1)$ in the best case, $\Theta(N)$ in the worst case, and $O(N)$ overall.
+\end{solution}
+\end{blocksection}
