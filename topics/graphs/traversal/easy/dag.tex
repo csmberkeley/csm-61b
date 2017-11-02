@@ -36,8 +36,6 @@ vertex $5$, consider the edge $(5,3)$ before the others.
 \fill (27,-30) -- (26.2,-29.5) -- (26.2,-30.5);
 \draw (22.88,-42.88) -- (12.12,-32.12);
 \fill (12.12,-32.12) -- (12.33,-33.04) -- (13.04,-32.33);
-\draw (29.05,-32.85) -- (25.95,-42.15);
-\fill (25.95,-42.15) -- (26.68,-41.55) -- (25.73,-41.24);
 \draw (28,-45) -- (52,-45);
 \fill (52,-45) -- (51.2,-44.5) -- (51.2,-45.5);
 \draw (52.43,-43.46) -- (32.57,-31.54);
@@ -61,23 +59,23 @@ vertex $5$, consider the edge $(5,3)$ before the others.
 
 \begin{parts}
 \part Give the depth-first \emph{pre-order} traversal of the graph.
-\begin{solution}[0.5in]
+\begin{solution}[0.75in]
 \begin{verbatim}
-0, 4, 2, 3, 1, 5, 6, 7, 8
+0, 4, 1, 2, 3, 5, 6, 7, 8
 \end{verbatim}
 \end{solution}
 
 \part Give the depth-first \emph{post-order} traversal of the graph.
-\begin{solution}[0.5in]
+\begin{solution}[0.75in]
 \begin{verbatim}
-3, 2, 4, 0, 1, 6, 7, 5, 8
+4, 0, 1, 3, 2, 6, 7, 5, 8
 \end{verbatim}
 \end{solution}
 
-\part Give the reverse depth-first \emph{post-order} traversal.
-\begin{solution}[0.5in]
+\part Give the \emph{reverse} depth-first \emph{post-order} traversal.
+\begin{solution}[0.75in]
 \begin{verbatim}
-8, 5, 7, 6, 1, 0, 4, 2, 3
+8, 5, 7, 6, 2, 3, 1, 0, 4
 \end{verbatim}
 \end{solution}
 \end{parts}
