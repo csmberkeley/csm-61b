@@ -1,0 +1,16 @@
+\begin{blocksection}
+\question Give a tight asymptotic bound for \lstinline$mystery$.
+
+\begin{lstlisting}
+int mystery(int N) {
+    if (N == 0) {
+        return 0;
+    }
+    return mystery(N/3) + mystery(N/3) + mystery(N/3);
+}
+\end{lstlisting}
+
+\begin{solution}[1in]
+$\Theta(N)$
+\end{solution}
+\end{blocksection}

@@ -1,0 +1,26 @@
+\begin{blocksection}
+\question Give a tight asymptotic runtime bound for \lstinline$contains$ as a
+function of $N$, the size of the list, in the \emph{best case, worst case, and
+overall}.
+
+\begin{lstlisting}
+public class IntList {
+    public int first;
+    public IntList rest;
+
+    public boolean contains(int value) {
+        if (first == value) {
+            return true;
+        } else if (rest == null) {
+            return false;
+        } else {
+            return rest.contains(value);
+        }
+    }
+}
+\end{lstlisting}
+
+\begin{solution}[0.5in]
+$\Theta(1)$ in the best case, $\Theta(N)$ in the worst case, and $O(N)$ overall.
+\end{solution}
+\end{blocksection}

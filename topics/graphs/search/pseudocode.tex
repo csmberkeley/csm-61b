@@ -1,0 +1,19 @@
+\begin{algorithm}
+\begin{algorithmic}
+\Function{Graph-Search}{$start, fringe$}
+    \State $seen \gets$ an empty set
+    \State \Call{Add}{$start$, $fringe$}
+    \While{$fringe$ is not empty}
+        \State $node \gets$ \Call{Remove}{$fringe$}
+        \If{$node$ is the goal} \Return $node$ \EndIf
+        \If{$node$ is not in $seen$}
+            \State \Call{Add}{$node$, $seen$}
+            \For{$child$ in \Call{Neighbors}{$node$}}
+                \State \Call{Add}{$child$, $fringe$}
+            \EndFor
+        \EndIf
+    \EndWhile
+    \State \Return failure
+\EndFunction
+\end{algorithmic}
+\end{algorithm}

@@ -1,0 +1,23 @@
+\begin{blocksection}
+\question Give a tight asymptotic runtime bound for \lstinline$binarySearch$ as
+a function of $N$, the size of the array, in the \emph{best case, worst case,
+and overall}. Assume the array is sorted.
+
+\begin{lstlisting}
+public static boolean binarySearch(int[] a, int value, int start, int end) {
+    if (start == end || start == end - 1) { return a[start] == value; }
+    int mid = end + ((start - end) / 2);
+    if (a[mid] == value) {
+        return true;
+    } else if (a[mid] > value) {
+        return binarySearch(a, value, start, mid);
+    } else {
+        return binarySearch(a, value, mid, end);
+    }
+}
+\end{lstlisting}
+
+\begin{solution}[0.5in]
+$\Theta(1)$ in the best case, $\Theta(\log N)$ in the worst case, and $O(\log N)$ overall.
+\end{solution}
+\end{blocksection}

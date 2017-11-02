@@ -1,0 +1,26 @@
+\begin{blocksection}
+\question For each pair of functions $f(n)$ and $g(n)$, state whether
+$f(n) \in O(g(n))$, $f(n) \in \Omega(g(n))$, or $f(n) \in \Theta(g(n))$. For
+example, for $f(n) = n^2$ and $g(n) = 2n^2 - n + 3$, write
+$f(n) \in \Theta(g(n))$.
+
+\ifprintanswers\else
+\begin{parts}
+\part $f(n) = n$ and $g(n) = n^2 - n$
+\part $f(n) = n^2$ and $g(n) = n^2 + n$
+\part $f(n) = 8n$ and $g(n) = n^2$
+\part $f(n) = 2^n$ and $g(n) = n^2$
+\part $f(n) = 3^n$ and $g(n) = 2^{2n}$
+\end{parts}
+\fi
+
+\begin{solution}
+\begin{parts}
+\part $f(n) = n$ and $g(n) = n^2 - n$ $\implies$ $f(n) \in O(g(n))$
+\part $f(n) = n^2$ and $g(n) = n^2 + n$ $\implies$ $f(n) \in \Theta(g(n))$
+\part $f(n) = 8n$ and $g(n) = n^2$ $\implies$ $f(n) \in O(g(n))$
+\part $f(n) = 2^n$ and $g(n) = n^2$ $\implies$ $f(n) \in \Omega(g(n))$
+\part $f(n) = 3^n$ and $g(n) = 2^{2n}$ $\implies$ $f(n) \in O(g(n))$
+\end{parts}
+\end{solution}
+\end{blocksection}

@@ -1,0 +1,12 @@
+\question Suppose know that the objects in our list can only be in $O(N^2)$
+possible permutations. Give a tight asymptotic lower bound on the running time
+of sorting this list.
+
+\begin{solution}[1in]
+$\Omega(N)$. The runtime is determined by the number of decisions that need to
+be made to identify a particular permutation as correct. If we model the
+problem as a decision tree, we can see that we need to make at least
+$\Omega(\log{N^2}) \in \Omega(\log N)$ comparisons before identifying a
+permutation as correct. But a search algorithm cannot be faster than linear
+time, so we bound our final answer with $\Omega(N)$.
+\end{solution}

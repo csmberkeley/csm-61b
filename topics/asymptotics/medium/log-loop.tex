@@ -1,0 +1,17 @@
+\begin{blocksection}
+\question Give a tight asymptotic bound for \lstinline$mystery$.
+
+\begin{lstlisting}
+void mystery(int N) {
+    for (int i = 1; i <= N * N; i *= 2) {
+        for (int j = 0; j < i; j += 1) {
+            System.out.println("moo");
+        }
+    }
+}
+\end{lstlisting}
+
+\begin{solution}[1in]
+$\Theta(N^2)$
+\end{solution}
+\end{blocksection}

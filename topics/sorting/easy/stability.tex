@@ -1,0 +1,9 @@
+\question Why does Java's built-in \lstinline$Array.sort$ method use quicksort
+for \lstinline$int$, \lstinline$long$, \lstinline$char$, or other primitive
+arrays, but merge sort for all \lstinline$Object$ arrays?
+
+\begin{solution}[1in]
+Fast, in-place solutions for quicksort are unstable, meaning that, for any two
+equivalent keys, their final order in the output is not guaranteed to be the
+same. Merge sort has good asymtotic behavior without sacrificing on stability.
+\end{solution}

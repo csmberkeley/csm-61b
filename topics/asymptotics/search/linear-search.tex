@@ -1,0 +1,21 @@
+\begin{blocksection}
+\question Give a tight asymptotic runtime bound for \lstinline$linearSearch$ as
+a function of $N$, the size of the array, in the \textit{best case, worst case,
+and overall}.
+
+\begin{lstlisting}
+public static boolean linearSearch(int[] a, int value, int start) {
+    if (start >= a.length) {
+        return false;
+    } else if (a[start] == value) {
+        return true;
+    } else {
+        return linearSearch(a, value, start + 1);
+    }
+}
+\end{lstlisting}
+
+\begin{solution}[0.5in]
+$\Theta(1)$ in the best case, $\Theta(N)$ in the worst case, and $O(N)$ overall.
+\end{solution}
+\end{blocksection}

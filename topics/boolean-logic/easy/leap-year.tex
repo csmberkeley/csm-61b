@@ -1,0 +1,64 @@
+\begin{blocksection}
+\question Suppose you've been asked to test the following code snippet. Recall
+that a \define{leap year} is divisible by 4 except for 3 out of every 4
+\emph{centuries} where the year is not divisible by 400.
+
+\begin{lstlisting}
+if (year % 400 != 0) {
+    System.out.println(year + " is not a leap year");
+} else if (year % 100 != 0) {
+    System.out.println(year + " is a leap year");
+} else if (year % 4 != 0) {
+    System.out.println(year + " is not a leap year");
+} else {
+    System.out.println(year + " is a leap year");
+}
+\end{lstlisting}
+
+\begin{parts}
+\part Provide a method header (or, in Python, the \emph{function definition})
+for the code above.
+\begin{solution}[0.5in]
+\lstinline$public static void printLeapYear(int year)$
+\end{solution}
+
+\part Write a \lstinline$main$ method that tests the correctness of the code
+against a couple inputs that work as expected and a couple inputs that cause
+problems.
+\begin{solution}[2in]
+\begin{lstlisting}
+public static void main(String[] args) {
+    printLeapYear(1900);
+    printLeapYear(1904);
+    printLeapYear(1905);
+    printLeapYear(1908);
+}
+\end{lstlisting}
+\end{solution}
+
+\part \define{Refactor} the program such that it functions correctly and can be
+more easily tested in the future.
+\begin{solution}[3in]
+\begin{lstlisting}
+public static void printLeapYear(int year) {
+    if (isLeapYear(year)) {
+        System.out.println(year + " is a leap year");
+    } else {
+        System.out.println(year + " is not a leap year");
+    }
+}
+private static boolean isLeapYear(int year) {
+    if (year % 4 != 0) {
+        return false;
+    } else if (year % 100 != 0) {
+        return true;
+    } else if (year % 400 != 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+\end{lstlisting}
+\end{solution}
+\end{parts}
+\end{blocksection}
