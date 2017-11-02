@@ -1,0 +1,13 @@
+\begin{algorithm}
+\begin{algorithmic}
+\Procedure{Tree-Traversal}{$start, fringe$}
+    \State \Call{Add}{$start$, $fringe$}
+    \While{$fringe$ is not empty}
+        \State $node \gets$ \Call{Remove}{$fringe$}
+        \For{$child$ in \Call{Neighbors}{$node$}}
+            \State \Call{Add}{$child$, $fringe$}
+        \EndFor
+    \EndWhile
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
