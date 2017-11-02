@@ -1,0 +1,10 @@
+\question What's the best sorting algorithm to apply on an array of $N$
+randomly distributed Java \lstinline$Object$s? Give a tight asymptotic runtime
+bound as well.
+
+\begin{solution}[1in]
+Merge sort is the best option since its design makes the algorithm stable,
+preserving the relative order of equal items in the list. Quicksort and
+heapsort are also acceptable, but because their fast or usual implementations
+are unstable, we prefer not to use them on Java reference types.
+\end{solution}

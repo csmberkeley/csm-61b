@@ -1,0 +1,10 @@
+\question Given a list of objects that is totally sorted except for
+$K < \log N$ randomly chosen elements that are out of place, choose the best
+sorting algorithm to solve the problem and give a tight asymptotic runtime
+bound.
+
+\begin{solution}[1in]
+Use insertion sort. Since each element is at most $N$ spaces away from its
+final position, we will need to spend $O(N)$ time moving the item.  The overall
+runtime is in $O(N + NK) \in O(NK)$.
+\end{solution}
