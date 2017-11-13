@@ -1,5 +1,7 @@
 \begin{blocksection}
-\question Find the path from the start, $S$, to the goal, $G$, when running
+\question Here, a \textbf{heuristic} is an educated guess of the distance from the node to the goal. For example, for node $S$, we see that $h=6$.  This means that it is estimated that $S$ is 6 units away from $G$. 
+
+Find the path from the start, $S$, to the goal, $G$, when running
 each of the following algorithms.
 
 \begin{center}
@@ -58,7 +60,8 @@ cumulative distance to a vertex.
 \end{solution}
 
 \begin{parts}
-\part Which path does uniform cost search return?
+\part Uniform cost search is the same as Dijkstra's, except that you stop the procedure once you reach your goal state.  
+Which path does uniform cost search return?
 \begin{solution}[1in]
 $S - A - D - G$
 
@@ -72,16 +75,18 @@ the shortest path from the fringe and add its children to the fringe, trying
 all paths in increasing cost order until we reach G.
 \end{solution}
 
-\part Which path does greedy search return?
+\part In greedy search, we ignore edge weights and only consider the heuristics to decide which node to go to next.  Just a note, we don't add heuristics together because they are an estimate of the distance to the goal.
+Which path does greedy search return?
 \begin{solution}[1in]
-$S - A - E - D - G$ or $S - A - D - G$ depending on tie-breaking behavior.
+$S - A - E - D - G$ 
 
 From the starting node, travel to the next node with the lowest value returned
 by the heuristic function until we reach the goal node. We choose the path with
 the lowest \emph{forward cost}.
 \end{solution}
 
-\part Which path does A* search return?
+\part A* is an algorithm that uses both heuristics and edge weights to find the shortest path to a goal.  For A* to work, heuristics must be an underestimate of the true distance to the goal.  
+Which path does A* search return?
 \begin{solution}[1in]
 $S - A - D - G$
 
