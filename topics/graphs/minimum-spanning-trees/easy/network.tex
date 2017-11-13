@@ -1,8 +1,6 @@
-\begin{blocksection}
-\question Suppose we need to design a telephone network connecting all the
-residents, labeled $A$ through $G$, in a neighborhood. How can we create a
-network that guarantees connectivity between all subscribers at the least
-possible cost?
+\question Suppose we want to design a telephone network connecting all the
+cities, labeled $A$ to $G$, in a neighborhood. We'd like to do so at the least
+cost.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.15]
@@ -52,11 +50,10 @@ possible cost?
 \part In a graph with $N$ vertices and $M$ edges, how many edges form a minimum
 spanning tree?
 \begin{solution}[0.5in]
-$N-1$, or 6 edges in the above graph.
+$N - 1$, or 6 edges in the above graph.
 \end{solution}
 
-\part Will the new graph contain any cycles? Describe the structure of the
-graph.
+\part Will the new graph contain any cycles? Describe its structure.
 \begin{solution}[1in]
 The resulting graph is a tree which implies that it contains no cycles. If the
 tree reaches every node in the graph, then it is a \define{spanning tree}.
@@ -65,8 +62,18 @@ A graph may have many spanning trees, but we are particularly interested in
 weight of the tree.
 \end{solution}
 
-\part Run Kruskal's Algorithm to find the minimum spanning tree.
-\begin{solution}[1in]
+\part One algorithm to find a minimum spanning tree is Kruskal's algorithm.
+\begin{enumerate}
+\item Sort all the edges by increasing order of their weight.
+\item Pick the smallest edge and check if it forms a cycle with the spanning
+tree so far. If it doesn't form a cycle, add this edge to the spanning tree.
+\item Repeat the previous step until there are $|V| - 1$ edges in the spanning
+tree, where $|V|$ is the number of vertices in the graph.
+\end{enumerate}
+
+Run Kruskal's Algorithm to find a minimum spanning tree.
+
+\begin{solution}
 \begin{center}
 \begin{tikzpicture}[scale=0.15]
 \tikzstyle{every node}+=[inner sep=0pt]
@@ -98,6 +105,9 @@ weight of the tree.
 \draw (49.5,-30) node [left] {$1$};
 \end{tikzpicture}
 \end{center}
+
+\textbf{Meta}: Draw only the nodes and add the edges that are part of the MST
+as you walk through the problem. Labeling all the edges would take a long time,
+and erasing is confusing and complicated.
 \end{solution}
 \end{parts}
-\end{blocksection}
