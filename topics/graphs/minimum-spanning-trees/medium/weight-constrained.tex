@@ -1,10 +1,10 @@
 \begin{blocksection}
-\question Briefly describe an efficient algorithm (and report the running time)
-for finding a minimum spanning tree in an undirected, connected graph
-$G = (V, E)$ when the edge weights satisfy:
+\question Briefly describe an efficient algorithm and the runtime for finding a
+minimum spanning tree in an undirected, connected graph $G = (V, E)$ when the
+edge weights satisfy:
 
 \begin{parts}
-\part For all $e \in E$, $w_e = 1$.
+\part For all $e \in E$, $w_e = 1$. (All edge weights are 1.)
 \begin{solution}[1.5in]
 The key idea here is that any tree which connects all nodes is an MST. We can
 run DFS and take the DFS tree. You could also take a BFS tree, or run Prim's
@@ -13,8 +13,8 @@ equivalent to BFS/DFS). The runtime of this algorithm is in
 $\Theta(|V| + |E|) \in \Theta(|E|)$ for simple graphs.
 \end{solution}
 
-\part For all $e \in E$, $w_e \in \{1, 2\}$. (In other words, all edge weights
-are either 1 or 2.)
+\part For all $e \in E$, $w_e \in \{1, 2\}$. (All edge weights are either 1 or
+2.)
 \begin{solution}[1.5in]
 Run Prim's algorithm with a specialized priority queue, comprised of 2 regular
 queues. When we add items to the priority queue, we add it to the first queue

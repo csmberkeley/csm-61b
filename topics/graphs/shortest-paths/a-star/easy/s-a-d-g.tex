@@ -1,15 +1,14 @@
-\begin{blocksection}
-\question Here, a \textbf{heuristic} is an educated guess of the distance from the node to the goal. For example, for node $S$, we see that $h=6$.  This means that it is estimated that $S$ is 6 units away from $G$. 
-
-Find the path from the start, $S$, to the goal, $G$, when running
+\question Find the path from the start, $S$, to the goal, $G$, when running
 each of the following algorithms.
+
+The \define{heuristic}, $h$, estimates the distance from each node to the goal.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.15]
 \tikzstyle{every node}+=[inner sep=0pt]
 \draw (60,-15) circle (3);
 \draw (60,-15) node {$E$};
-\draw (65,-18) node {\footnotesize $h = 1$};
+\draw (66.5,-15) node {\footnotesize $h = 1$};
 \draw (10,-30) circle (3);
 \draw (10,-30) node {$S$};
 \draw (15,-33) node {\footnotesize $h = 6$};
@@ -49,19 +48,25 @@ each of the following algorithms.
 \draw (58,-30) -- (67,-30);
 \fill (67,-30) -- (66.2,-29.5) -- (66.2,-30.5);
 \draw (62.5,-29.5) node [above] {$2$};
+\draw (61.66,-17.5) -- (68.34,-27.5);
+\fill (68.34,-27.5) -- (68.31,-26.56) -- (67.48,-27.12);
+\draw (64.39,-23.83) node [left] {$1$};
 \end{tikzpicture}
 \end{center}
 
 \begin{solution}
 Note that uniform cost search and greedy search are not a part of the course.
 The algorithms for all 3 of these searches are extremely similar, the only
-difference being the priority given to a key and whether or not we need the
-cumulative distance to a vertex.
+difference being the priority given to each node and whether or not we need to
+keep track of the cumulative distance to a vertex.
 \end{solution}
 
 \begin{parts}
-\part Uniform cost search is the same as Dijkstra's, except that you stop the procedure once you reach your goal state.  
-Which path does uniform cost search return?
+\part Which path does uniform cost search return?
+
+\define{Uniform cost search} is the same as Dijkstra's, except that the search
+stops once we visit the goal state.
+
 \begin{solution}[1in]
 $S - A - D - G$
 
@@ -69,24 +74,32 @@ From the starting node, choose the path that has the least cost, go to that
 node, and repeat until we reach the goal node. We choose the lowest
 \emph{backward cost}.
 
-Note that this is very similar to Dijkstra's, just a little more general. We
-keep a priority-queue fringe that keeps track of paths. At each step, we remove
-the shortest path from the fringe and add its children to the fringe, trying
-all paths in increasing cost order until we reach G.
+We keep a priority-queue fringe that keeps track of paths. At each step, we
+remove the shortest path from the fringe and add its children to the fringe,
+trying all paths in increasing cost order until we reach $G$.
 \end{solution}
 
-\part In greedy search, we ignore edge weights and only consider the heuristics to decide which node to go to next.  Just a note, we don't add heuristics together because they are an estimate of the distance to the goal.
-Which path does greedy search return?
+\part Which path does greedy search return?
+
+In \define{greedy search}, we ignore edge weights entirely and only use the
+heuristic to decide which node to visit next.
+
 \begin{solution}[1in]
-$S - A - E - D - G$ 
+$S - A - E - D - G$
 
 From the starting node, travel to the next node with the lowest value returned
 by the heuristic function until we reach the goal node. We choose the path with
 the lowest \emph{forward cost}.
+
+Note that, unlike UCS or Dijkstra's, we don't add heuristics together because
+they already estimate the distance to the goal.
 \end{solution}
 
-\part A* is an algorithm that uses both heuristics and edge weights to find the shortest path to a goal.  For A* to work, heuristics must be an underestimate of the true distance to the goal.  
-Which path does A* search return?
+\part Which path does A* search return?
+
+\define{A* search} is an algorithm that combines the total distance from the
+start with the heuristic to optimize the search procedure.
+
 \begin{solution}[1in]
 $S - A - D - G$
 
@@ -94,6 +107,12 @@ At each node, we choose the next node that has the lowest sum of the path cost
 and $h(\cdot)$ value. This is essentially uniform cost search and greedy search
 combined.
 
+For A* to work, heuristics must be \emph{admissible} and \emph{consistent}.
+
+\begin{itemize}
+\item Admissible heuristics underestimate the true distance to the goal.
+\item Consistent heuristics require that the difference in heuristic values
+between two nodes cannot be greater than the true distance between the two.
+\end{itemize}
 \end{solution}
 \end{parts}
-\end{blocksection}
