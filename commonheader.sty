@@ -21,18 +21,25 @@
 \usepackage{algorithm}
 \usepackage{algorithmicx}
 \usepackage[noend]{algpseudocode}
-\usepackage{amsfonts}
-\usepackage{amsmath}
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage{bm}
+\usepackage{color}
 \usepackage{comment}
+\usepackage{enumerate}
 \usepackage{fancybox}
+\usepackage{fix-cm}
+\usepackage{float}
 \usepackage{fullpage}
 \usepackage{graphicx}
-\usepackage[colorlinks]{hyperref}
+\usepackage[pdftex,colorlinks]{hyperref}
 \usepackage{import}
 \usepackage{listings}
+\usepackage{multicol}
+\usepackage{multirow}
 \usepackage{paralist}
 \usepackage{parskip}
 \usepackage{tabularx}
+\usepackage[calcwidth]{titlesec}
 \usepackage{upquote}
 \usepackage{verbatim}
 \usepackage{wasysym}
@@ -51,31 +58,30 @@
 
 % Course information
 \def\coursenumber{CSM 61B}
-\def\semester{Fall 2017}
+\def\semester{Spring 2018}
 % Provide discnum and disctitle
 \newcommand{\discnumber}[1]{\newcommand{\discnum}{#1}}
 \def\title#1{\gdef\@title{#1}\gdef\disctitle{#1}}
 
-% Provide "Extra" section text
-\newcommand{\extra}[1]{#1 \large\textit{Extra Practice}}
-\newcommand{\midterm}[1]{#1 \textit{Midterm Question}}
+% Provide "Extra for Experts" section text
+\newcommand{\extra}[1]{#1 \large\textit{Extra}}
 
 % Configuring the header and footer
 \pagestyle{head}
 \runningheader{
- \oddeven{}{\thepage \quad \textit{\disctitle}}}
+ \oddeven{}{\small{\thepage \qquad \textit{\disctitle}}}}
  {}
- {\oddeven{\textit{\disctitle} \quad \thepage}{}
+ {\oddeven{\small{\textit{\disctitle} \qquad \thepage}}{}
 }
 
 % Define formatting
-\textheight=9.5in
+\textheight=9.25in
 \textwidth=5in
-\voffset=-0.5in
-\hoffset=-0.25in
+\voffset=-0.25in
+\hoffset=0in
 \headsep=1em
 \marginparsep=1em
-\marginparwidth=2in
+\marginparwidth=1.5in
 \footskip=2em
 \renewcommand{\baselinestretch}{1.2}
 \font\dunhd=cmdunh10 scaled \magstep5
@@ -99,24 +105,30 @@
  {\dunhb \hfill \disctitle}
  \vskip 0em
  \makebox[1.6in][l]{\dunhb \semester}
- {\dunhb \hfill \dunhs \ifdefined\discnum Mentoring \discnum: \fi\@date}
+ {\dunhb \hfill \dunhs \ifdefined\discnum Discussion \discnum: \fi\@date}
  \vskip 0.75em
  \hrule height1pt width\textwidth \par \vskip 0.5em
 }
 
+% Define notes
+\newcommand{\notes}{
+ \marginpar{
+  \vspace{-1em}
+  \textit{Notes}
+ }
+}
+
 % Define section and subsection styles
-\def\section{\@startsection{section}{1}{\z@}
-{-3.0ex plus -.6ex minus -.2ex}{1.3ex plus .1ex}{\dunhb}}
-\def\subsection{\@startsection{subsection}{2}{\z@}
-{-1.6ex plus -.5ex minus -.1ex}{0.9ex plus .1ex}{\dunha}}
+\titleformat{\section}{\dunha}{\thesection}{1em}{}[\vspace{-0.5em}]
+\titleformat{\subsection}{\dunhb}{\thesubsection}{1em}{}[\vspace{-0.5em}]
 
 % Define questions listings
 \renewcommand{\questionshook}{
  \setlength{\leftmargin}{0in}
- \setlength{\labelwidth}{0.2in}
+ \setlength{\labelwidth}{0.3in}
 }
-\renewcommand{\thequestion}{\thesection.\arabic{question}}
-\renewcommand{\questionlabel}{\scriptsize\thequestion\hfill}
+\renewcommand{\questionlabel}
+{\fbox{\scriptsize\thesection.\thequestion}\hfill}
 
 \long\def\@makecaption#1#2{
  \vskip 10pt
@@ -165,11 +177,15 @@ to\hsize{\hfil\box\@tempboxa\hfil}
 % Define lstlisting styles
 \lstset{language=Java,
         basicstyle=\ttfamily,
+        numberstyle=\ttfamily\scriptsize,
+        numbers=left,
+        numbersep=4ex,
         showstringspaces=false,
         breaklines=true,
         linewidth=7in,
         keepspaces=true,
         columns=fullflexible,
+        belowskip=0pt,
 }
 
 % Creates a minipage environment, which can be used to section off text so that
@@ -242,3 +258,5 @@ to\hsize{\hfil\box\@tempboxa\hfil}
 \def\>{\right\rangle}
 % For lemmas
 \newtheorem{lemma}{Lemma}
+% For theorems
+\newtheorem{theorem}{Theorem}

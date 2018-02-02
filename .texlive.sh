@@ -38,28 +38,33 @@ tlmgr install --no-depends fontspec
 
 # Add contrib packages for building commonheader.sty
 tlmgr install \
-    exam \
     algorithms \
     algorithmicx \
+    amscls \
     amsfonts \
     amsmath \
     cm-super \
     comment \
     ec \
     enumitem \
+    exam \
     fancybox \
     float \
+    graphics \
     hyperref \
     ifxetex \
     import \
     listings \
     lm \
     lm-math \
+    multirow \
     paralist \
     parskip \
     pgf \
     preprint \
     tikz-qtree \
+    titlesec \
+    tools \
     upquote \
     url \
     wasy \
