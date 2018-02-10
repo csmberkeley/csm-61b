@@ -1,6 +1,8 @@
+\question
 \begin{blocksection}
-\question A normal generic linked list contains objects of only one type. But
+A normal generic linked list contains objects of only one type. But
 we can imagine a generic linked list where entries alternate between two types.
+\end{blocksection}
 
 \begin{lstlisting}
 public class AltList<X,Y> {
@@ -32,16 +34,12 @@ should be non-destructive: it should not modify the original
 \lstinline$AltList$ instance. Assume that the list has an even, non-zero
 length.
 
-For example, calling \lstinline$pairsSwapped()$ on the list \lstinline$[5, cat,
-10, dog]$ should yield the list \lstinline$[cat, 5, dog, 10]$.
+For example, calling \lstinline$pairsSwapped()$ on the list \lstinline$[5, cat, 10, dog]$ should yield the list \lstinline$[cat, 5, dog, 10]$.
 
 \ifprintanswers\else
 \begin{lstlisting}
 public class AltList<X,Y> {
-    public                 pairsSwapped() {
-
-
-
+    public pairsSwapped() {
 
 
 
@@ -68,4 +66,3 @@ public class AltList<X,Y> {
 }
 \end{lstlisting}
 \end{solution}
-\end{blocksection}
