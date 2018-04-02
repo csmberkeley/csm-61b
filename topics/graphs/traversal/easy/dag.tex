@@ -1,7 +1,7 @@
 \begin{blocksection}
-\question Consider the following directed graph. Break ties numerically from
+\question Consider the following traversals on this directed graph. Break ties numerically from
 least to greatest. For example, when iterating through the edges pointing from
-vertex $5$, consider the edge $(5,3)$ before the others.
+vertex $5$, 'traverse' the edge $(5, 3)$ first (i.e. remove it from \emph{fringe} first.) If the traversal terminates without completing all vertices (there is some unvisited vertex), then continue by initiating a new traversal from the numerically smallest unvisited vertex.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.15]
@@ -63,6 +63,7 @@ vertex $5$, consider the edge $(5,3)$ before the others.
 \begin{verbatim}
 0, 4, 1, 2, 3, 5, 6, 7, 8
 \end{verbatim}
+Meta: It might not be obvious how we traverse the edges in correct tie-breaking order. For example, it might seem like if at $5$ we push $6$, then $7$ onto the stack, the first node to be popped off should be 7. This would create the order $\ldots 5, 7, 6 \ldots$. In order to get the desired order, we must actually push onto the stack in \emph{reverse} numerical order, so that they are popped off in numerical order.
 \end{solution}
 
 \part Give the depth-first \emph{post-order} traversal of the graph.
