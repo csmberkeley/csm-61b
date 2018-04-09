@@ -1,38 +1,33 @@
 \documentclass[11pt]{exam}
 \usepackage{../commonheader}
 
-\discnumber{11}
-\title{Balanced Search}
-\date{November 6, 2017}
+\discnumber{13}
+\title{Graph Algorithms}
+\date{April 11, 2018}
 
 \begin{document}
 \maketitle
 
-\section{Unbalanced Trees}
+\section{Shortest Paths}
 \begin{questions}
-\subimport{../topics/trees/binary-search-trees/easy/}{bst-valid-balanced.tex}
-\subimport{../topics/trees/}{runtime.tex}
-\end{questions}
-
-\section{2-3-Forever}
-\marginpar{\subimport{../topics/trees/balanced-search-trees/}{example-2-3-tree.tex}}
-\begin{questions}
-\subimport{../topics/trees/balanced-search-trees/easy/}{2-3-tree-insertion.tex}
-\subimport{../topics/trees/balanced-search-trees/easy/}{2-3-tree-to-llrb.tex}
-\end{questions}
-
-\section{New World Order}
-\begin{questions}
-\subimport{../topics/trees/tries/easy/}{hieyllo.tex}
-\subimport{../topics/trees/tries/easy/}{prefix.tex}
-\subimport{../topics/trees/tries/medium/}{newspaper.tex}
+\subimport{../topics/graphs/shortest-paths/a-star/easy/}{s-a-d-g-revised.tex}
 \end{questions}
 
 \clearpage
 
-\section{\extra{Sorting Mechanics}}
+\section{Networking}
 \begin{questions}
-\subimport{../topics/sorting/hard/}{sorting-mechanics.tex}
+\subimport{../topics/graphs/minimum-spanning-trees/easy/}{network.tex}
+\end{questions}
+
+\clearpage
+
+\section{\extra{Algorithms}}
+\subimport{../topics/graphs/text/}{algorithms.tex}
+\begin{questions}
+\subimport{../topics/graphs/search/medium/}{greedy-dfs.tex}
+\subimport{../topics/graphs/minimum-spanning-trees/medium/}{weight-constrained.tex}
+\subimport{../topics/graphs/shortest-paths/dijkstras/hard/}{bfs-dijkstras.tex}
 \end{questions}
 
 \end{document}
