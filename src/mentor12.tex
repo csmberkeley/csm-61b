@@ -1,39 +1,48 @@
 \documentclass[11pt]{exam}
 \usepackage{../commonheader}
 
-\discnumber{12}
-\title{Graphs \& Searches}
-\date{November 13, 2017}
+\discnumber{10}
+\title{Sorting Algorithms}
+\date{18 April, 2018}
 
 \begin{document}
 \maketitle
 
-\section{Tree Traversal}
-\marginpar{\subimport{../topics/trees/binary-trees/}{code.tex}}
-\subimport{../topics/trees/binary-trees/text/}{fringe.tex}
+\section{Asymptotics Potpourri}
+\subimport{../topics/sorting/text/}{stability.tex}
+\subimport{../topics/sorting/runtime/}{comparison-based.tex}
+
+\section{QuickCo}
+\subimport{../topics/sorting/quickco/text/}{quickco.tex}
 \begin{questions}
-\subimport{../topics/trees/binary-trees/medium/}{traversals.tex}
+\subimport{../topics/sorting/quickco/easy/}{worst-case-pivot.tex}
+\subimport{../topics/sorting/quickco/easy/}{worst-case-input.tex}
+\subimport{../topics/sorting/quickco/easy/}{runtime.tex}
+\subimport{../topics/sorting/quickco/easy/}{why-quicksort.tex}
 \end{questions}
 
-\section{Graph Traversal}
-\subimport{../topics/graphs/traversal/}{pseudocode.tex}
+\section{Vertigo}
 \begin{questions}
-\subimport{../topics/graphs/traversal/easy/}{dag.tex}
+\subimport{../topics/sorting/medium/}{inversions.tex}
 \end{questions}
 
 \clearpage
 
-\section{Searches}
+\section{Getting to Know You}
 \begin{questions}
-\subimport{../topics/graphs/search/medium/}{searches.tex}
+\subimport{../topics/sorting/medium/}{dna-sorting.tex}
+\subimport{../topics/sorting/medium/}{need-radix.tex}
+\subimport{../topics/sorting/medium/}{lsd.tex}
 \end{questions}
 
-\section{\extra{Elephants}}
-\subimport{../topics/graphs/elephants/text/}{elephants.tex}
-\marginpar{\subimport{../topics/graphs/elephants/text/}{puzzle.tex}}
+\section{\extra{More Asymptotics Potpourri}}
+\subimport{../topics/sorting/runtime/}{counting.tex}
+
+\section{\extra{Berkeley Bytes Buffet}}
+\subimport{../topics/sorting/berkeley-bytes/text/}{berkeley-bytes-buffet.tex}
 \begin{questions}
-\subimport{../topics/graphs/elephants/easy/}{bfs-or-dfs.tex}
-\subimport{../topics/graphs/elephants/medium/}{solve.tex}
+\subimport{../topics/sorting/berkeley-bytes/easy/}{age-sort.tex}
+\subimport{../topics/sorting/berkeley-bytes/easy/}{radix-sort.tex}
 \end{questions}
 
 \end{document}
