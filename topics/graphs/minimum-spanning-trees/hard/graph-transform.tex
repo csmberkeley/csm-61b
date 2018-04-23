@@ -1,0 +1,9 @@
+\begin{blocksection}
+\question You are the king of a large kingdom! In order to manage your kingdom, you have appointed lords to rule towns within your kingdom. Every lord can govern over his town and any town that he is connected to by road. Your job as king is to figure out the optimal way to allocate lords and build roads.
+
+Formally, consider a graph $G$ with vertices $V$ and edges $E$. Each vertex $v$ represents a town. It has an associated cost $c$, the cost of installing a lord in the town. Each edge $e$ represents a potential road. It has an edge weight $w$, the cost of building that road. Devise an algorithm that can efficiently compute which towns to install lords in and which roads to build, such that every town in the kingdom is governed (either has a lord in it or is connected by some number of roads to a town with a lord in it).
+
+\begin{solution}[1.5in]
+  We can formulate this problem as a Minimum Spanning Tree problem. We create a dummy node $S$. We connect $S$ to every vertex with edge weight $c$, the cost of that vertex. We then find the MST of this modified graph, and that is the solution. Why does this method work? We know that the MST must include $S$, by definition of spanning tree. Every edge in te MST that is outgoing from $S$ represents a selected town. In the MST, every vertex is either directly connected to $S$, i.e. a town with a lord, or connected to $S$ by a series of selected edges, i.e. connected to some town with a lord via some roads. Since the MST finds the minimum cost solution, this is our desired arrangement of lords and roads
+\end{solution}
+\end{blocksection}
