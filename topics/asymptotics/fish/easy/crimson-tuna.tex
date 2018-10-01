@@ -22,5 +22,18 @@ $O(N)$. This function returns after it reaches the fourth row (and if there are
 less than four rows it returns immediately). The number of elements it's able
 to reach in four rows is dependent on the number of columns, which in this case
 is $N$.
+
+Note: The reason we provide an $O$ bound and not a $\Theta$ bound here is that
+there are three cases where the size of the input gets large:
+
+1. $M$ approaches infinity, $N$ is small
+2. $N$ approaches infinity, $M$ is small
+3. $M$ and $N$ both approach infinity
+
+If all three cases have the same $\Omega$ and $O$ bound then we can write a
+$\Theta$ bound for this problem. However, if we consider case 1, we can see
+that if N < 4, then the function will return immediately after the first
+if statement. Thus not all three cases have the same  $\Omega$ and $O$ bound,
+so we can only provide an $O$ bound for the runtime.
 \end{solution}
 \end{blocksection}
