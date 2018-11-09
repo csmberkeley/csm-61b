@@ -47,6 +47,7 @@ tlmgr install \
     comment \
     ec \
     enumitem \
+    etoolbox \
     fancybox \
     float \
     hyperref \
