@@ -4,57 +4,44 @@ would cause an error, determine if it is a compile-error or runtime-error.
 
 \begin{lstlisting}
 class Dog {
-    void bark(Dog dog) {
+    void bark(Dog d) {
         System.out.println("bark");
     }
 }
 
 class Poodle extends Dog {
-    void bark(Dog dog) {
+    void bark(Dog d) {
         System.out.println("woof");
     }
-    void bark(Poodle poodle) {
+    void bark(Poodle p) {
         System.out.println("yap");
     }
-    void play(Dog dog) {
+    void play(Dog d) {
         System.out.println("no");
     }
-    void play(Poodle poodle) {
+    void play(Poodle p) {
         System.out.println("bowwow");
     }
     public static void main(String[] args) {
-        Dog dog = new Poodle();
-        Poodle poodle = new Poodle();
+        Dog dan = new Poodle();
+        Poodle pym = new Poodle();
 \end{lstlisting}
-
 \ifprintanswers\else
 \begin{lstlisting}
-        dog.play(dog)
-        dog.play(poodle)
-        poodle.play(dog)
-        poodle.play(poodle)
-
-        poodle.bark(dog)
-        poodle.bark(poodle)
-        dog.bark(dog)
-        dog.bark(poodle)
+        1) dan.play(dan)                        5) pym.bark(dan)
+        2) dan.play(pym)                        6) pym.bark(pym)
+        3) pym.play(dan)                        7) dan.bark(dan)
+        4) pym.play(pym)                        8) dan.bark(pym)
 \end{lstlisting}
 \fi
-
 \begin{solution}
 \begin{lstlisting}
-        dog.play(dog)         // Compile-error
-        dog.play(poodle)      // Compile-error
-        poodle.play(dog)      // no
-        poodle.play(poodle)   // bowwow
-
-        poodle.bark(dog)      // woof
-        poodle.bark(poodle)   // yap
-        dog.bark(dog)         // woof
-        dog.bark(poodle)      // woof
+        1) dan.play(dan)   // Compile-error     5) pym.bark(dan)   // woof
+        2) dan.play(pym)   // Compile-error     6) pym.bark(pym)   // yap
+        3) pym.play(dan)   // no                7) dog.bark(dog)   // woof
+        4) pym.play(pym)   // bowwow            8) dog.bark(pym)   // woof
 \end{lstlisting}
 \end{solution}
-
 \begin{lstlisting}
     }
 }
