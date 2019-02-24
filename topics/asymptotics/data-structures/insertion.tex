@@ -1,0 +1,36 @@
+\begin{blocksection}
+\question Insertion of one element into each of the following data structures
+where $N$ is the number of elements already in the collection.
+
+\begin{parts}
+\part \lstinline$ArrayList$
+\begin{solution}
+$\Omega(1)$ if there is enough space, $O(N)$ if a resize is needed.
+\end{solution}
+
+\part \lstinline$LinkedList$
+\begin{solution}
+$\Theta(1)$.
+\end{solution}
+
+\part \lstinline$BSTMap$ (binary search tree)
+\begin{solution}
+$\Omega(1)$, $O(N)$ if the tree is spindly.
+\end{solution}
+
+\part \lstinline$TreeSet$ (balanced search tree)
+\begin{solution}
+$\Theta(\log N)$ since the tree is always bushy.
+\end{solution}
+
+\part \lstinline$HashSet$
+\begin{solution}
+$\Omega(1)$ in the ideal case, $O(N)$ if there are many collisions since we
+need to scan for possible duplicates.
+
+Note that if the keys implement \lstinline$Comparable$, the upper bound is
+reduced to $O(\log N)$ since Java's implementation converts long external
+chains to balanced search trees.
+\end{solution}
+\end{parts}
+\end{blocksection}

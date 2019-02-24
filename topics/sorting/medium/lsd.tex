@@ -1,0 +1,20 @@
+\begin{blocksection}
+\question Why does Least-Significant Digit radix sort work?
+
+\begin{solution}[1in]
+The key is to maintain stability during sorting. If we make sure that at each
+step we sort stably, then the following proof explains why LSD sort works.
+
+Consider the final step of the algorithm, where we are sorting the first digit.
+
+If two strings differ on the first character, then their ordering will now be
+fixed, and since the previous steps of the algorithm relatively sorted the rest
+of the string, the ordering will be fully correct.
+
+If two strings do not differ on the first character, e.g., we having $CAT$ and
+$CBX$, we know that $CAT$ would appear before $CBX$ because of the previous
+steps. All we have to ensure is that this final step doesn't change the
+ordering of $CAX$ and $CBX$. This will be ensured, since we make sure we sort
+stably.
+\end{solution}
+\end{blocksection}

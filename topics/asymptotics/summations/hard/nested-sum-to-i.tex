@@ -1,0 +1,15 @@
+\question $\displaystyle\sum_{i = 0}^{N} \sum_{j = 0}^{i} j$
+\begin{solution}[2in]
+\begin{align*}
+\sum_{i = 0}^{N} \sum_{j = 0}^{i} j
+&= \sum_{i = 0}^{N} \frac{i(i + 1)}{2} \\
+&< N\frac{N(N + 1)}{2} \\
+&\in O(N^3) \\
+\sum_{i = 0}^{N} \sum_{j = 0}^{i} j
+&= \sum_{i = 0}^{N} \frac{i(i + 1)}{2} \\
+&> \sum_{i = \frac{N}{2}}^{N} \frac{i(i + 1)}{2} \\
+&> \frac{N}{2}\Bigg(\frac{\frac{N}{2}(\frac{N}{2} + 1)}{2}\Bigg) \\
+&\in \Omega(N^3) \\
+O(N^3), \enspace \Omega(N^3) &\implies \Theta(N^3)
+\end{align*}
+\end{solution}

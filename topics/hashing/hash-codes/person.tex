@@ -1,0 +1,19 @@
+\question \begin{lstlisting}
+class Person {
+    Long id;
+    String name;
+    Integer age;
+    public int hashCode() {
+        return id.hashCode() + name.hashCode() + age.hashCode();
+    }
+    public boolean equals(Object o) {
+        Person p = (Person) o;
+        return p.id == id;
+    }
+}
+\end{lstlisting}
+
+\begin{solution}[0.25in]
+Incorrect: Persons that are \lstinline$equals()$ do not necessarily have the
+same \lstinline$hashCode()$.
+\end{solution}

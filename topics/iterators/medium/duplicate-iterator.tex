@@ -1,0 +1,76 @@
+\question Fill out \lstinline$DuplicateIterator$ so that it works as used in
+the example main method. When given two sorted input iterators, the
+\lstinline$DuplicateIterator$ returns the elements that are within both
+iterators.  Assume that \lstinline$findNextElement$ is correctly implemented.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public class DuplicateIterator<T extends Comparable<? super T>> implements Iterator<T> {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /** Sets the nextElement instance variable to the next duplicate element
+      * (or null if there is no remaining duplicate element). */
+    private void findNextElement() { ... }
+
+    public static void main(String[] args) {
+        Iterator<Integer> iter1 = Arrays.asList(1, 2, 4, 5, 6, 9).iterator();
+        Iterator<Integer> iter2 = Arrays.asList(1, 2, 3, 5, 7, 10).iterator();
+        DuplicateIterator<Integer> di = new DuplicateIterator<>(iter1, iter2);
+        di.forEachRemaining(o -> System.out.print(o.toString() + " ")); // 1 2 5
+    }
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class DuplicateIterator<T extends Comparable<? super T>> implements Iterator<T> {
+    private Iterator<T> iter1, iter2;
+    private T nextElement = null;
+
+    public DuplicateIterator(Iterator<T> iter1, Iterator<T> iter2) {
+        this.iter1 = iter1;
+        this.iter2 = iter2;
+        findNextElement();
+    }
+    public boolean hasNext() {
+        return nextElement != null;
+    }
+    public T next() {
+        T next = nextElement;
+        findNextElement();
+        return next;
+    }
+
+    /** Sets the nextElement instance variable to the next duplicate element
+      * (or null if there is no remaining duplicate element). */
+    private void findNextElement() { ... }
+
+    public static void main(String[] args) {
+        Iterator<Integer> iter1 = Arrays.asList(1, 2, 4, 5, 6, 9).iterator();
+        Iterator<Integer> iter2 = Arrays.asList(1, 2, 3, 5, 7, 10).iterator();
+        DuplicateIterator<Integer> di = new DuplicateIterator<>(iter1, iter2);
+        di.forEachRemaining(o -> System.out.print(o.toString() + " ")); // 1 2 5
+    }
+}
+\end{lstlisting}
+\end{solution}

@@ -1,0 +1,18 @@
+\question Write an expression equivalent to \texttt{x * 35} without using \texttt{*}, \texttt{/}, or \texttt{\%}.
+
+\ifprintanswers\else
+\begin{lstlisting}
+static int times35(int x) {
+
+    return
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+static int times35(int x) {
+    return (x << 5) + (x << 2) + x;
+}
+\end{lstlisting}
+\end{solution}

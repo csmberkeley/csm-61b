@@ -1,0 +1,33 @@
+\begin{blocksection}
+\question Draw the trie that results from inserting \lstinline$"hi"$,
+\lstinline$"hello"$, and \lstinline$"hey"$.
+
+\begin{solution}[1.5in]
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=30pt]
+\node[vertex]{}
+child {
+    node[vertex]{\lstinline$h$}
+    child {
+        node[vertex]{\lstinline$e$}
+        child[sibling distance=10mm] {
+            node[vertex]{\lstinline$l$}
+            child {
+                node[vertex]{\lstinline$l$}
+                child {
+                    node[vertex]{\lstinline$o$}
+                }
+            }
+        }
+        child {
+            node[vertex]{\lstinline$y$}
+        }
+    }
+    child {
+        node[vertex]{\lstinline$i$}
+    }
+};
+\end{tikzpicture}
+\end{center}
+\end{solution}
+\end{blocksection}

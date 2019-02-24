@@ -1,0 +1,24 @@
+\begin{blocksection}
+\question For each of the following, state the order of growth using
+$\Theta(\cdot)$ notation. For example, $f(n) \in \Theta(n)$.
+
+\ifprintanswers\else
+\begin{parts}
+\part $f(n) = 50$
+\part $f(n) = n^2 - 2n + 3$
+\part $f(n) = n + \cdots + 2 + 1$
+\part $f(n) = n^{100} + 1.01^n$
+\part $f(n) = n^{1.1} + n \log n$
+\end{parts}
+\fi
+
+\begin{solution}
+\begin{parts}
+\part $f(n) = 50$ $\implies$ $f(n) \in \Theta(1)$
+\part $f(n) = n^2 - 2n + 3$ $\implies$ $f(n) \in \Theta(n^2)$
+\part $f(n) = n + \cdots + 2 + 1$ $\implies$ $f(n) \in \Theta(n^2)$
+\part $f(n) = n^{100} + 1.01^n$ $\implies$ $f(n) \in \Theta(1.01^n)$
+\part $f(n) = n^{1.1} + n \log n$ $\implies$ $f(n) \in \Theta(n^{1.1})$
+\end{parts}
+\end{solution}
+\end{blocksection}

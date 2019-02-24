@@ -1,0 +1,28 @@
+\question For each pivot selection strategy below, what is the best, average and worst case runtime?
+
+\begin{solution}
+The best case and average case runtime for quicksort in each scenario is still in $\Theta(N \log N)$.
+\end{solution}
+
+\begin{parts}
+\part Always choose the first value in the list.
+\begin{solution}[2in]
+If we always select the first value as a pivot, the values in the list will determine the runtime. If we have a sorted or reverse sorted array, selecting the first value will only reduce the problem size by a single value during each call: we essentially have selection sort! The runtime in this worst-case scenario is $\Theta(N^2)$.
+
+But if the values in the list are randomly shuffled, then choosing the first value not degrade into the worst-case runtime.
+\end{solution}
+
+\part Always find and choose the median value in the list. Assume finding the median takes $O(N)$ time where $N$ is the length of the list.
+\begin{solution}[2in]
+The worst case runtime in this scenario will be in $\Theta(N \log N)$ including the time to find the median (which can be found in linear time using the median of medians algorithm). In reality, the additional cost associated with finding the median is usually not worth it over simply selecting a random value.
+
+Even though median-finding takes linear time, quicksort normally needs to spend linear time bucketing values into less-than, equal-to, and greater-than buckets anyways so the asymptotic runtime is not affected.
+\end{solution}
+
+\part Always choose a random pivot.
+\begin{solution}[2in]
+It is possible for this to degrade to $\Theta(N^2)$ runtime in the worst case as well. If we pick a random pivot from an array we have a $\frac{1}{N}$ probability of selecting the smallest value and, after that, a $\frac{1}{N-1}$ of selecting the next smallest, and so forth. The total probability of selecting the smallest value every time is $\frac{1}{N!}$.
+
+Although it is possible for for quicksort to run in $\Theta(N^2)$, it becomes less and less probable as $N$, or the size of the list, increases.
+\end{solution}
+\end{parts}

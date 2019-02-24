@@ -1,0 +1,88 @@
+\question Given a trie containing the dictionary of words, define a procedure, \texttt{getWords}, that returns the set of matching words for a given key-press sequence.
+
+\begin{lstlisting}
+public interface TrieNode {
+    public char getCharacter();
+    public boolean isWord();
+    public String getWord();
+    public Map<Character,TrieNode> getChildren();
+}
+\end{lstlisting}
+
+\ifprintanswers\else
+\begin{lstlisting}
+public class T9 {
+    private static char[][] KEY_MAPPINGS = {
+        {}, {}, // keys 0 and 1 don't map to any characters
+        {'a', 'b', 'c'},
+        {'d', 'e', 'f'},
+        {'g', 'h', 'i'},
+        {'j', 'k', 'l'},
+        {'m', 'n', 'o'},
+        {'p', 'q', 'r', 's'},
+        {'t', 'u', 'v'},
+        {'w', 'x', 'y', 'z'}
+    };
+    public static Set<String> getMatches(int[] keyPresses, TrieNode words) {
+        return getMatches(keyPresses, words, 0);
+    }
+    private static Set<String> getMatches(int[] keyPresses, TrieNode wordNode, int index) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class T9 {
+    private static char[][] KEY_MAPPINGS = {
+        {}, {}, // keys 0 and 1 don't map to any characters
+        {'a', 'b', 'c'},
+        {'d', 'e', 'f'},
+        {'g', 'h', 'i'},
+        {'j', 'k', 'l'},
+        {'m', 'n', 'o'},
+        {'p', 'q', 'r', 's'},
+        {'t', 'u', 'v'},
+        {'w', 'x', 'y', 'z'}
+    };
+    public static Set<String> getMatches(int[] keyPresses, TrieNode words) {
+        return getMatches(keyPresses, words, 0);
+    }
+    private static Set<String> getMatches(int[] keyPresses, TrieNode wordNode, int index) {
+        Set<String> matches = new HashSet<String>();
+        if (index == keyPresses.length) {
+            if (wordNode.isWord()) {
+                matches.add(wordNode.getWord());
+            }
+            return matches;
+        }
+        Map<Character,TrieNode> children = wordNode.getChildren();
+        for (Character c : KEY_MAPPINGS[keyPresses[index]])) {
+            if (children.containsKey(c)) {
+                matches.addAll(getMatches(keyPresses, children.get(c), index + 1));
+            }
+        }
+        return matches;
+    }
+}
+\end{lstlisting}
+\end{solution}

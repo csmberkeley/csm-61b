@@ -1,0 +1,69 @@
+\begin{blocksection}
+\question Define the \lstinline$solve$ method in \lstinline$PicturePuzzle$
+which returns the board \lstinline$State$ that is the solution with the least
+number of moves away from a given starting \lstinline$State$.
+
+\begin{lstlisting}
+public interface State {
+    public Set<State> getNextStates();
+    public boolean isGoal();
+}
+\end{lstlisting}
+
+\ifprintanswers\else
+\begin{lstlisting}
+public class PicturePuzzle {
+    public static State solve(State state) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class PicturePuzzle {
+    public static State solve(State startState) {
+        Set<State> seen = new HashSet<>();
+        Queue<State> nextStates = new LinkedList<>();
+        seen.add(startState);
+        nextStates.add(startState);
+        while (!nextStates.isEmpty()) {
+            State currentState = nextStates.remove();
+            if (currentState.isGoal()) {
+                return currentState;
+            }
+            for (State nextState : currentState.getNextStates()) {
+                if (!seen.contains(nextState)) {
+                    seen.add(nextState);
+                    nextStates.add(nextState);
+                }
+            }
+        }
+        return null;
+    }
+}
+\end{lstlisting}
+\end{solution}
+\end{blocksection}

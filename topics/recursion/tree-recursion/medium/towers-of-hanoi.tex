@@ -1,0 +1,68 @@
+\question A classic puzzle called the Towers of Hanoi is a game that consists of three rods, and a number of disks of different sizes which can slide onto any rod. The puzzle starts with \texttt{n} disks in a neat stack in ascending order of size on a \texttt{start} rod with the smallest disk at the top.
+
+The objective of the puzzle is to move the entire stack to an \texttt{end} rod, obeying the following rules:
+\begin{itemize}
+\item Only one disk may be moved at a time.
+\item Each move consists of taking the top (smallest) disk from one of the rods and sliding it onto another rod, on top of the other disks that may already be present on that rod.
+\item No disk may be placed on top of a smaller disk.
+\end{itemize}
+
+Complete the definition of \texttt{moveStack}, which prints out the steps required to move \texttt{n} disks from the \texttt{start} rod to the \texttt{end} rod without violating the rules.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public class Towers {
+
+    /** Print instructions to move a disk. */
+    public static void printMove(int start, int end) {
+        System.out.println("Move the top disk from rod " + start + " to rod " + end);
+    }
+
+    /** Print the moves required to move n disks on the start pole to the end
+    pole without violating the rules of Towers of Hanoi. */
+    public static void moveStack(int n, int start, int end) {
+        assert 1 <= start && start <= 3 && 1 <= end && end <= 3 && start != end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class Towers {
+
+    /** Print instructions to move a disk. */
+    public static void printMove(int start, int end) {
+        System.out.println("Move the top disk from rod " + start + " to rod " + end);
+    }
+
+    /** Print the moves required to move n disks on the start pole to the end
+    pole without violating the rules of Towers of Hanoi. */
+    public static void moveStack(int n, int start, int end) {
+        assert 1 <= start && start <= 3 && 1 <= end && end <= 3 && start != end;
+        if (n == 1) {
+            printMove(start, end);
+        } else {
+            int other = 6 - start - end;
+            moveStack(n - 1, start, other);
+            printMove(start, end);
+            moveStack(n - 1, other, end);
+        }
+    }
+}
+\end{lstlisting}
+\end{solution}

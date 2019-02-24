@@ -1,0 +1,39 @@
+\begin{blocksection}
+\question Define a procedure, \lstinline$sumUp$, which returns \lstinline$true$
+if any two values in the \lstinline$array$ sum up to \lstinline$n$.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public static boolean sumUp(int[] array, int n) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public static boolean sumUp(int[] array, int n) {
+    Set<Integer> seen = new HashSet<>();
+    for (int value : array) {
+        if (seen.contains(n - value)) {
+            return true;
+        }
+        seen.add(value);
+    }
+    return false;
+}
+\end{lstlisting}
+\end{solution}
+\end{blocksection}

@@ -1,0 +1,48 @@
+\documentclass[11pt]{exam}
+\usepackage{../commonheader}
+
+\discnumber{10}
+\title{Sorting Algorithms}
+\date{18 April, 2018}
+
+\begin{document}
+\maketitle
+
+\section{Asymptotics Potpourri}
+\subimport{../topics/sorting/text/}{stability.tex}
+\subimport{../topics/sorting/runtime/}{comparison-based.tex}
+
+\section{QuickCo}
+\subimport{../topics/sorting/quickco/text/}{quickco.tex}
+\begin{questions}
+\subimport{../topics/sorting/quickco/easy/}{worst-case-pivot.tex}
+\subimport{../topics/sorting/quickco/easy/}{worst-case-input.tex}
+\subimport{../topics/sorting/quickco/easy/}{runtime.tex}
+\subimport{../topics/sorting/quickco/easy/}{why-quicksort.tex}
+\end{questions}
+
+\section{Vertigo}
+\begin{questions}
+\subimport{../topics/sorting/medium/}{inversions.tex}
+\end{questions}
+
+\clearpage
+
+\section{Getting to Know You}
+\begin{questions}
+\subimport{../topics/sorting/medium/}{dna-sorting.tex}
+\subimport{../topics/sorting/medium/}{need-radix.tex}
+\subimport{../topics/sorting/medium/}{lsd.tex}
+\end{questions}
+
+\section{\extra{More Asymptotics Potpourri}}
+\subimport{../topics/sorting/runtime/}{counting.tex}
+
+\section{\extra{Berkeley Bytes Buffet}}
+\subimport{../topics/sorting/berkeley-bytes/text/}{berkeley-bytes-buffet.tex}
+\begin{questions}
+\subimport{../topics/sorting/berkeley-bytes/easy/}{age-sort.tex}
+\subimport{../topics/sorting/berkeley-bytes/easy/}{radix-sort.tex}
+\end{questions}
+
+\end{document}

@@ -1,0 +1,44 @@
+\begin{blocksection}
+\question Write a method \lstinline$flatten$ that takes in a two-dimensional array
+\lstinline$data$ and returns a one-dimensional array that contains all of the
+arrays in \lstinline$data$ concatenated together.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public static int[] flatten(int[][] data) {
+
+
+
+
+
+
+
+
+
+
+
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public static int[] flatten(int[][] data) {
+    int size = 0;
+    for (int[] row : data) {
+        size += row.length;
+    }
+    int[] result = new int[size];
+    int i = 0;
+    for (int[] row : data) {
+        for (int value : row) {
+            result[i] = value;
+            i += 1;
+        }
+    }
+    return result;
+}
+\end{lstlisting}
+\textbf{Meta:} This may be one of the first times students see this kind of a for loop syntax, so it will be helpful to review it. Additionally, if students are stuck, one starting point is to figure out what the size of the new flattened array should be. Also, a discussion on why the array size needs to be determined at the beginning is in order since in Python, one can use the .append method to dynamically change the size of the array.
+\end{solution}
+\end{blocksection}

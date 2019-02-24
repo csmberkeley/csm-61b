@@ -1,0 +1,70 @@
+\begin{blocksection}
+\question Implement \lstinline$fromSortedArray$ for binary search trees. Given
+a sorted \lstinline$int[] array$, efficiently construct a balanced binary
+search tree containing every element of the array.
+
+\ifprintanswers
+\else
+\begin{lstlisting}
+public class BinarySearchTree<T extends Comparable<T>> {
+    protected Node root;
+    protected class Node {
+        public T value;
+        public Node left;
+        public Node right;
+    }
+    public static BinarySearchTree<Integer> fromSortedArray(int[] values) {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+        bst.root = bst.fromSortedArray(values, 0, values.length - 1);
+        return bst;
+    }
+    private Node fromSortedArray(int[] values, int lower, int upper) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class BinarySearchTree<T extends Comparable<T>> {
+    protected Node root;
+    protected class Node {
+        public T value;
+        public Node left;
+        public Node right;
+    }
+    public static BinarySearchTree<Integer> fromSortedArray(int[] values) {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+        bst.root = bst.fromSortedArray(values, 0, values.length - 1); // setting a new root
+        return bst;
+    }
+    private Node fromSortedArray(int[] values, int lower, int upper) {
+       if (lower > upper) {
+           return null;
+       }
+       int middle = lower + ((upper - lower) / 2); // middle index of the array
+       Node mid = new Node();
+       mid.value = values[middle];
+       mid.left = fromSortedArray(values, lower, middle - 1);  // recurse on the left half
+       mid.right = fromSortedArray(values, middle + 1, upper); // recurse on the right half
+       return mid;
+    }
+}
+\end{lstlisting}
+
+\textbf{Meta}: Be sure to explain the difference between a binary tree and a
+    binary search tree.
+\end{solution}
+\end{blocksection}

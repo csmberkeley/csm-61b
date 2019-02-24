@@ -1,0 +1,33 @@
+\documentclass[11pt]{exam}
+\usepackage{../commonheader}
+
+\discnumber{13}
+\title{Graph Algorithms}
+\date{April 11, 2018}
+
+\begin{document}
+\maketitle
+
+\section{Shortest Paths}
+\begin{questions}
+\subimport{../topics/graphs/shortest-paths/a-star/easy/}{s-a-d-g-revised.tex}
+\end{questions}
+
+\clearpage
+
+\section{Networking}
+\begin{questions}
+\subimport{../topics/graphs/minimum-spanning-trees/easy/}{network.tex}
+\end{questions}
+
+\clearpage
+
+\section{\extra{Algorithms}}
+\subimport{../topics/graphs/text/}{algorithms.tex}
+\begin{questions}
+\subimport{../topics/graphs/search/medium/}{greedy-dfs.tex}
+\subimport{../topics/graphs/minimum-spanning-trees/medium/}{weight-constrained.tex}
+\subimport{../topics/graphs/shortest-paths/dijkstras/hard/}{bfs-dijkstras.tex}
+\end{questions}
+
+\end{document}

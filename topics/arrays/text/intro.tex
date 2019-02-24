@@ -1,0 +1,28 @@
+\begin{blocksection}
+\define{Arrays} are ordered sequences of fixed length. Unlike Python lists, the
+\lstinline$length$ must be known when creating an array.
+
+\begin{lstlisting}
+int[] a = new int[3];
+\end{lstlisting}
+
+It is possible to initialize and fill an array in a single expression.
+
+\begin{lstlisting}
+int[] b = new int[]{1, 2, 3};
+\end{lstlisting}
+
+Java can infer the type of the array from its context, yielding this shorthand.
+
+\begin{lstlisting}
+int[] c = {1, 2, 3};
+\end{lstlisting}
+
+Uninitialized values have a default value like \lstinline$0$,
+\lstinline$false$, or \lstinline$null$.
+
+\begin{lstlisting}
+String[] c = new String[1]; 
+c[0] == null;
+\end{lstlisting}
+\end{blocksection}

@@ -1,0 +1,55 @@
+\question Define a \textbf{recursive} \texttt{SLList.get(int index)} method.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public class SLList {
+    private static class IntNode {
+        public int item;
+        public IntNode next;
+    }
+
+    private IntNode sentinel;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class SLList {
+    private static class IntNode {
+        public int item;
+        public IntNode next;
+    }
+
+    private IntNode sentinel;
+
+    public int get(int index) {
+        return SLList.get(sentinel.next, index);
+    }
+
+    private static int get(IntNode node, int index) {
+        if (node == null) {
+            throw new NoSuchElementException();
+        } else if (index == 0) {
+            return node.item;
+        } else {
+            return SLList.get(node.next, index - 1);
+        }
+    }
+}
+\end{lstlisting}
+\end{solution}

@@ -1,0 +1,43 @@
+\begin{blocksection}
+\question Give the \emph{amortized runtime analysis} for \lstinline$push$ and
+\lstinline$pop$ for the priority queue below.
+
+\begin{lstlisting}
+class TwinListPriorityQueue<E implements Comparable> {
+    ArrayList<E> L1, L2;
+    void push(E item) {
+        L1.push(elem);
+        if (L1.size() >= Math.log(L2.size())) {
+            L2.addAll(L1);
+            mergeSort(L2);
+            L1.clear();
+        }
+    }
+    E pop() {
+        E min1 = getMin(L1);
+        E min2 = L2.poll();
+        if (min1.compareTo(min2) < 0) {
+            L1.remove(min1);
+            return min1;
+        } else {
+            L2.remove(min2);
+            return min2;
+        }
+    }
+}
+\end{lstlisting}
+
+\begin{solution}
+Let $N$ be the number of elements in the priority queue. Then the amortized
+runtime for \lstinline$push$ is in $O(N)$ as the cost for every $\log N$
+insertions is in $O(\log N \cdot 1 + 1 \cdot N \log N)$ which simplifies to
+$O(N)$. Note that the size of \lstinline$L1$ is always constrained to be in
+$O(\log N)$.
+
+The amortized runtime for \lstinline$pop$ is also in $O(N)$. \lstinline$getMin$
+on the unsorted list, \lstinline$L1$, is in $O(\log N)$, as with
+\lstinline$L1.remove(min1)$. Polling from the front of \lstinline$L2$ is in
+$\Theta(1)$. The most expensive component is \lstinline$L2.remove(min2)$ which
+is in $O(N)$.
+\end{solution}
+\end{blocksection}

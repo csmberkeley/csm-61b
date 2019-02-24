@@ -1,0 +1,57 @@
+\begin{blocksection}
+\question What would each call in \lstinline$Poodle.main$ print? If a line
+would cause an error, determine if it is a compile-error or runtime-error.
+
+\begin{lstlisting}
+class Dog {
+    void bark(Dog d) {
+        System.out.println("bark");
+    }
+}
+
+class Poodle extends Dog {
+    void bark(Dog d) {
+        System.out.println("woof");
+    }
+    void bark(Poodle p) {
+        System.out.println("yap");
+    }
+    void play(Dog d) {
+        System.out.println("no");
+    }
+    void play(Poodle p) {
+        System.out.println("bowwow");
+    }
+    public static void main(String[] args) {
+        Dog dan = new Poodle();
+        Poodle pym = new Poodle();
+\end{lstlisting}
+\ifprintanswers\else
+\begin{lstlisting}
+        1) dan.play(dan)                        5) pym.bark(dan)
+        2) dan.play(pym)                        6) pym.bark(pym)
+        3) pym.play(dan)                        7) dan.bark(dan)
+        4) pym.play(pym)                        8) dan.bark(pym)
+\end{lstlisting}
+\fi
+\begin{solution}
+\begin{lstlisting}
+        1) dan.play(dan)   // Compile-error     5) pym.bark(dan)   // woof
+        2) dan.play(pym)   // Compile-error     6) pym.bark(pym)   // yap
+        3) pym.play(dan)   // no                7) dan.bark(dan)   // woof
+        4) pym.play(pym)   // bowwow            8) dan.bark(pym)   // woof
+\end{lstlisting}
+\end{solution}
+\begin{lstlisting}
+    }
+}
+\end{lstlisting}
+\end{blocksection}
+
+\begin{solution}
+\textbf{Meta:} This requires a walkthrough. First, setup the rules: dynamic
+method lookup, method overriding, static and dynamic types, and compile-error
+vs. runtime error. Give students a chance to work, then clear misconceptions. When actually doing the walkthrough, go through all of them and check compilation first. Once you do compilation, you should not only be able to rule out 1&2 but also link method signatures to each method call. Then, move onto runtime. 
+
+When in runtime it's important to re-establish the Is-A relationship between static and dynamic types. dan is a perfect example: a Poodle Is-A Dog. For number 7,8 remember that when compiling, the method signature is determined based off of the static types of the inputs, but when running it first looks in the dynamic type class for the same method signature, which is why both 7 and 8 output woof. Only if the method signature cannot be found in the dynamic class does it move to the superclass.
+\end{solution}

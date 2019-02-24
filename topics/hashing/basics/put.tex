@@ -1,0 +1,35 @@
+\begin{blocksection}
+\question
+
+\begin{lstlisting}
+public class BadHashMap<K, V> implements Map<K, V> {
+    private V[] array;
+    public void put(K key, V value) {
+        this.array[key.hashCode() % this.array.length] = value;
+    }
+}
+\end{lstlisting}
+
+\begin{parts}
+\part Why do we use the \lstinline $%$ (modulo) operator?
+\begin{solution}[0.5in]
+Allows us to take a large \lstinline$int$ and turn it into an index into the
+\lstinline$array$.
+\end{solution}
+
+\part What are collisions? What data structure can we use to address them?
+\begin{solution}[0.5in]
+Collisions occur when two keys map to the same bucket, or index, in the
+\lstinline$array$. We can use external chaining with a linked list, for
+example, to resolve the conflicts. Each bucket can be associated with more than
+one key.
+\end{solution}
+
+\part Why is this a bad \lstinline$HashMap$?
+\begin{solution}[0.5in]
+\lstinline$BadHashMap$ doesn't handle collisions. If a given key produces a
+collision, the value will be completely overwritten rather than stored
+alongside the value currently there.
+\end{solution}
+\end{parts}
+\end{blocksection}

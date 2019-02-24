@@ -1,0 +1,63 @@
+\begin{blocksection}
+\question For taxes, you must to submit a list of the ages of your customers in
+sorted order. Define \lstinline$ageSort$, which takes an
+\lstinline$int[] array$ of all customers' ages and returns a sorted array.
+Assume customers are less than 150 years old.
+
+\ifprintanswers
+\else
+\begin{lstlisting}
+public class BerkeleyBytes {
+    public static int[] histogram(int[] ages) {
+        private static int maxAge = 149;
+        int[] ageCounts = new int[maxAge + 1];
+        for (int age : ages) {
+            ageCounts[age] += 1;
+        }
+        return ageCounts;
+    }
+    public static int[] ageSort(int[] ages) {
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class BerkeleyBytes {
+    private static int maxAge = 149;
+    public static int[] histogram(int[] ages) {
+        int[] ageCounts = new int[maxAge + 1];
+        for (int age : ages) {
+            ageCounts[age] += 1;
+        }
+        return ageCounts;
+    }
+    public static int[] ageSort(int[] ages) {
+        int[] ageCounts = histogram(ages);
+        int[] result = new int[ages.length];
+        int index = 0;
+        for (int age = 0; age < maxAge; age++) {
+            for (int count = 0; count < ageCounts[age]; count++) {
+                result[index] = age;
+                index += 1;
+            }
+        }
+        return result;
+    }
+}
+\end{lstlisting}
+\end{solution}
+\end{blocksection}

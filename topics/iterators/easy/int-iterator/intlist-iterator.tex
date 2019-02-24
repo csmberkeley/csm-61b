@@ -1,0 +1,24 @@
+\question Define an \lstinline$IntListIterator$ class that adheres to the
+\lstinline$IntIterator$ interface.
+
+\begin{solution}[3in]
+\begin{lstlisting}
+public class IntListIterator implements IntIterator {
+    private IntList node;
+    public IntListIterator(IntList list) {
+        node = list;
+    }
+    public boolean hasNext() {
+        return node != null;
+    }
+    public int next() {
+        int value = node.first;
+        node = node.rest;
+        return value;
+    }
+}
+\end{lstlisting}
+
+\textbf{Meta:} This can be gone through and explained faster since the students
+just implemented \lstinline$IntArrayIterator$.
+\end{solution}

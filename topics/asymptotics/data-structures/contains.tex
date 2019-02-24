@@ -1,0 +1,34 @@
+\begin{blocksection}
+\question Containment check (\lstinline$contains$) of one element in each of the
+following data structures where $N$ is the number of elements already in the
+collection.
+
+\begin{parts}
+\part \lstinline$ArrayList$
+\begin{solution}
+$\Omega(1)$ if the element is found near the beginning, $O(N)$ if the element
+is not in the list at all.
+\end{solution}
+
+\part \lstinline$LinkedList$
+\begin{solution}
+$\Omega(1)$, $O(N)$.
+\end{solution}
+
+\part \lstinline$BSTMap$ (binary search tree)
+\begin{solution}
+$\Omega(1)$ if the element is found near the root, $O(N)$ if the tree is
+spindly.
+\end{solution}
+
+\part \lstinline$TreeSet$ (balanced search tree)
+\begin{solution}
+$\Omega(1)$ if the element is found near the root, $O(\log N)$ otherwise.
+\end{solution}
+
+\part \lstinline$HashSet$
+\begin{solution}
+$\Omega(1)$ in the ideal case, $O(N)$ if there are many collisions.
+\end{solution}
+\end{parts}
+\end{blocksection}

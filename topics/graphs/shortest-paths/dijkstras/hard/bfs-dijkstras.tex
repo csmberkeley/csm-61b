@@ -1,0 +1,43 @@
+\begin{blocksection}
+\question Given a weighted, directed graph $G$ where the weights of every edge
+in $G$ are all integers between 1 and 10, and a starting vertex $s$ in $G$,
+find the distance from $s$ to every other vertex in the graph where the
+distance between two vertices is defined as the weight of the shortest path
+connecting them, or infinity if no such path exists.
+
+\begin{parts}
+\part Design an algorithm for solving the problem better than Dijkstra's.
+\begin{solution}[2.5in]
+For every edge $e$ in the graph, replace $e$ with a chain of $w-1$ vertices
+(where $w$ is the weight of $e$) where the two ends of the chain are the
+endpoints of $e$.
+
+Then run BFS on the modified graph, keeping track of the distance from $v$ to
+each vertex from the original graph.
+
+Alternatively, we can modify Dijkstra's algorithm. Since the runtime of
+Dijkstra's is bounded by the priority queue implementation, if we can come up
+with a faster priority queue, we can improve the runtime. Define our priority
+queue as an array of 11 linked list buckets. Keep track of a counter that
+represents our current position in the array. Each bucket corresponds to
+vertices of some distance from the start, $s$.
+
+\lstinline$removeMin()$: If the bucket with index counter is non-empty, remove
+and return the first vertex in its linked list. Otherwise, increment counter
+until we find a non-empty bucket. If the counter reaches 11, reset it to 0 and
+continue (so in effect our array is circular).
+
+\lstinline$insert()$: Given a vertex $v$ and a distance $d$, insert the vertex
+into the beginning of the linked list at index $d \mod 11$.
+
+This strategy works because the vertices we add to the priority queue at any
+time have a distance that is no more than 10 greater than the current distance.
+\end{solution}
+
+\part Give the runtime of your algorithm.
+\begin{solution}[0.5in]
+$\Theta(|V| + |E|)$ for running BFS on the modified graph, and $O(|V| + |E|)$
+for modifying Dijkstra's priority queue.
+\end{solution}
+\end{parts}
+\end{blocksection}

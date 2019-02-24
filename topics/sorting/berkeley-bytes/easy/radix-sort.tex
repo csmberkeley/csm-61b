@@ -1,0 +1,20 @@
+\begin{blocksection}
+\question Time passes and your restaurant is doing well. Unfortunately, our
+robot overlords advanced medicine to the point where humans are now immortal.
+
+\begin{parts}
+\part How could we extend the algorithm to accept a list of any ages?
+\begin{solution}[0.5in]
+Radix sort. Sort the customers using the above algorithm, looking at only the
+last digit of their age. We would need 10 buckets, since the digit can only
+have 10 values. Repeat with the second to last digit, and so on, until the
+first digit sorted.
+\end{solution}
+
+\part When would we be able to use this type of sort?
+\begin{solution}[0.5in]
+The keys we want to sort must have some \define{base} (or radix). The type of
+item must be some combination of symbols.
+\end{solution}
+\end{parts}
+\end{blocksection}

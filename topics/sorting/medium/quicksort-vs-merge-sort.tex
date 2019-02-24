@@ -1,0 +1,35 @@
+\question
+\begin{parts}
+\part What are the advantages and disadvantages of quicksort?
+\begin{solution}[2in]
+Advantages:
+\begin{itemize}
+\item Faster on average by a constant factor than merge sort
+\item In-place variant for $\Theta(1)$ memory complexity. Including the average-case call stack brings up space complexity to $\Theta(\log N)$
+\item Multi-pivot quicksort offers greater constant factor optimizations
+\end{itemize}
+
+Disadvantages:
+\begin{itemize}
+\item Most efficient implementations (in-place) are not stable
+\item Worst-case runtime is in $\Theta(N^2)$, thus making it a poor choice for adversarial datasets
+\item Not very good for external sorting
+\end{itemize}
+\end{solution}
+
+\part What are the advantages and disadvantages of merge sort?
+\begin{solution}[2in]
+Advantages:
+\begin{itemize}
+\item Stable
+\item Good for external sorting
+\item Constant space usage for sorting linked lists
+\end{itemize}
+
+Disadvantages:
+\begin{itemize}
+\item Slower than quicksort on average
+\item Higher space complexity for array allocation
+\end{itemize}
+\end{solution}
+\end{parts}

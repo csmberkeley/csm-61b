@@ -1,0 +1,38 @@
+\begin{blocksection}
+\question How is this implementation of \lstinline$swap$ different?
+
+\begin{lstlisting}
+class Coordinate {
+    int x, y;
+    Coordinate(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+class SwapObject {
+    public static void swap(Coordinate p) {
+        int temp = p.x;
+        p.x = p.y;
+        p.y = temp;
+    }
+    public static void main(String[] args) {
+        Coordinate p = new Coordinate(2, 5);
+        System.out.println("p.x: " + p.x + ", p.y: " + p.y);
+        swap(p);
+        System.out.println("p.x: " + p.x + ", p.y: " + p.y);
+    }
+}
+\end{lstlisting}
+
+\begin{solution}
+When calling \lstinline$swap$ with a \lstinline$Coordinate$ object, we're
+passing a reference to the original \lstinline$Coordinate$ object. The object's
+instance variables can be changed from within \lstinline$swap$ and will remain
+changed after we exit from the function.
+
+\textbf{Meta:} It can be useful to mention that Java stores only the address of
+an object in a variable of non-primitive type, and so when passed to a
+function, the address of the original object gets passed around.
+\end{solution}
+\end{blocksection}

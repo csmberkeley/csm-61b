@@ -1,0 +1,24 @@
+\begin{blocksection}
+\question Mallory decides to change the way QuickCo chooses a pivot for
+Quicksort.
+
+Given the \lstinline$int[] data$ of size \lstinline$n$, what choice of pivot
+would cause the worst-case runtime for Quicksort? Expand out the first few
+steps of the quicksort algorithms in such a case.
+
+\begin{solution}[1in]
+First, last, or alternating first-last. The Quicksort algorithm will continue
+in the following fashion:
+
+\begin{verbatim}
+{ 1 }, { 2, 3, 4, 5, 6, 7, 8 }
+{ 1 }, { 2 }, { 3, 4, 5, 6, 7, 8 }
+{ 1 }, { 2 }, { 3 }, { 4, 5, 6, 7, 8 }
+\end{verbatim}
+\ldots
+
+Since the size of our problem is decreasing only by one at each step, this will
+end up doing $O(N)$ work in the first step, $O(N-1)$ in the second step,
+$O(N-3)$ in the next, and so on. This will take $O(N^2)$ work.
+\end{solution}
+\end{blocksection}

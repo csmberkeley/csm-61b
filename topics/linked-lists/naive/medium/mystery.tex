@@ -1,0 +1,45 @@
+\begin{blocksection}
+\question What does \lstinline$mystery$ do? Draw the box-and-pointer diagram!
+
+\begin{lstlisting}
+public class IntList {
+    public int first;
+    public IntList rest;
+    public IntList(int first, IntList rest) {
+        this.first = first;
+        this.rest = rest;
+    }
+    public static IntList mystery(IntList L) {
+        if (L == null || L.rest == null) {
+            return L;
+        } else {
+            IntList x = mystery(L.rest);
+            L.rest.rest = L;
+            L.rest = null;
+            return x;
+        }
+    }
+    public String toString() {
+        String result = "";
+        IntList p = this;
+        while (p != null) {
+            result = result + p.first + " ";
+            p = p.tail;
+        }
+        return result;
+    }
+    public static void main(String[] args) {
+        IntList x = new IntList(2, new IntList(3, new IntList(4, new IntList(5, null))));
+        System.out.println(x);
+        IntList y = mystery(x);
+        System.out.println(x);
+        System.out.println(y);
+    }
+}
+\end{lstlisting}
+
+\begin{solution}
+\lstinline$mystery$ reverses the \lstinline$IntList$ in-place and returns the
+front of the reversed list.
+\end{solution}
+\end{blocksection}

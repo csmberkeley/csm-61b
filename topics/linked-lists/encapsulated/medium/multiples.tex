@@ -1,0 +1,73 @@
+\question Define a procedure, \texttt{multiples}, that returns an \texttt{SLList} containing the elements at indices \texttt{k}, \texttt{k + j}, \texttt{k + 2*j}, and so forth to the end of the list.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public class SLList {
+    private IntNode sentinel;
+    private static class IntNode {
+        public int value;
+        public IntNode next;
+        public IntNode(int value, IntNode next) {
+            this.value = value;
+            this.next = next;
+        }
+    }
+    public SLList() {
+        this.sentinel = new IntNode(-1, null);
+    }
+    public SLList multiples(int k, int j) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class SLList {
+    private IntNode sentinel;
+    private static class IntNode {
+        public int value;
+        public IntNode next;
+        public IntNode(int value, IntNode next) {
+            this.value = value;
+            this.next = next;
+        }
+    }
+    public SLList() {
+        this.sentinel = new IntNode(-1, null);
+    }
+    public SLList multiples(int k, int j) {
+        IntNode node = this.sentinel.next;
+        for (int i = 0; i < k && node != null; i++) {
+            node = node.next;
+        }
+        SLList multiples = new SLList();
+        IntNode target = multiples.sentinel;
+        while (node != null) {
+            target.next = new IntNode(node.value, null);
+            target = target.next;
+            for (int i = 0; i < j && node != null; i++) {
+                node = node.next;
+            }
+        }
+        return multiples;
+    }
+}
+\end{lstlisting}
+\end{solution}

@@ -1,0 +1,53 @@
+\begin{blocksection}
+\question Provide tight asymptotic runtime bounds in terms of $N$, the number
+of nodes in the tree, for the following operations and data structures.
+
+\ifprintanswers\else
+{
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\textwidth}{Xp{1.25in}p{1.25in}}
+Operations                         & Binary Search      & Balanced Search \\\hline
+\lstinline$boolean contains(E e);$ &                    &                 \\
+\lstinline$boolean add(E e);$      &                    &
+\end{tabularx}
+}
+\fi
+
+\begin{solution}
+{
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\textwidth}{Xll}
+Operations                         & Binary Search      & Balanced Search         \\\hline
+\lstinline$boolean contains(E e);$ & $\Omega(1)\; O(N)$ & $\Omega(1)\; O(\log N)$ \\
+\lstinline$boolean add(E e);$      & $\Omega(1)\; O(N)$ & $\Theta(\log N)$
+\end{tabularx}
+}
+
+For \lstinline$boolean contains(E e)$, the best case is always $\Theta(1)$ for
+both binary search trees and balanced search trees. This is the case if the
+node we are looking for is at the root of the tree. The worst case for binary
+search trees is if the tree is completely unbalanced (a spindly tree), and the
+node we are looking for is a leaf, yielding a time complexity of $\Theta(N)$
+because we have to visit every node.
+
+However, for a balanced search tree, we know that the height of the tree will
+never exceed $\Theta(\log N)$. Thus, even if the node we are looking for is a
+leaf, we will never have to search more than $\Theta(\log N)$ nodes.
+
+For \lstinline$boolean add(E e)$, we always have to insert nodes as a a leaf.
+For a binary search tree, imagine a right-leaning spindly tree (where all of
+the root's children are in its right subtree). To insert a node in the root's
+left subtree, this would simply be a constant time operation because there are
+no nodes in the left subtree, so we would just need to set the root's left
+child to the node we are inserting. This is the best case for binary search
+trees, so the runtime is $\Theta(1)$ in this case. However, to insert a node in
+the root's right subtree, we would have to move all the way down the spindly
+tree, passing every node, to reach the leaf node to insert the new node.
+This is the worst case for binary search trees, so the runtime is $\Theta(N)$.
+
+For balanced binary search trees, the height will always be $\Theta(\log N)$
+nodes. This means that every insertion will always have to visit
+$\Theta(\log N)$ nodes to reach a leaf. Thus, the runtime is always in
+$\Theta(\log N)$.
+\end{solution}
+\end{blocksection}

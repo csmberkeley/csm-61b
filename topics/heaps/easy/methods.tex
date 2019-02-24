@@ -1,0 +1,14 @@
+\question In general, there are 4 ways to heapify. Which 2 ways actually work?
+
+\begin{itemize}
+\item Level order, bubbling up
+\item Level order, bubbling down
+\item Reverse level order, bubbling up
+\item Reverse level order, bubbling down
+\end{itemize}
+
+\begin{solution}
+Only level order, bubbling up and reverse level order, bubbling down work as
+they maintain heap invariant. Namely, that every node is either larger (in a
+max heap) or smaller (in a min heap) than all of its children.
+\end{solution}

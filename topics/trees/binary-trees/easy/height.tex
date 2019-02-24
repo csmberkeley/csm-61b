@@ -1,0 +1,43 @@
+\begin{blocksection}
+\question Define a procedure, \lstinline$height$, which takes in a
+\lstinline$Node$ and outputs the height of the tree. Recall that the height of
+a leaf node is 0.
+
+\ifprintanswers
+\else
+\begin{lstlisting}
+private int height(Node node) {
+
+
+
+
+
+
+
+
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+private int height(Node node) {
+    if (node == null) {
+        return -1;
+    }
+    return 1 + Math.max(height(node.left), height(node.right));
+}
+\end{lstlisting}
+
+\textbf{Meta}: That this Binary Tree class is an encapsulated binary tree. This
+means that in a recursive function, we want to recurse on that particular node.
+\end{solution}
+
+What is the runtime of \lstinline$height$?
+\begin{solution}[0.25in]
+$\Theta(N)$, where $N$ is the number of nodes in the tree. We visit every node
+once and at each node perform a constant amount of work (\lstinline$null$
+check). The actual ``work'' that contributes to the order of growth is done in
+the recursion, where we repeatedly step down through every node in the tree.
+\end{solution}
+\end{blocksection}

@@ -1,0 +1,64 @@
+\begin{blocksection}
+\question
+
+\begin{lstlisting}
+try {
+    doSomething();
+} catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("caught array index exception");
+} catch (Exception e) {
+    System.out.println("caught an exception");
+    throw e;
+} catch (NullPointerException e) {
+    System.out.println("caught null pointer exception");
+} finally {
+    System.out.println("in finally block");
+}
+\end{lstlisting}
+
+\begin{solution}
+The code is a trick! Java doesn't like ambiguity or unreachable code, so
+\lstinline$catch (NullPointerException e)$ is a compile-time error as
+\lstinline$NullPointerException$ is a subclass of \lstinline$Exception$. Assume
+the catch block is removed.
+\end{solution}
+
+\begin{parts}
+\part What will print if \lstinline$doSomething()$ throws a
+\lstinline$NullPointerException$?
+\begin{solution}[0.75in]
+\begin{verbatim}
+caught an exception
+in finally block
+NullPointerException
+\end{verbatim}
+\end{solution}
+
+\part What if \lstinline$doSomething()$ throws an
+\lstinline$ArrayIndexOutOfBoundsException$?
+\begin{solution}[0.75in]
+\vspace{-2em}
+\begin{verbatim}
+caught array index exception
+in finally block
+\end{verbatim}
+\end{solution}
+
+\part What if \lstinline$doSomething()$ doesn't error?
+\begin{solution}[0.75in]
+\begin{verbatim}
+in finally block
+\end{verbatim}
+\end{solution}
+\end{parts}
+
+\begin{solution}
+\textbf{Meta:} Remember that completing a catch prevents all other catches
+in the same block from running. Even on a re-throw, no other catches in the
+same block are called, because the exception has already been `handled'!
+
+\textbf{Slides:}
+\href{https://docs.google.com/presentation/d/1j418bduZS2Ltm6dVVg-b3WpGbOGrRUm6DKRkZCByuaQ/edit?usp=sharing}
+     {Mudit's Slides}
+\end{solution}
+\end{blocksection}

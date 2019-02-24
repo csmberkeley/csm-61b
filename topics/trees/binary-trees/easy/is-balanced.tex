@@ -1,0 +1,57 @@
+\begin{blocksection}
+\question Define a procedure, \lstinline$isBalanced$, which takes a
+\lstinline$Node$ and outputs whether or not the tree is balanced. A tree is
+\define{balanced} if the left and right branches differ in height by at most
+one and are themselves balanced.
+
+\ifprintanswers
+\else
+\begin{lstlisting}
+private boolean isBalanced(Node node) {
+
+
+
+
+
+
+
+
+
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+private boolean isBalanced(Node node) {
+    if (node == null) {
+        return true;
+    } else if (Math.abs(height(node.left) - height(node.right)) <= 1) {
+        return isBalanced(node.left) && isBalanced(node.right);
+    }
+    return false;
+}
+\end{lstlisting}
+\end{solution}
+
+What is the runtime of \lstinline$isBalanced$?
+\begin{solution}[0.25in]
+$\Theta(N)$ in the best case, $\Theta(N \log N)$ in the worst case.  This can
+also be read as $\Omega(N), O(N \log N)$ overall.
+
+The best case is if the tree is unbalanced at the root, meaning that the
+difference in the height of the root's left branch and the root's right branch
+is greater than one. In this case, we just call \lstinline$height$ twice, once
+on the left branch and once on the right subtree. After these two calls, we can
+immediately see that the tree is unbalanced, so we return false. This leads to
+a runtime of $\Theta(N)$ in the best case.
+
+The worst case is if the tree is perfectly balanced. In this case, first, we will call \lstinline$height$ 
+on \lstinline$node.left$ and \lstinline$node.right$. Each of these nodes has a sub-tree of roughly $N/2$ nodes, 
+and so at this level, 2 height calls are made, each of which costs $N/2$. The total work done on this level is
+$\Theta(N)$. Next, \lstinline$node.left$ will call \lstinline$height$ on its left and right children, and \lstinline$node.right$ will do the same. These children are now on the third level of the tree (the root node being the first level). Note that these third-level children now have a subtree of roughly $N/4$ nodes each. 4 \lstinline$height$ calls are made at this level, for a total cost of $\Theta(N)$ at this level too. As we keep going, each level will do $\Theta(N)$ work. Note that the bottom-most level (leaf-level) of such a perfectly balanced tree would have roughly $N/2$ nodes, and each height call would take constant time, for a total of $\Theta(N/2) = \Theta(N)$ work at the leaf-level too. 
+
+Now that we have established that each level does $\Theta(N)$ work, all that we need to figure out is how many levels
+there are in our worst case situation. This tree has $\log n$ levels, since a perfectly balanced tree has $\log n$ levels. Therefore, the total runtime cost for the worst case is $\Theta(N \log N)$, which can also be read as $O(N \log N)$
+\end{solution}
+\end{blocksection}

@@ -1,0 +1,44 @@
+\begin{blocksection}
+\question Suppose we're designing a hash table. Compare and contrast each of
+the following external chaining implementations. Why would you use one over the
+other?
+
+\begin{solution}
+Remember that the external chaining mechanism has a number of important
+constraints. First, in the ideal scenario, the size of the chain is some
+constant factor proportional to the load factor. Second, we need to traverse
+the chain on every insertion to see if there already exists an entry with the
+same key. These facts motivate our answers.
+\end{solution}
+
+\begin{parts}
+\part Linked list
+\begin{solution}[3em]
+Since the size of the list is ideally some constant factor, traversing and
+adding elements to the linked list is relatively inexpensive and the same
+performance for all insertions.
+\end{solution}
+
+\part Resizing array
+\begin{solution}[3em]
+Array insertion can be expensive in the case where we need to resize and copy
+over each element in the array. Arrays have fast random access but the external
+chain can't take advantage of that fact.
+\end{solution}
+
+\part Balanced search tree
+\begin{solution}[3em]
+An additional constraint is that elements need to be \lstinline$Comparable$.
+There is greater overhead in terms of memory cost than linked lists since there
+are more pointers to keep track. But we can limit the time spent searching
+through the external chain to $O(\log N)$ because the tree is balanced.
+\end{solution}
+
+\part Hash table
+\begin{solution}[3em]
+Without a new hash function, elements already destined for this external chain
+may be more likely to collide again. But if we have a second hash function,
+this strategy can be useful. See cuckoo hashing.
+\end{solution}
+\end{parts}
+\end{blocksection}

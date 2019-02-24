@@ -1,0 +1,32 @@
+A \define{list} is an ordered sequence of items: like an array, but without worrying about the length or size.
+
+\begin{lstlisting}
+interface List<E> {
+    boolean add(E element);
+    void add(int index, E element);
+    E get(int index);
+    int size();
+}
+\end{lstlisting}
+
+A \define{set} is an unordered collection of unique elements.
+
+\begin{lstlisting}
+interface Set<E> {
+    boolean add(E element);
+    boolean contains(Object object);
+    int size();
+    boolean remove(Object object);
+}
+\end{lstlisting}
+
+A \define{map} is a collection of key-value mappings, like a dictionary in Python. Like a set, the keys in a map are unique.
+
+\begin{lstlisting}
+interface Map<K,V> {
+    V put(K key, V value);
+    V get(K key);
+    boolean containsKey(Object key);
+    Set<K> keySet();
+}
+\end{lstlisting}

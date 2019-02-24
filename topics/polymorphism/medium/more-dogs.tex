@@ -1,0 +1,68 @@
+\question
+\begin{lstlisting}
+class Dog {
+    public String className;
+    public Dog() {
+        className = "dog";
+    }
+    public String getClassName() {
+        return className;
+    }
+}
+class Beagle extends Dog {
+    public String className;
+    public Beagle() {
+        super();
+        className = "beagle";
+    }
+}
+class Chihuahua extends Dog {
+    public String className;
+    public Chihuahua() {
+        super();
+        className = "chihuahua";
+    }
+    @Override
+    public String getClassName() {
+        return className;
+    }
+}
+\end{lstlisting}
+
+\begin{solution}
+Note that this behavior, \textit{field hiding}, is \textbf{not a part of the course}. You will not be expected to know how to solve these problems on an exam.
+\end{solution}
+
+What would Java display?
+
+\begin{parts}
+\part
+\begin{verbatim}
+Dog d = new Chihuahua();
+System.out.println(d.getClassName());
+\end{verbatim}
+\begin{solution}[0.75in]
+\texttt{chihuahua}. \texttt{d.getClassName} is an instance method so we look at its dynamic type, \texttt{Chihuahua}.
+\texttt{getClassName} returns \texttt{d}'s \texttt{Chihuahua.className}, \texttt{chihuahua}.
+\end{solution}
+
+\part
+\begin{verbatim}
+Dog d = new Beagle();
+System.out.println(d.className);
+\end{verbatim}
+\begin{solution}[0.75in]
+\texttt{dog}. \texttt{d.className} is a field so we use its static type.
+\texttt{d}'s \texttt{Dog.className} is \texttt{dog}.
+\end{solution}
+
+\part
+\begin{verbatim}
+Beagle d = new Beagle();
+System.out.println(d.getClassName());
+\end{verbatim}
+\begin{solution}[0.75in]
+\texttt{dog}. \texttt{d.getClassName} is an instance method so we use its dynamic type: \texttt{Beagle}.
+\texttt{Beagle} inherits \texttt{getClassName} from \texttt{Dog} so the static type of \texttt{this} in \texttt{Dog.getClassName} is \texttt{Dog}. As a result, we return \texttt{d}'s \texttt{Dog.className}, \texttt{dog}.
+\end{solution}
+\end{parts}

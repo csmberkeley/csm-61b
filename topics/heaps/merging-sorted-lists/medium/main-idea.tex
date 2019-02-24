@@ -1,0 +1,15 @@
+\begin{blocksection}
+\question Given the following sorted lists as inputs, how we can efficiently
+return a sorted list containing all the elements?
+
+\begin{lstlisting}
+inputs: {1, 2, 3, 7}, {3, 4, 5, 6}, {2, 4, 6, 8}, {0, 1, 2, 4}, {1, 1, 6, 9}
+output: {0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 5, 6, 6, 6, 7, 8, 9}
+\end{lstlisting}
+
+\begin{solution}[0.5in]
+Use a priority queue of iterators where the priority is given by
+\lstinline$peek()$, or the value that would be returned from calling
+\lstinline$next()$.
+\end{solution}
+\end{blocksection}

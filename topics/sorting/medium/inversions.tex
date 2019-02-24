@@ -1,0 +1,33 @@
+\begin{blocksection}
+\question We have a list of $N$ elements that should be sorted, but to our
+surprise we recently discovered that there are at most $k$ pairs out of order,
+or $k$ \textbf{inversions}, in the list. The list
+\lstinline${ 0, 1, 2, 6, 4, 5, 3 }$, for example, contains 5 inversions:
+$(6, 4), (6, 5), (6, 3), (4, 3), (5, 3)$.
+
+For each value of $k$ below, state the most efficient sorting algorithm and
+give a tight asymptotic runtime bound.
+
+\begin{parts}
+\part $k \in O(\log N)$
+\begin{solution}[0.75in]
+Insertion sort is the most efficient in this case because its runtime is
+$O(N + k)$. The overall runtime bound for insertion sort in this scenario is
+$O(N)$.
+\end{solution}
+
+\part $k \in O(N)$
+\begin{solution}[0.75in]
+Insertion sort for the same reason above. The overall runtime bound for
+insertion sort in this scenario is $O(N)$.
+\end{solution}
+
+\part $k \in O(N^2)$
+\begin{solution}[0.75in]
+Merge sort, quicksort, or heap sort would be ideal here since the number of
+inversions causes insertion sort to run in $O(N^2)$ runtime. Using one of the
+three sorts listed earlier yields a runtime in $O(N \log N)$ in the normal
+case.
+\end{solution}
+\end{parts}
+\end{blocksection}

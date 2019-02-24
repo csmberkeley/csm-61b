@@ -1,0 +1,76 @@
+\begin{blocksection}
+\question Define \lstinline$findDuplicatesWithinK$, a procedure which, when
+given an \lstinline$int[] array$ and an boundary range $k$, returns a
+\lstinline$Set$ of all  duplicates within $k$ indices of each other.
+
+\begin{lstlisting}
+findDuplicatesWithinK([1, 2, 3, 1, 4, 3], 3) // {1, 3}
+findDuplicatesWithinK([1, 2, 3, 1, 4, 3], 2) // {}
+\end{lstlisting}
+
+\ifprintanswers\else
+\begin{lstlisting}
+public static Set<Integer> findDuplicatesWithinK(int[] array, int k) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public static Set<Integer> findDuplicatesWithinK(int[] array, int k) {
+    Map<Integer,Integer> seen = new HashMap<>();
+    Set<Integer> duplicates = new HashSet<>();
+    for (int i = 0; i < array.length; i++) {
+        if (!seen.containsKey(array[i])) {
+            seen.put(array[i], 0);
+        }
+        if (seen.get(array[i]) > 0) {
+            duplicates.add(array[i]);
+        }
+        seen.put(array[i], seen.get(array[i]) + 1);
+        if (i - k >= 0) {
+            seen.put(array[i - k], seen.get(array[i - k]) - 1);
+        }
+    }
+    return duplicates;
+}
+\end{lstlisting}
+
+The question is asking for all duplicates in all ``sliding windows'' of $k$
+values in the array. The solution keeps track of all duplicates in the set
+\lstinline$duplicates$. The map \lstinline$seen$ changes as we iterate through
+the array. Before processing index \lstinline$i$, its keys are the elements in
+the array seen before index \lstinline$i$, and the corresponding values are the
+number of times they key has been seen on and after the index \lstinline$i-k$.
+
+At every index in the iteration, we check if the value of the key corresponding
+to the element of the array we are currently looking at is greater than
+\lstinline$0$. If it is, then it was previously seen within the current
+\lstinline$k$-element sliding window, and we therefore need to add that element
+to our set of \lstinline$duplicates$. We then decrement the value of the key
+corresponding to the \lstinline$i-k$\textsuperscript{th} element in the array
+by one before moving on to the next index.
+\end{solution}
+\end{blocksection}

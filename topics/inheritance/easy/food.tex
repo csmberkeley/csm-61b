@@ -1,0 +1,70 @@
+\question
+\begin{lstlisting}
+public interface Consumable {
+    public void consume();
+}
+public abstract class Food implements Consumable {
+    String name;
+    public abstract void prepare();
+    public void play() {
+        System.out.println("Mom says, 'Don't play with your food.'");
+    }
+}
+public class Snack extends Food {
+    public void prepare() {
+        System.out.println("Taking " + name + " out of wrapper");
+    }
+    public void consume() {
+        System.out.println("Snacking on " + name);
+    }
+}
+\end{lstlisting}
+
+\begin{parts}
+\begin{blocksection}
+\part Compare and contrast interfaces and abstract classes.
+
+\begin{solution}[1in]
+\begin{itemize}
+\item Java classes cannot extend multiple superclasses (unlike Python) but
+classes can implement multiple interfaces.
+\item Interfaces are implicitly public.
+\item Interfaces can't have fields declared as instance variables; any fields
+that are declared are implicitly \lstinline$static$ and \lstinline$final$.
+\item Interfaces use the \lstinline$default$ keyword to declare \emph{concrete}
+implementations while abstract classes use the \lstinline$abstract$ keyword to
+declare \emph{abstract} implementations.
+\item Interfaces define the way we interact with an implementing object or
+functions of an object. Conversely, abstract classes define an ``is-a''
+relationship and tell us more about the object's fundamental identity.
+\end{itemize}
+
+\textbf{Meta:} Warn students to be careful searching about this topic as CS 61B
+uses Java 8 but most content online covers Java 7, which behaves differently.
+\end{solution}
+\end{blocksection}
+
+\begin{blocksection}
+\part Do we need the \lstinline$play$ method in \lstinline$Snack$?
+
+\begin{solution}[0.5in]
+No, we do not need the \lstinline$play$ method because it's already defined in
+the abstract class. Java will lookup the parent class's method if it cannot
+find it in the child class.
+\end{solution}
+\end{blocksection}
+
+\begin{blocksection}
+\part Does this compile? \lstinline$Consumable chips = new Snack();$
+
+\begin{solution}[0.5in]
+Yes, the code compiles since \lstinline$Snack$ inherits from the
+\lstinline$Food$ class which implements the \lstinline$Consumable$ interface.
+\end{solution}
+\end{blocksection}
+\end{parts}
+
+\begin{solution}
+\textbf{Meta:} Use this question as a mini-lecture for interfaces to build up
+to the next question. This question should not take a lot of time.
+\end{solution}

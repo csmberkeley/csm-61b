@@ -1,0 +1,58 @@
+\begin{blocksection}
+\question Define a procedure, \lstinline$nearestDuplicate$, that accepts a
+\lstinline$String[] array$ and returns the string closest to its duplicate. For
+example, if given the following input:
+
+\begin{verbatim}
+{ "all", "work", "and", "no", "play", "makes", "for", "no", "work",
+  "no", "fun", "and", "no", "results" }
+\end{verbatim}
+
+\lstinline$nearestDuplicate$ would return \lstinline$no$ because the second and
+third \lstinline$no$'s are the closest. This function should run in $O(N)$
+time, where $N$ is the size of the array.
+
+\ifprintanswers
+\else
+\begin{lstlisting}
+public static String nearestDuplicate(String[] array) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public static String nearestDuplicate(String[] array) {
+    int min = Integer.MAX_VALUE;
+    String duplicate = null;
+    Map<String,Integer> nearestIndices = new HashMap<>();
+    for (int i = 0; i < array.length; i++) {
+        String s = array[i];
+        if (nearestIndices.containsKey(s) && i - nearestIndices.get(s) < min) {
+            min = i - nearestIndices.get(s);
+            duplicate = s;
+        }
+        nearestIndices.put(s, i);
+    }
+    return duplicate;
+}
+\end{lstlisting}
+\end{solution}
+\end{blocksection}

@@ -1,0 +1,51 @@
+\begin{blocksection}
+\question Mallory is designing a resizing \lstinline$ArrayList$ implementation.
+She needs to decide the amount to resize by. Help her figure out which option
+provides the best runtime.
+
+Assuming Mallory resizes her \lstinline$ArrayList$ when it's full, what is the
+average runtime of adding an element to the \lstinline$ArrayList$?
+
+\begin{parts}
+
+\part When full, increase the size of the array by 1 element.
+\begin{solution}[1.5in]
+This would be in $\Theta(N)$ since every time we want to add a new element, we
+will have to create a new array with space for one additional element and copy
+all the previous elements ($N$ elements) over.
+\end{solution}
+
+\part When full, increase the size of array by 10,000 elements.
+\begin{solution}[1.5in]
+This would still be in $\Theta(N)$ since the constant, 10,000, does not scale
+with the size of the array. We're resizing the array every 10,000 inputs,
+regardless of the size of the array which could be much larger than 10,000.
+\end{solution}
+
+\part When full, double the size of the array.
+\begin{solution}[2.5in]
+This would be in $\Theta(1)$.
+
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{16pt}
+\begin{tabularx}{\textwidth}{Xlll}
+Operation                     & Elements Added & Cost & Array Usage \\ \hline
+\lstinline$add()$             & 1              & 1    & 1/10        \\
+\lstinline$add()$             & 1              & 1    & 2/10        \\
+\lstinline$add()$ $\times 8$  & 8              & 8    & 10/10       \\
+\lstinline$add()$             & 1              & 11   & 11/20       \\
+\lstinline$add()$ $\times 9$  & 9              & 9    & 20/20       \\
+\lstinline$add()$             & 1              & 20   & 21/40       \\
+\lstinline$add()$ $\times 19$ & 19             & 19   & 40/40       \\
+\lstinline$add()$             & 1              & 40   & 41/80       \\
+\lstinline$add()$ $\times 39$ & 39             & 39   & 80/80
+\end{tabularx}
+
+Given a full array of size $\frac{N}{2}$, the runtime of resizing it would be
+in $\Theta(N)$. This new array of size $N$ would allow us to insert
+$\frac{N}{2}$ elements before having to resize again. This means the runtime of
+inserting each one of those elements, amortized, is in
+$\frac{\Theta(N)}{\frac{N}{2}}$, which is in $\Theta(1)$.
+\end{solution}
+\end{parts}
+\end{blocksection}

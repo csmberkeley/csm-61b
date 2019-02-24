@@ -1,0 +1,55 @@
+\question For each scenario below, describe what you think caused each error.
+
+\begin{parts}
+\begin{blocksection}
+\part
+\begin{verbatim}
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 55
+        at Sum.sum(Test.java:15)
+        at Sum.main(Test.java:28)
+\end{verbatim}
+
+where line 15 of \lstinline$Sum$ is:
+
+\begin{verbatim}
+total += nums[i];
+\end{verbatim}
+
+\begin{solution}[1in]
+\lstinline$i$ was incremented beyond the length of the array (\lstinline$i >= nums.length$).
+\end{solution}
+\end{blocksection}
+
+\begin{blocksection}
+\part
+\begin{verbatim}
+Exception in thread "main" java.lang.NullPointerException
+        at IntNode.traverse(IntNode.java:25)
+        at IntNode.main(IntNode.java:63)
+\end{verbatim}
+
+where line 25 of \lstinline$IntNode$ is:
+
+\begin{verbatim}
+nextNode = currNode.next;
+\end{verbatim}
+
+\begin{solution}[1in]
+Forgot to add a null check: \lstinline$currNode$ might be null.
+\end{solution}
+\end{blocksection}
+
+\begin{blocksection}
+\part
+\begin{verbatim}
+Test.java:67: error: non-static variable name cannot be referenced
+from a static context
+                System.out.println(name);
+                                    ^
+\end{verbatim}
+
+\begin{solution}[1in]
+\lstinline$name$, an instance variable (non-static), was referenced from a static method.
+\end{solution}
+\end{blocksection}
+\end{parts}

@@ -1,0 +1,24 @@
+install:
+  - source ./.texlive.sh
+
+cache:
+  directories:
+    - /tmp/texlive
+    - $HOME/.texlive
+
+script:
+  - make src
+
+before_deploy:
+  - cp README.md published/README.md
+
+deploy:
+  provider: pages
+  local_dir: published
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
+
+notifications:
+  email: false

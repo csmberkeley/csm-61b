@@ -1,0 +1,266 @@
+\question \begin{parts}
+\part Show the heapification of the tree.
+
+\begin{solution}[1.5in]
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=35pt]
+\node[vertex]{$9$}
+child {
+    node[vertex]{$6$}
+    child {
+        node[vertex]{$9$}
+    }
+    child {
+        node[vertex]{$5$}
+    }
+  }
+  child {
+    node[vertex]{$7$}
+    child {
+        node[vertex]{$1$}
+    }
+    child {
+        node[vertex]{$8$}
+    }
+};
+\end{tikzpicture}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=35pt]
+\node[vertex]{$9$}
+child {
+    node[vertex]{$6$}
+    child {
+        node[vertex]{$9$}
+    }
+    child {
+        node[vertex]{$5$}
+    }
+  }
+  child {
+    node[vertex]{$1$}
+    child {
+        node[vertex]{$7$}
+    }
+    child {
+        node[vertex]{$8$}
+    }
+};
+\end{tikzpicture}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=35pt]
+\node[vertex]{$9$}
+child {
+    node[vertex]{$5$}
+    child {
+        node[vertex]{$9$}
+    }
+    child {
+        node[vertex]{$6$}
+    }
+  }
+  child {
+    node[vertex]{$1$}
+    child {
+        node[vertex]{$7$}
+    }
+    child {
+        node[vertex]{$8$}
+    }
+};
+\end{tikzpicture}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=35pt]
+\node[vertex]{$1$}
+child {
+    node[vertex]{$5$}
+    child {
+        node[vertex]{$9$}
+    }
+    child {
+        node[vertex]{$6$}
+    }
+  }
+  child {
+    node[vertex]{$9$}
+    child {
+        node[vertex]{$7$}
+    }
+    child {
+        node[vertex]{$8$}
+    }
+};
+\end{tikzpicture}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=35pt]
+\node[vertex]{$1$}
+child {
+    node[vertex]{$5$}
+    child {
+        node[vertex]{$9$}
+    }
+    child {
+        node[vertex]{$6$}
+    }
+  }
+  child {
+    node[vertex]{$7$}
+    child {
+        node[vertex]{$9$}
+    }
+    child {
+        node[vertex]{$8$}
+    }
+};
+\end{tikzpicture}
+\end{center}
+\end{solution}
+
+\part Now, insert the value 2.
+
+\begin{solution}[1.5in]
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=35pt]
+\node[vertex]{$1$}
+child {
+    node[vertex]{$5$}
+    child {
+        node[vertex]{$9$}
+        child {
+            node[vertex]{$2$}
+        }
+        child { edge from parent[draw=none] }
+    }
+    child {
+        node[vertex]{$6$}
+    }
+  }
+  child {
+    node[vertex]{$7$}
+    child {
+        node[vertex]{$9$}
+    }
+    child {
+        node[vertex]{$8$}
+    }
+};
+\end{tikzpicture}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=35pt]
+\node[vertex]{$1$}
+child {
+    node[vertex]{$5$}
+    child {
+        node[vertex]{$2$}
+        child {
+            node[vertex]{$9$}
+        }
+        child { edge from parent[draw=none] }
+    }
+    child {
+        node[vertex]{$6$}
+    }
+  }
+  child {
+    node[vertex]{$7$}
+    child {
+        node[vertex]{$9$}
+    }
+    child {
+        node[vertex]{$8$}
+    }
+};
+\end{tikzpicture}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=35pt]
+\node[vertex]{$1$}
+child {
+    node[vertex]{$2$}
+    child {
+        node[vertex]{$5$}
+        child {
+            node[vertex]{$9$}
+        }
+        child { edge from parent[draw=none] }
+    }
+    child {
+        node[vertex]{$6$}
+    }
+  }
+  child {
+    node[vertex]{$7$}
+    child {
+        node[vertex]{$9$}
+    }
+    child {
+        node[vertex]{$8$}
+    }
+};
+\end{tikzpicture}
+\end{center}
+\end{solution}
+
+\newpage
+\part Finally, remove the value 1.
+
+\begin{solution}[1.5in]
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=35pt]
+\node[vertex]{$9$}
+child {
+    node[vertex]{$2$}
+    child {
+        node[vertex]{$5$}
+    }
+    child {
+        node[vertex]{$6$}
+    }
+  }
+  child {
+    node[vertex]{$7$}
+    child {
+        node[vertex]{$9$}
+    }
+    child {
+        node[vertex]{$8$}
+    }
+};
+\end{tikzpicture}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=35pt]
+\node[vertex]{$2$}
+child {
+    node[vertex]{$9$}
+    child {
+        node[vertex]{$5$}
+    }
+    child {
+        node[vertex]{$6$}
+    }
+  }
+  child {
+    node[vertex]{$7$}
+    child {
+        node[vertex]{$9$}
+    }
+    child {
+        node[vertex]{$8$}
+    }
+};
+\end{tikzpicture}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=35pt]
+\node[vertex]{$2$}
+child {
+    node[vertex]{$5$}
+    child {
+        node[vertex]{$9$}
+    }
+    child {
+        node[vertex]{$6$}
+    }
+  }
+  child {
+    node[vertex]{$7$}
+    child {
+        node[vertex]{$9$}
+    }
+    child {
+        node[vertex]{$8$}
+    }
+};
+\end{tikzpicture}
+\end{center}
+\end{solution}
+\end{parts}

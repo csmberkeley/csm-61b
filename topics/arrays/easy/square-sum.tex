@@ -1,0 +1,42 @@
+\begin{blocksection}
+\question Implement \lstinline$squareSum$, which takes an \lstinline$int[]$ and
+of values and returns the sum of all the squared values.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public class Arrays {
+    public static int squareSum(int[] values) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class Arrays {
+    public static int squareSum(int[] values) {
+        int sum = 0;
+        for (int i = 0; i < values.length; i += 1) {
+            values[i] *= values[i];
+            sum += values[i];
+        }
+        return sum;
+    }
+}
+\end{lstlisting}
+\end{solution}
+\end{blocksection}

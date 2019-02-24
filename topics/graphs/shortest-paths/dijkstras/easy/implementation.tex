@@ -1,0 +1,13 @@
+\question Give the runtime bound for Dijkstra's assuming the priority queue is
+implemented using an unordered array, ordered linked list, and a binary
+min-heap.
+
+\begin{solution}[1in]
+$O(|E| \cdot 1 + |V| \cdot |V|)$ for an unordered array if the array indices
+represent integer vertices and the values in the array represent the priority.
+$O(|E| \cdot |V| + |V| \cdot 1)$ for an ordered linked list where the greatest
+expense is in maintaining the order when calling \lstinline$changePriority$.
+$O(|E| \cdot \log |V| + |V| \cdot \log |V|)$ for a binary min-heap.
+
+Note that on simple graphs, $|E| \in O(|V|^2)$.
+\end{solution}

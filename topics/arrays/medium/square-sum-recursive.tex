@@ -1,0 +1,41 @@
+\begin{blocksection}
+\question Implement \lstinline$squareSum$ \emph{using recursion}. Assume the
+input array of \lstinline$values$ is non-empty.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public class Arrays {
+    public static int squareSumRecursive(int[] values, int index) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class Arrays {
+    public static int squareSumRecursive(int[] values, int index) {
+        values[index] *= values[index];
+        if (index >= values.length - 1) {
+            return values[index];
+        }
+        return values[index] + squareSumRecursive(values, index + 1);
+    }
+}
+\end{lstlisting}
+\end{solution}
+\end{blocksection}

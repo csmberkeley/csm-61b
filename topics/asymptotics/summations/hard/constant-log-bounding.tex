@@ -1,0 +1,13 @@
+\question $\displaystyle\sum_{i = 0}^{\log_4{n}} \Big(\frac{3}{4}\Big)^i n\log{\frac{n}{4^i}}$
+\begin{solution}[2in]
+\begin{align*}
+\sum_{i = 0}^{\log_4{n}} \Big(\frac{3}{4}\Big)^i n\log{\frac{n}{4^i}}
+&< \sum_{i = 0}^{\log_4{n}} \Big(\frac{3}{4}\Big)^i n\log{n} \\
+&\in O(n\log{n}) \\
+\sum_{i = 0}^{\log_4{n}} \Big(\frac{3}{4}\Big)^i n\log{\frac{n}{4^i}}
+&= 1 \cdot n\log{\frac{n}{1}} + \cdots \\
+&> n\log{n} \\
+&\in \Omega(n\log{n}) \\
+O(n\log{n}), \enspace \Omega(n\log{n}) &\implies \Theta(n\log{n})
+\end{align*}
+\end{solution}

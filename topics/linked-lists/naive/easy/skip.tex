@@ -1,0 +1,51 @@
+\begin{blocksection}
+\question Define \lstinline$skip$, which takes in an \lstinline$IntList$ and
+destructively removes every other node starting from the second node. Do not
+use recursion.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public class IntList {
+    public int first;
+    public IntList rest;
+    public IntList(int first, IntList rest) {
+        this.first = first;
+        this.rest = rest;
+    }
+    public static void skip(IntList L) {
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public class IntList {
+    public int first;
+    public IntList rest;
+    public IntList(int first, IntList rest) {
+        this.first = first;
+        this.rest = rest;
+    }
+    public static void skip(IntList L) {
+        while (L != null && L.rest != null) {
+            L.rest = L.rest.rest;
+            L = L.rest;
+        }
+    }
+}
+\end{lstlisting}
+\end{solution}
+\end{blocksection}

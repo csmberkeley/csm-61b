@@ -1,0 +1,39 @@
+\documentclass[11pt]{exam}
+\usepackage{../commonheader}
+
+\discnumber{10}
+\title{Graphs \& Searches}
+\date{April 4, 2018}
+
+\begin{document}
+\maketitle
+
+\section{Tree Traversal}
+\marginpar{\subimport{../topics/trees/binary-trees/}{code.tex}}
+\subimport{../topics/trees/binary-trees/text/}{fringe.tex}
+\begin{questions}
+\subimport{../topics/trees/binary-trees/medium/}{traversals.tex}
+\end{questions}
+
+\section{Graph Traversal}
+\subimport{../topics/graphs/traversal/}{pseudocode.tex}
+\begin{questions}
+\subimport{../topics/graphs/traversal/easy/}{dag.tex}
+\end{questions}
+
+\clearpage
+
+\section{Searches}
+\begin{questions}
+\subimport{../topics/graphs/search/medium/}{searches.tex}
+\end{questions}
+
+\section{\extra{Elephants}}
+\subimport{../topics/graphs/elephants/text/}{elephants.tex}
+\marginpar{\subimport{../topics/graphs/elephants/text/}{puzzle.tex}}
+\begin{questions}
+\subimport{../topics/graphs/elephants/easy/}{bfs-or-dfs.tex}
+\subimport{../topics/graphs/elephants/medium/}{solve.tex}
+\end{questions}
+
+\end{document}

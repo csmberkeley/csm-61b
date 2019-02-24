@@ -1,0 +1,26 @@
+\begin{blocksection}
+\question
+
+\begin{lstlisting}
+public static int redHerring(int[][] array) {
+    if (array.length < 1 || array[0].length <= 4) {
+        return 0;
+    }
+    for (int i = 0; i < array.length; i++) {
+         for (int j = 0; j < array[i].length; j++) {
+            if (j == 4) {
+                return -1;
+            }
+        }
+    }
+    return 1;
+}
+\end{lstlisting}
+
+\begin{solution}
+$\Theta(1)$. The function will return once it reaches the fourth element of the
+first row of the \lstinline$array$ matrix, so this function always takes
+constant time. (And if the array doesn't have any rows, or if the first row has
+fewer than 4 entries, the function returns immediately.)
+\end{solution}
+\end{blocksection}

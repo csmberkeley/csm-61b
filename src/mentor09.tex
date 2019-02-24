@@ -1,0 +1,41 @@
+\documentclass[11pt]{exam}
+\usepackage{../commonheader}
+
+\discnumber{9}
+\title{BSTs \& Hashing}
+\date{October 22, 2018}
+
+\begin{document}
+\maketitle
+
+\section{Unbalanced Trees}
+\begin{questions}
+\subimport{../topics/trees/binary-search-trees/easy/}{bst-valid-balanced.tex}
+\subimport{../topics/trees/}{runtime.tex}
+\end{questions}
+
+\newpage
+\section{Heaps of Fun}
+\subimport{../topics/heaps/}{example-tree.tex}
+\begin{questions}
+\subimport{../topics/heaps/easy/}{min-heapify.tex}
+\end{questions}
+
+\section{Hashing Motivation}
+\begin{questions}
+\subimport{../topics/hashing/easy/}{motivation.tex}
+\end{questions}
+
+\section{Hash Table Basics}
+\marginpar{\subimport{../topics/hashing/basics/}{map.tex}}
+\begin{questions}
+\subimport{../topics/hashing/basics/}{put.tex}
+\subimport{../topics/hashing/basics/}{diagram.tex}
+\end{questions}
+
+\section{\extra{Hash Codes}}
+\begin{questions}
+\subimport{../topics/hashing/easy/}{valid-hashcodes.tex}
+\end{questions}
+
+\end{document}

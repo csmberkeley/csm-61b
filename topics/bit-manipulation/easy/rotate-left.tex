@@ -1,0 +1,18 @@
+\question Rotate a 32-bit integer left by \texttt{k} bits. Assume \texttt{k} is less than 32.
+
+\ifprintanswers\else
+\begin{lstlisting}
+static int rotateLeft(int x, int k) {
+
+    return
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+static int rotateLeft(int x, int k) {
+    return (x << k) | (x >>> (32 - k));
+}
+\end{lstlisting}
+\end{solution}

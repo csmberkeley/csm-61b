@@ -1,0 +1,17 @@
+\question Determine whether an integer is odd using only bit shifting and equality checks.
+
+\ifprintanswers\else
+\begin{lstlisting}
+static int isOdd(int x) {
+
+    return
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+static int isOdd(int x) {
+    return x != ((x >> 1) << 1);
+\end{lstlisting}
+\end{solution}

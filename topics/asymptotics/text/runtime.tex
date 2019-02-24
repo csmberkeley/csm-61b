@@ -1,0 +1,23 @@
+\begin{blocksection}
+The \define{running time} of a program can be modeled by the number of
+instructions executed by the computer. To simplify things, suppose arithmetic
+operators (\lstinline$+$, \lstinline$-$, \lstinline$*$, \lstinline$/$), logical
+operators (\lstinline$&&$, \lstinline$||$, \lstinline$!$), comparison
+(\lstinline$==$, \lstinline$<$, \lstinline$>$), assignment, field access, array
+indexing, and so forth take 1 unit of time. \lstinline$(6 + 3 * 8) / 3$ would
+take 3 units of time, one for each arithmetic operator.
+
+While this measure is fine for simple operations, many problems in computer
+science depend on the size of the input: \lstinline$fib(3)$ executes almost
+instantly, but \lstinline$fib(10000)$ will take much longer to compute.
+
+\define{Asymptotic analysis} is a method of describing the run-time of an
+algorithm \emph{with respect} to the size of its input. We can now say,
+
+\begin{quote}
+The run-time of \lstinline$fib$ is, at most, within a factor of $2^N$ where $N$
+is the size of the input number.
+\end{quote}
+
+Or, in formal notation, $\texttt{fib(n)} \in O(2^N)$.
+\end{blocksection}

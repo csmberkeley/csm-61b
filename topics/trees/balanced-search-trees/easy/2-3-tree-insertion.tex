@@ -1,0 +1,89 @@
+\begin{blocksection}
+\question Draw the 2-3 tree would look like after inserting 18, 12, and 13.
+
+\begin{solution}[3in]
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=30pt]
+\node[vertex]{$8$}
+child {
+    node[vertex]{$6$}
+    child {
+        node[vertex]{$3$}
+    }
+    child {
+        node[vertex]{$7$}
+    }
+}
+child[sibling distance=30mm] {
+    node[vertex,ellipse]{$14 \; 16$}
+    child {
+        node[vertex]{$10$}
+    }
+    child {
+        node[vertex]{$15$}
+    }
+    child {
+        node[vertex]{$18$}
+    }
+};
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=30pt]
+\node[vertex]{$8$}
+child {
+    node[vertex]{$6$}
+    child {
+        node[vertex]{$3$}
+    }
+    child {
+        node[vertex]{$7$}
+    }
+}
+child[sibling distance=40mm] {
+    node[vertex,ellipse]{$14 \; 16$}
+    child[sibling distance=12mm] {
+        node[vertex,ellipse]{$10 \; 12$}
+    }
+    child {
+        node[vertex]{$15$}
+    }
+    child {
+        node[vertex]{$18$}
+    }
+};
+\end{tikzpicture}
+\end{center}
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=30pt]
+\node[vertex,ellipse]{$8 \; 14$}
+child {
+    node[vertex]{$6$}
+    child {
+        node[vertex]{$3$}
+    }
+    child {
+        node[vertex]{$7$}
+    }
+}
+child {
+    node[vertex]{$12$}
+    child {
+        node[vertex]{$10$}
+    }
+    child {
+        node[vertex]{$13$}
+    }
+}
+child {
+    node[vertex]{$16$}
+    child {
+        node[vertex]{$15$}
+    }
+    child {
+        node[vertex]{$18$}
+    }
+};
+\end{tikzpicture}
+\end{center}
+\end{solution}
+\end{blocksection}

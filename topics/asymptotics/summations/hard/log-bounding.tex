@@ -1,0 +1,16 @@
+\question $\displaystyle\sum_{i = 0}^{k} (\log N)^i N^{k-i}$
+\begin{solution}[2in]
+\begin{align*}
+\sum_{i = 0}^{k} (\log N)^i N^{k-i}
+&= \sum_{i = 0}^{k} (\log N)^i + \sum_{i = 0}^{k} N^i \\
+&< k(\log N)^k + \sum_{i = 0}^{k} N^i \\
+&< kN^k + kN^k \\
+&\in O(N^k) \\
+\sum_{i = 0}^{k} (\log N)^i N^{k-i}
+&= \sum_{i = 0}^{k} (\log N)^i + \sum_{i = 0}^{k} N^i \\
+&> \sum_{i = 0}^{k} N^i \\
+&> N^k \\
+&\in \Omega(N^k) \\
+O(N^k), \enspace \Omega(N^k) &\implies \Theta(N^k)
+\end{align*}
+\end{solution}

@@ -1,0 +1,40 @@
+\documentclass[11pt]{exam}
+\usepackage{../commonheader}
+
+\discnumber{8}
+\title{Binary Trees}
+\date{October 15, 2018}
+
+\begin{document}
+\maketitle
+
+\section{Binary Trees}
+\marginpar{\subimport{../topics/trees/binary-trees/}{code.tex}
+           \subimport{../topics/trees/binary-trees/}{example-tree.tex}}
+\begin{questions}
+\subimport{../topics/trees/binary-trees/easy/}{height.tex}
+\subimport{../topics/trees/binary-trees/easy/}{is-balanced.tex}
+\clearpage
+\marginpar{\subimport{../topics/trees/binary-trees/medium/}{is-symmetric-tree.tex}}\vspace*{-2em}
+\subimport{../topics/trees/binary-trees/medium/}{is-symmetric.tex}
+\end{questions}
+
+\clearpage
+
+\section{Binary Search Trees}
+\begin{questions}
+\subimport{../topics/trees/binary-search-trees/medium/}{from-sorted-array.tex}
+\end{questions}
+
+\clearpage
+
+\section{\extra{Successor}}
+\subimport{../topics/trees/binary-trees/text/}{traversals.tex}
+\marginpar{\subimport{../topics/trees/binary-trees/}{example-tree.tex}}
+\begin{questions}
+\subimport{../topics/trees/binary-trees/easy/}{depth-first-traversals.tex}
+\subimport{../topics/trees/binary-trees/easy/}{level-order-traversal.tex}
+\subimport{../topics/trees/binary-search-trees/hard/}{successor.tex}
+\end{questions}
+
+\end{document}

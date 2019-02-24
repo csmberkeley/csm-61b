@@ -1,0 +1,64 @@
+\begin{blocksection}
+\question Define a procedure, \lstinline$isPermutation$, which returns
+\lstinline$true$ if a string \lstinline$s1$ is a permutation of \lstinline$s2$.
+For example, \lstinline$"atc"$ and \lstinline$"tac"$ are permutations of
+\lstinline$"cat"$.
+
+\ifprintanswers\else
+\begin{lstlisting}
+public static boolean isPermutation(String s1, String s2) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+\begin{lstlisting}
+public static boolean isPermutation(String s1, String s2) {
+    Map<Character,Integer> characterCounts = new HashMap<>();
+    for (char c : s1.toCharArray()) {
+        int count = 0;
+        if (characterCounts.containsKey(c)) {
+            count = characterCounts.get(c);
+        }
+        characterCounts.put(c, count + 1);
+    }
+    for (char c : s2.toCharArray()) {
+        int count = 0;
+        if (characterCounts.containsKey(c)) {
+            count = characterCounts.get(c);
+        }
+        characterCounts.put(c, count - 1);
+    }
+    for (char c : characterCounts.keySet()) {
+        if (characterCounts.get(c) != 0 ) {
+            return false;
+        }
+    }
+    return true;
+}
+\end{lstlisting}
+\end{solution}
+\end{blocksection}
