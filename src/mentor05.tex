@@ -1,26 +1,40 @@
 \documentclass[11pt]{exam}
 \usepackage{../commonheader}
 
+% \noprintanswers
 \discnumber{5}
-\title{Exceptions \& More Interfaces}
-\date{September 24, 2018}
+\title{Asymptotics \& Disjoint Sets}
+\date{February 25, 2019}
 
 \begin{document}
 \maketitle
 
-\section{Catch Blocks, Exceptions, and Try-s, Oh My}
+\section{Analysis of Algorithms}
+\subimport{../topics/asymptotics/text/}{runtime.tex}
 \begin{questions}
-\subimport{../topics/exceptions/easy/}{try-catch-finally.tex}
+\subimport{../topics/asymptotics/easy/}{case-analysis.tex}
 \end{questions}
 
-\section{Mercantilism}
+\clearpage
+
+\section{Something Fishy}
+\subimport{../topics/asymptotics/fish/}{question.tex}
 \begin{questions}
-\subimport{../topics/exceptions/medium/}{mercantilism.tex}
+\subimport{../topics/asymptotics/fish/easy/}{red-herring.tex}
+\subimport{../topics/asymptotics/fish/easy/}{crimson-tuna.tex}
+\subimport{../topics/asymptotics/fish/easy/}{pink-trout.tex}
+\subimport{../topics/asymptotics/fish/medium/}{scarlet-koi.tex}
 \end{questions}
 
-\section{VoteIterator}
+\clearpage
+\section{Disjoint Sets}
 \begin{questions}
-\subimport{../topics/iterators/medium/}{vote-iterator.tex}
+\subimport{../topics/union-find/weighted-quick-union-uf/easy/}{connect-find.tex}
+\subimport{../topics/union-find/weighted-quick-union-uf/easy/}{path-compression-find.tex}
+\subimport{../topics/union-find/weighted-quick-union-uf/medium/}{max-height.tex}
 \end{questions}
+
+\clearpage
+
 
 \end{document}

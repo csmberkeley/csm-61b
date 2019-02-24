@@ -45,9 +45,7 @@ Beagle fido3 = new Dog();
 fido3.walk();
 \end{verbatim}
 \begin{solution}[0.7in]
-Compile-time error.
-
-A container meant for \lstinline$Beagle$s can't contain \lstinline$Dog$s.
+Compile-time error. A container meant for \lstinline$Beagle$s can't contain \lstinline$Dog$s.
 \end{solution}
 
 \part
@@ -63,15 +61,13 @@ The beagle is walking
 A container for \lstinline$Dog$s can contain \lstinline$Beagle$s. At compile
 time, \lstinline$fido.walk()$ is linked to \lstinline$Dog.walk()$ but at
 runtime, this method is overridden by \lstinline$Beagle.walk()$.
+\textbf{Meta:} It can be useful to talk about the static types of variables as boxes with labels and the dynamic type 
+of an object as what you place in the box. So long as what you place in the box fits the label (i.e. a \lstinline$Beagle$ 
+is a \lstinline$Dog$, so a dynamic \lstinline$Beagle$ can be placed in a static \lstinline$Dog$) then no compiler errors occur. Remember to mention dynamic method lookup.
 \end{solution}
 \end{parts}
 \end{blocksection}
 
 \begin{solution}
-\textbf{Meta:} It can be useful to talk about the static types of variables as
-boxes with labels and the dynamic type of an object as what you place in the
-box. So long as what you place in the box fits the label (i.e. a
-\lstinline$Beagle$ is a \lstinline$Dog$, so a dynamic \lstinline$Beagle$ can be
-placed in a static \lstinline$Dog$) then no compiler errors occur. Remember to
-mention dynamic method lookup.
+
 \end{solution}
