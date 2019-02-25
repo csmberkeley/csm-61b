@@ -5,18 +5,18 @@
 # A minimal current TL is installed adding only the packages that are required
 
 # See if there is a cached version of TL available
-export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
-if ! command -v texlua > /dev/null; then
+#export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
+#if ! command -v texlua > /dev/null; then
   # Obtain TeX Live
-  # wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-	wget http://ctan.mirrors.hoobly.com/systems/texlive/tlnet/install-tl-unx.tar.gz
-  tar -xzf install-tl-unx.tar.gz
-  cd install-tl-*
+wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+#wget http://mirror.hmc.edu/ctan/systems/texlive/tlnet/install-tl-unx.tar.gz
+tar -xzf install-tl-unx.tar.gz
+cd install-tl-*
 
-  # Install a minimal system
-  ./install-tl --profile=../.texlive.profile
-  cd ..
-fi
+# Install a minimal system
+./install-tl --profile=../.texlive.profile
+cd ..
+#fi
 
 # Default to letter-size paper
 tlmgr paper letter
