@@ -8,7 +8,8 @@
 export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
 if ! command -v texlua > /dev/null; then
   # Obtain TeX Live
-  wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+  # wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+	wget http://ctan.mirrors.hoobly.com/systems/texlive/tlnet/install-tl-unx.tar.gz
   tar -xzf install-tl-unx.tar.gz
   cd install-tl-*
 
