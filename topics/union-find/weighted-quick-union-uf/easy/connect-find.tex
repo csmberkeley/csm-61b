@@ -1,27 +1,24 @@
 \question Suppose we have a \texttt{WeightedQuickUnionUF} disjoint set with path compression. Show the tree structure in the union-find algorithm as the following sequence of commands is executed.
 
-\begin{lstlisting}
+\begin{parts}
+\part \begin{lstlisting}
 connect(1, 2);
 connect(3, 4);
 connect(5, 6);
 connect(1, 6);
-connect(3, 6);
 \end{lstlisting}
 
 \begin{solution}[1in]
 \begin{center}
 \begin{tikzpicture}[very thick,level/.style={sibling distance=10mm/#1},level distance=30pt]
-
+\node[vertex]{$4$}
+child {
+    node[vertex]{$3$}
+};
 \end{tikzpicture}
 \quad
 \begin{tikzpicture}[very thick,level/.style={sibling distance=10mm/#1},level distance=30pt]
 \node[vertex]{$6$}
-child {
-    node[vertex]{$4$}
-    child {
-        node[vertex]{$3$}
-    }
-}
 child {
     node[vertex]{$5$}
 }
@@ -34,3 +31,32 @@ child {
 \end{tikzpicture}
 \end{center}
 \end{solution}
+
+\part \begin{lstlisting}
+find(6);
+\end{lstlisting}
+
+\begin{solution}[1in]
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=10mm/#1},level distance=30pt]
+\node[vertex]{$4$}
+child {
+    node[vertex]{$3$}
+};
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[very thick,level/.style={sibling distance=10mm/#1},level distance=30pt]
+\node[vertex]{$6$}
+child {
+    node[vertex]{$5$}
+}
+child {
+    node[vertex]{$2$}
+    child {
+        node[vertex]{$1$}
+    }
+};
+\end{tikzpicture}
+\end{center}
+\end{solution}
+\end{parts}

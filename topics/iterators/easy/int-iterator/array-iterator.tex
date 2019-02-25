@@ -1,4 +1,7 @@
-\question Consider the following code that demonstrates the \lstinline$IntArrayIterator$.
+\begin{blocksection}
+\question Consider the following code that demonstrates the
+\lstinline$IntArrayIterator$.
+
 \begin{lstlisting}
 int[] arr = {1, 2, 3, 4, 5, 6};
 IntIterator iter = new IntArrayIterator(arr);
@@ -11,43 +14,10 @@ if (iter.hasNext()) {
 while (iter.hasNext()) {
     System.out.println(iter.next());     // 3 4 5 6
 }
-
 \end{lstlisting}
-\clearpage
+
 Define an \lstinline$IntArrayIterator$ class that works as described above.
-\ifprintanswers\else
-\begin{lstlisting}
 
-public class IntArrayIterator __________________ IntIterator {
-
-
-
-    public IntArrayIterator(int[] arr) {
-
-
-
-    }
-    
-    public boolean hasNext() {
-
-
-
-
-
-
-    }
-    
-    public int next() {
-    
-    
-    
-    
-    
-    
-    }
-}
-\end{lstlisting}
-\fi
 \begin{solution}[3in]
 \begin{lstlisting}
 public class IntArrayIterator implements IntIterator {
@@ -68,3 +38,4 @@ public class IntArrayIterator implements IntIterator {
 }
 \end{lstlisting}
 \end{solution}
+\end{blocksection}
