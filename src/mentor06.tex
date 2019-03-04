@@ -2,35 +2,44 @@
 \usepackage{../commonheader}
 
 \discnumber{6}
-\title{Asymptotic Analysis}
-\date{October 1, 2018}
+\title{ADTs, Trees}
+\date{March 4, 2019}
 
 \begin{document}
 \maketitle
 
-\section{Analysis of Algorithms}
-\subimport{../topics/asymptotics/text/}{runtime.tex}
+\section{Abstract Data Types}
+\subimport{../topics/abstract-data-types/text/}{list-set-map.tex}
+
+\clearpage
+
+\section{Interview Questions}
 \begin{questions}
-\subimport{../topics/asymptotics/easy/}{notation.tex}
-\subimport{../topics/asymptotics/easy/}{case-analysis.tex}
+\subimport{../topics/abstract-data-types/easy/}{sum-up.tex}
+\subimport{../topics/abstract-data-types/easy/}{is-permutation.tex}
 \end{questions}
 
 \clearpage
 
-\section{Something Fishy}
-\subimport{../topics/asymptotics/fish/}{question.tex}
+\section{Binary Trees}
+\marginpar{\subimport{../topics/trees/binary-trees/}{code.tex}
+           \subimport{../topics/trees/binary-trees/}{example-tree.tex}}
 \begin{questions}
-\subimport{../topics/asymptotics/fish/easy/}{red-herring.tex}
-\subimport{../topics/asymptotics/fish/easy/}{crimson-tuna.tex}
-\subimport{../topics/asymptotics/fish/easy/}{pink-trout.tex}
-\subimport{../topics/asymptotics/fish/medium/}{scarlet-koi.tex}
+\subimport{../topics/trees/binary-trees/easy/}{height.tex}
+\subimport{../topics/trees/binary-trees/easy/}{is-balanced.tex}
+\subimport{../topics/trees/binary-trees/medium/}{is-symmetric.tex}
+\clearpage
 \end{questions}
 
 \clearpage
 
-\section{\extra{Linky Listy}}
+\section{Binary Search Trees}
 \begin{questions}
-\subimport{../topics/asymptotics/medium/}{linked-list-runtimes.tex}
+\subimport{../topics/trees/}{runtime.tex}
+\newline \newline 
 \end{questions}
+
+\clearpage
+
 
 \end{document}
