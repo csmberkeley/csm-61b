@@ -1,0 +1,16 @@
+\begin{blocksection}
+\question We have two algorithms, Kruskal's and Prim's, that allow us to find a Minimum Spanning Tree. Consider the problem of finding a Maximum Spanning Tree
+
+\begin{parts}
+\part Describe a modification to Kruskal's algorithm that would allow us to find a Maximum Spanning Tree of a graph
+\begin{solution}[1.5in]
+Negate all the edge weights and find the minimum spanning tree using Kruskal's algorithm. Nothing in Kruskal's algorithm assumes the weights are positive. Therefore, the minimum of the weights negated, is achieved by the maximum of the original weights, and we will have a Maximum Spanning Tree. \\
+Similar logic applies for using Prim's algorithm with negated edge weights. 
+\end{solution}
+
+\part Can we use a similar approach to modify Djikstra's algorithm to find the Maximum Path between two nodes. 
+\begin{solution}[1.5in]
+No, because Djikstra's doesn't work with negative edge weights. This is because Djikstra's relies on the assumption that if all weights are non-negative, adding an edge can never make a path shorter. Therefore, we cannot simply negate edge weights and use Djikstra's to find the Maximum path. 
+\end{solution}
+\end{parts}
+\end{blocksection}
