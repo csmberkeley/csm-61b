@@ -20,24 +20,41 @@ public class BinarySearchTree<T extends Comparable<T>> {
 \begin{lstlisting}
 public class BinarySearchTree<T extends Comparable<T>> {
     protected Node root;
-    protected class Node {
+    protected class Node implements Iterable<Node> {
         public T value;
         public Node parent, left, right;
-    }
-    private Node successor(Node node) {
-        if (node.right != null) {
-            node = node.right;
-            while (node.left != null) {
-                node = node.left;
+        
+        public Iterator<Node> iterator() {
+            return new SuccessorIterator(root);
+        }
+        
+        private class SuccessorIterator implements Iterator<Node> {
+            private Node node;
+            
+            public SuccessorIterator(Node node) {
+                this.node = node;
             }
-            return node;
-        } else {
-            Node parent = node.parent;
-            while (parent != null && parent.right == node) {
-                node = parent;
-                parent = parent.parent;
+            
+            public boolean hasNext() {
+                return node != null;
             }
-            return parent;
+            
+            public Node next() {
+                if (node.right != null) {
+                    node = node.right;
+                    while (node.left != null) {
+                        node = node.left;
+                    }
+                    return node;
+                } else {
+                    Node parent = node.parent;
+                    while (parent != null && parent.right == node) {
+                        node = parent;
+                        parent = parent.parent;
+                    }
+                    return parent;
+                }
+            }
         }
     }
 }
@@ -65,7 +82,7 @@ this case, first consider a simple case with just 2 nodes.
     child {
         node[vertex]{$1$}
     }
-    child { edge from parent[draw=none]};
+    child { edge from parent[draw=none] }
 \end{tikzpicture}
 \end{center}
 

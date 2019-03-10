@@ -2,34 +2,47 @@
 \usepackage{../commonheader}
 
 \discnumber{7}
-\title{Sequences \& ADTs}
-\date{October 8, 2018}
+\title{Trees \& Hash}
+\date{March 11, 2019}
 
 \begin{document}
 \maketitle
-
-\section{Abstract Data Types}
-\subimport{../topics/abstract-data-types/text/}{list-set-map.tex}
-
+\section{Binary Search Trees}
+\subimport{../topics/trees/binary-search-trees/}{code.tex}
+\begin{questions}
+\subimport{../topics/trees/binary-search-trees/easy/}{bst-valid-balanced.tex}
 \clearpage
 
-\section{Interview Questions}
-\begin{questions}
-\subimport{../topics/abstract-data-types/easy/}{sum-up.tex}
-\subimport{../topics/abstract-data-types/easy/}{missing-no.tex}
-\subimport{../topics/abstract-data-types/easy/}{is-permutation.tex}
 \end{questions}
 
 \clearpage
 
-\section{Amortized Analysis}
+\section{Balanced Trees}
+\subimport{../topics/trees/balanced-search-trees/}{example-2-3-tree.tex}
 \begin{questions}
-\subimport{../topics/asymptotics/medium/}{amortized-analysis.tex}
+\subimport{../topics/trees/balanced-search-trees/easy/}{2-3-tree-insertion.tex}
+\subimport{../topics/trees/balanced-search-trees/easy/}{2-3-tree-to-llrb.tex}
 \end{questions}
 
-\section{\extra{Finding Duplicates}}
+\clearpage
+
+\section{Hashing}
 \begin{questions}
-\subimport{../topics/abstract-data-types/medium/}{find-duplicates-within-k.tex}
+\subimport{../topics/hashing/basics/}{diagram.tex}
+\end{questions}
+
+\clearpage
+
+\section{Hash Codes}
+\begin{questions}
+\subimport{../topics/hashing/easy/}{valid-hashcodes.tex}
+\end{questions}
+
+\clearpage
+
+\section{Extra Practice: Trees}
+\begin{questions}
+\subimport{../topics/trees/binary-search-trees/hard/}{successor.tex}
 \end{questions}
 
 \end{document}

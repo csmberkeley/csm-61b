@@ -1,0 +1,16 @@
+\begin{blocksection}
+\question Recall that the cut property states that given any cut, the minimum weight crossing edge is in the MST. The converse is also true, that if an edge is in the MST, then it must be the minimum weight crossing edge across some cut. \\
+You are given a graph G = (V, E) with positive, unique edge weights, and a minimum spanning tree T for this graph; Now suppose the weight of a particular edge e in the graph is modified. You wish to quickly update the minimum spanning tree T to reflect this change, without recomputing the entire tree from scratch. Describe how to do so efficiently in the following cases.
+
+\begin{parts}
+\part e is part of T and the edge weight is decreased
+\begin{solution}[1.5in]
+The edge e was in the original MST; therefore it was the lightest edge weight across some cut(by the cut property). If we decrease the edge weight e, it will still be the lightest edge weight across the same cut, and therefore still be part of the MST. Therefore, we do not need to change anything and T is the MST of the new graph. 
+\end{solution}
+
+\part e is not part of the MST and its edge weight is increased. 
+\begin{solution}[1.5in]
+The edge e was not in the MST; therefore it was not a unique lightest edge across any cut(otherwise it would have been in some MST by the cut property).  Increasing the edge weight of e doesn’t change that fact and therefore the edge e will still not be in the MST by the cut property. Therefore, we do not need to change anything and T is the MST of the new graph. 
+\end{solution}
+\end{parts}
+\end{blocksection}
