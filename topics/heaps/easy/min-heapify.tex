@@ -1,5 +1,5 @@
 \question \begin{parts}
-\part Show the heapification of the tree.
+\part Show the heapification of the tree. (note we want to create a min-heap)
 
 \begin{solution}[1.5in]
 \begin{center}
@@ -193,9 +193,12 @@ child {
 \end{center}
 \end{solution}
 
-\newpage
+% \newpage
+
 \part Finally, remove the value 1.
 
+
+\ifprintanswers
 \begin{solution}[1.5in]
 \begin{center}
 \begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=35pt]
@@ -263,4 +266,5 @@ child {
 \end{tikzpicture}
 \end{center}
 \end{solution}
+\fi
 \end{parts}

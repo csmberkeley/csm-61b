@@ -1,0 +1,14 @@
+\begin{blocksection}
+\question Given a dictionary of $n$ words, where the average length of the words is $l$, how long would it take to insert all of the words into a Trie? Express your answer in terms of a tight asymptotic bound.
+
+
+\begin{solution}[1in]
+Runtime would be $\Theta(nl)$.\newline For each word in our dictionary, we must either traverse through $l$ nodes if the suffix already exists in the trie or add $l$ nodes if a suffix does not exist in the trie. Both cases involve iterating $l$ times and since there are $n$ words, the total runtime of adding all the words from the dictionary into the Trie would be $\Theta(nl)$. 
+\end{solution}
+
+\question With that same Trie already containing those $n$ words, how long would it take to check whether or not a new word of length $l$ was in our initial dictionary? Express the runtime in both Big Omega and Big O notation.
+
+\begin{solution}
+Runtime would be $O(l)$ and $\Omega(1)$. Worst case, all letters of our new word exist in that sequence inside our Trie, so we must iterate over every letter of our new word. Best case, the first letter of our new word, is not the first letter of any word in our initial dictionary (ie. given a new word \lstinline$"hello"$ for a dictionary of \lstinline${"asdf", "cat", "pidgeon"}$, the starting node of our trie would not have any edge for the character \lstinline$h$ so we immediately return \lstinline$false$).
+\end{solution}
+\end{blocksection}
