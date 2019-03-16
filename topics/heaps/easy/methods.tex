@@ -11,4 +11,6 @@
 Only level order, bubbling up and reverse level order, bubbling down work as
 they maintain heap invariant. Namely, that every node is either larger (in a
 max heap) or smaller (in a min heap) than all of its children.
+
+Meta: Students often ask about the runtime of these methods. The specific runtime for heapification is hard to prove, but specifically level order, bubbling up will take $O(N\log(N))$ and reverse level order, bubbling down takes $O(N)$, so reverse level order + bubbling down is faster. Intuition on why it is faster: the majority of the nodes are near the bottom of the tree, so a lot of the nodes bubble down really quickly. 
 \end{solution}

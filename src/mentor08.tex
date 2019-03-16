@@ -2,39 +2,41 @@
 \usepackage{../commonheader}
 
 \discnumber{8}
-\title{Binary Trees}
-\date{October 15, 2018}
+\title{Heaps \& Tries}
+\date{March 18, 2019}
 
 \begin{document}
 \maketitle
 
-\section{Binary Trees}
-\marginpar{\subimport{../topics/trees/binary-trees/}{code.tex}
-          \subimport{../topics/trees/binary-trees/}{example-tree.tex}}
+\section{Heaps of Fun}
 \begin{questions}
-\subimport{../topics/trees/binary-trees/easy/}{height.tex}
-\subimport{../topics/trees/binary-trees/easy/}{is-balanced.tex}
-\clearpage
-\marginpar{\subimport{../topics/trees/binary-trees/medium/}{is-symmetric-tree.tex}}\vspace*{-2em}
-\subimport{../topics/trees/binary-trees/medium/}{is-symmetric.tex}
+\subimport{../topics/heaps/easy/}{methods.tex}
+\subimport{../topics/heaps/}{example-tree.tex}
+\subimport{../topics/heaps/easy/}{min-heapify.tex}
+\subimport{../topics/heaps/medium/}{k-largest-items.tex}
 \end{questions}
 
 \clearpage
 
-\section{Binary Search Trees}
+\section{Tries}
 \begin{questions}
-\subimport{../topics/trees/binary-search-trees/medium/}{from-sorted-array.tex}
+\subimport{../topics/trees/tries/easy/}{hieyllo.tex}
+\subimport{../topics/trees/tries/easy/}{prefix.tex}
+\subimport{../topics/trees/tries/medium/}{runtime.tex}
 \end{questions}
 
 \clearpage
 
-
-\section{\extra{Successor}}
-\subimport{../topics/trees/binary-trees/text/}{traversals.tex}
-\marginpar{\subimport{../topics/trees/binary-trees/}{example-tree.tex}}
+\section{Hashing Again}
 \begin{questions}
-\subimport{../topics/trees/binary-trees/easy/}{depth-first-traversals.tex}
-\subimport{../topics/trees/binary-trees/easy/}{level-order-traversal.tex}
+\subimport{../topics/hashing/hard/}{2-sum-redux.tex}
 \end{questions}
+
+\clearpage
+
+\section{Extra Practice: Trie-ing Extra Hard}
+\subimport{../topics/trees/tries/t9/text/}{t9.tex}
+
+\subimport{../topics/trees/tries/t9/hard/}{get-matches.tex}
 
 \end{document}

@@ -1,14 +1,24 @@
 \begin{blocksection}
-\question Given a dictionary of words, describe a procedure for checking if a
-new word can be created out of the concatenation of two words in the
+\question Given a dictionary of $n$ words, describe a procedure for checking if a
+new compound word of length $l$ can be created out of the concatenation of two words in the
 dictionary. For example, if our dictionary contains the words,
 \lstinline$"news"$, \lstinline$"paper"$, \lstinline$"new"$, and
-\lstinline$"ape"$, we should be able to discover the new word,
-\lstinline$"newspaper"$.
+\lstinline$"ape"$, given a new word:
+\lstinline$"newspaper"$ check whether or not it is the concatenation of any two words in our dictionary. Give the runtime for your answer and explain why.
 
 \begin{solution}[1in]
-We can put all of the words in the dictionary into a trie. Then we can check a
-prefix of the word and see if the remainder of the word is in the trie as
-well.
+We can put all of the words in the dictionary into a trie. 
+
+Then we check all possible prefixes of the word. 
+
+If the current trie does not have a certain prefix, then we know that all other prefixes are not in the trie, thus terminating the code. (Ex: if "new" is not in the trie, then obviously "news" is not either)
+
+If the prefix is in our dictionary, we check if the remainder of the word is also in the trie. If the remainder does not exist in the trie, we check the next prefix. If both cases are satisfied, then we have a compound word. For example, if \lstinline$"ne"$ is a word, and \lstinline$"wspaper"$ is a word, then there exists a valid pairing in our trie.
+
+Runtime is $O(l^2)$ and $\Omega(1)$. In the worst case, you must check all $l$ prefixes and each prefix is a valid word, meaning we also check the corresponding suffix. Checking both the prefix and suffix pair with the trie takes $l$ operations giving us $O(l^2)$. In the best case, the first letter of the compound word does not exist in the first level of the trie. Then we can break the loop early as none of the following prefixes could possibly form a trie.
+
+
+
+
 \end{solution}
 \end{blocksection}

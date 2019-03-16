@@ -1,4 +1,5 @@
-\question Given a trie containing the dictionary of words, define a procedure, \texttt{getWords}, that returns the set of matching words for a given key-press sequence.
+Given a trie containing the dictionary of words, 
+define a procedure, \texttt{getWords}, that returns the set of matching words for a given key-press sequence.
 
 \begin{lstlisting}
 public interface TrieNode {
@@ -67,6 +68,7 @@ public class T9 {
     public static Set<String> getMatches(int[] keyPresses, TrieNode words) {
         return getMatches(keyPresses, words, 0);
     }
+
     private static Set<String> getMatches(int[] keyPresses, TrieNode wordNode, int index) {
         Set<String> matches = new HashSet<String>();
         if (index == keyPresses.length) {

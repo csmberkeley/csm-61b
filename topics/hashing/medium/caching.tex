@@ -1,9 +1,0 @@
-\question You are a software engineer for a newspaper company! Your users are complaining about how slowly your website loads. After performing some performance profiling, you realize that the database queries are slowing the system down.
-
-To fix the issue, you decide to implement a cache that contains the most recently accessed articles. The cache is only fast if it's small so you can only store a maximum of $N$ articles. You want to keep only the $N$ most recent articles that people have read. If a new, unique article is accessed, then the oldest article should be replaced.
-
-Describe how you would implement this cache. What combinations of data structures would you use to build this efficiently? 
-
-\begin{solution}[2in]
-Use a \texttt{HashMap} with references to nodes in a doubly linked list. The \texttt{HashMap} will map the name of the article to a tuple containing the article as well as a reference to a node in a doubly linked list. If the article we are trying to access is in the \texttt{HashMap}, we deliver the article, and then retrieve its respective node in the linked list and move it to the front. If the article is not in the \texttt{HashMap}, and the size of the \texttt{HashMap} is still less than $N$, we can fetch from the main server and create a new node to append to the front of the linked list. If the \texttt{HashMap} is at capacity, we look at the tail of the linked list and delete that article from both the linked list as well as the \texttt{HashMap}. We then add the new article into the \texttt{HashMap} and to the front of the linked list. In Java there's actually a data structure for this: \texttt{java.util.LinkedHashMap}!
-\end{solution}
