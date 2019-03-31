@@ -14,7 +14,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Display solutions
-%\def\discussionsolutions{}
+% \def\discussionsolutions{}
 
 \ProvidesPackage{commonheader}
 
@@ -51,7 +51,7 @@
 
 % Course information
 \def\coursenumber{CSM 61B}
-\def\semester{Spring 2018}
+\def\semester{Spring 2019}
 % Provide discnum and disctitle
 \newcommand{\discnumber}[1]{\newcommand{\discnum}{#1}}
 \def\title#1{\gdef\@title{#1}\gdef\disctitle{#1}}
@@ -87,6 +87,24 @@
 \def\preamble#1{\gdef\@preamble{#1}}
 
 \def\sp#1{\underline{\hspace*{#1}}}
+
+% Use \printanswers to print with answers and \noprintanswers to print without.
+% Check for defined flag \discussionsolutions to show solutions
+\ifdefined\discussionsolutions
+  \printanswers
+\else
+  \noprintanswers
+\fi
+
+% Use \printmeta to print with meta and \noprintmeta to print without
+\newif\ifprintmeta
+\newcommand{\printmeta}{\printmetatrue}
+\newcommand{\noprintmeta}{\printmetafalse}
+\noprintmeta % default to no print meta
+
+\usepackage{environ}
+\NewEnviron{meta}{\ifprintmeta\expandafter \textbf{Meta:} \BODY\fi}
+% define meta inside \begin{meta} \end{meta}
 
 % Define title
 \renewcommand{\maketitle}{\@maketitle\thispagestyle{empty}}
@@ -182,14 +200,6 @@ to\hsize{\hfil\box\@tempboxa\hfil}
  \setlength{\parskip}{\currentparskip} % restore the value
 }{\end{minipage}}
 
-% Use \printanswers to print with answers and \noprintanswers to print without.
-% Check for defined flag \discussionsolutions to show solutions
-\ifdefined\discussionsolutions
-  \printanswers
-\else
-  \noprintanswers
-\fi
-
 % Mathematical commands
 \newcommand{\surjects}{\twoheadrightarrow}
 \newcommand{\injects}{\hookrightarrow}
@@ -242,3 +252,4 @@ to\hsize{\hfil\box\@tempboxa\hfil}
 \def\>{\right\rangle}
 % For lemmas
 \newtheorem{lemma}{Lemma}
+

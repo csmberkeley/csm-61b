@@ -1,0 +1,61 @@
+\begin{blocksection}
+\question For the graph below, write the order in which vertices are visited
+using the specified algorithm starting from $A$. Break ties by alphabetical
+order.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.15]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (20,-20) circle (3);
+\draw (20,-20) node {$C$};
+\draw [black] (60,-20) circle (3);
+\draw (60,-20) node {$G$};
+\draw [black] (40,-40) circle (3);
+\draw (40,-40) node {$F$};
+\draw [black] (30,-30) circle (3);
+\draw (30,-30) node {$D$};
+\draw [black] (20,-40) circle (3);
+\draw (20,-40) node {$B$};
+\draw [black] (10,-30) circle (3);
+\draw (10,-30) node {$E$};
+\draw [black] (30,-10) circle (3);
+\draw (30,-10) node {$H$};
+\draw [black] (40,-20) circle (3);
+\draw (40,-20) node {$A$};
+\draw [black] (42.12,-37.88) -- (57.88,-22.12);
+\draw (51.08,-30.48) node [below] {};
+\draw [black] (22.12,-22.12) -- (27.88,-27.88);
+\draw (23.92,-25.48) node [below] {};
+\draw [black] (22.12,-17.88) -- (27.88,-12.12);
+\draw (25.52,-16.48) node [right] {};
+\draw [black] (23,-20) -- (37,-20);
+\draw (30,-20.5) node [below] {};
+\draw [black] (43,-20) -- (57,-20);
+\draw (50,-20.5) node [below] {};
+\draw [black] (37.88,-37.88) -- (32.12,-32.12);
+\draw (35.52,-33.52) node [right] {};
+\draw [black] (27.88,-32.12) -- (22.12,-37.88);
+\draw (24.48,-33.52) node [left] {};
+\draw [black] (17.88,-37.88) -- (12.12,-32.12);
+\draw (15.52,-33.52) node [right] {};
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part DFS
+\begin{solution}[0.5in]
+$A - C - D - B - E - F - G - H$ \\
+Use a Stack when traversing through this graph, similar to tree traversal.
+% A Stack has a LIFO (Last in First Out) nature that is used to perform the traversal. \\
+% To be more specific, you add node A to the fringe. Pop it, add its children, G and then C to the fringe. (Every time a node is popped and is not in the seen set, add it to the set). Since it is LIFO, you would pop C out first and add all its children, H and then D to the fringe. Then you would pop D, and add its child F and then B, to the fringe. Then you would pop B, and its child, E to the fringe. Pop E, but since it has no children, you would not add anything to the fringe. Once you've popped E, you would pop F, and add its children - G to the fringe. Then you would pop G, but because it has no children, nothing is added to the Stack. Lastly, pop 5!
+
+\end{solution}
+
+\part BFS
+\begin{solution}[0.5in]
+$A - C - G - D - H - F - B - E$ \\
+Use a Queue when traversing through the graph, similar to tree traversal.
+\end{solution}
+
+\end{parts}
+\end{blocksection}
