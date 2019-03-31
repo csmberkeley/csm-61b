@@ -60,6 +60,7 @@ tlmgr install \
     pgf \
     preprint \
     tikz-qtree \
+		trimspaces \
     upquote \
     url \
     wasy \
