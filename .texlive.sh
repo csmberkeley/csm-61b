@@ -45,6 +45,7 @@ tlmgr install \
     comment \
     ec \
     enumitem \
+		environ \
     etoolbox \
     fancybox \
     float \
