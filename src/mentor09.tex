@@ -2,34 +2,52 @@
 \usepackage{../commonheader}
 
 \discnumber{9}
-\title{Heaps \& Tries}
-\date{March 18, 2019}
-\printanswers
+\title{Graphs \& Searches}
+\date{April 1, 2019}
+%\printanswers
+
 \begin{document}
 \maketitle
 
-\section{Leaping into Heaps}
-\subimport{../topics/heaps/}{example-tree.tex}
+\section{Tree Traversal}
+
+\subimport{../topics/trees/binary-trees/text/}{traversals.tex}
+\subimport{../topics/trees/binary-trees/}{example-tree.tex}
 \begin{questions}
-\subimport{../topics/heaps/easy/}{min-heapify.tex}
+\subimport{../topics/trees/binary-trees/easy/}{depth-first-traversals.tex}
+\subimport{../topics/trees/binary-trees/easy/}{level-order-traversal.tex}
+
+\end{questions}
+
+\section{Searches}
+\begin{questions}
+\subimport{../topics/graphs/search/medium/}{copy_searches.tex}
 \end{questions}
 
 \clearpage
 
-\section{Deeper into Heaps}
+\section{Shortest Paths}
 \begin{questions}
-\subimport{../topics/heaps/medium/}{k-largest-items.tex}
+\subimport{../topics/graphs/shortest-paths/a-star/easy/}{s-a-d-g-revised.tex}
 \end{questions}
 
 \clearpage
 
-\section{Trying Out Tries}
+\section{Networking}
 \begin{questions}
-\subimport{../topics/trees/tries/easy/}{hieyllo.tex}
-\clearpage
-\subimport{../topics/trees/tries/easy/}{prefix.tex}
-\subimport{../topics/trees/tries/medium/}{newspaper.tex}
-
+\subimport{../topics/graphs/minimum-spanning-trees/easy/}{network.tex}
 \end{questions}
+
+\clearpage
+
+\section{\extra{Algorithms}}
+\subimport{../topics/graphs/text/}{algorithms.tex}
+\begin{questions}
+\subimport{../topics/graphs/search/medium/}{greedy-dfs.tex}
+\subimport{../topics/graphs/minimum-spanning-trees/medium/}{weight-constrained.tex}
+\subimport{../topics/graphs/shortest-paths/dijkstras/hard/}{bfs-dijkstras.tex}
+\end{questions}
+
+
 
 \end{document}

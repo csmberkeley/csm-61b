@@ -45,6 +45,7 @@ tlmgr install \
     comment \
     ec \
     enumitem \
+		environ \
     etoolbox \
     fancybox \
     float \
@@ -59,6 +60,7 @@ tlmgr install \
     pgf \
     preprint \
     tikz-qtree \
+		trimspaces \
     upquote \
     url \
     wasy \
