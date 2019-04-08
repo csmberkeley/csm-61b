@@ -2,45 +2,46 @@
 \usepackage{../commonheader}
 
 \discnumber{10}
-\title{Graphs \& Searches}
-\date{April 1, 2019}
+
+\title{More MSTs \& Sorting}
+\date{April 8, 2019}
 
 \begin{document}
 \maketitle
 
-\section{Tree Traversal}
-\marginpar{\subimport{../topics/trees/binary-trees/}{code.tex}}
-\subimport{../topics/trees/binary-trees/text/}{fringe.tex}
+\section{Prim's Algorithm}
 \begin{questions}
-\subimport{../topics/trees/binary-trees/medium/}{traversals.tex}
-\end{questions}
-
-\section{Graph Traversal}
-\subimport{../topics/graphs/traversal/}{pseudocode.tex}
-\begin{questions}
-\subimport{../topics/graphs/traversal/easy/}{dag.tex}
+\subimport{../topics/graphs/minimum-spanning-trees/easy/}{cut-and-prims.tex}
+\subimport{../topics/graphs/minimum-spanning-trees/easy/}{network-prims.tex}
 \end{questions}
 
 \clearpage
 
-\section{Searches}
+\section{Maximum Spanning Trees}
 \begin{questions}
-\subimport{../topics/graphs/search/medium/}{searches.tex}
-\end{questions}
-
-\section{Shortest Paths}
-\begin{questions}
-\subimport{../topics/graphs/shortest-paths/a-star/easy/}{s-a-d-g-revised.tex}
+\subimport{../topics/graphs/minimum-spanning-trees/hard/}{max-spanning-tree.tex}
 \end{questions}
 
 \clearpage
 
-\section{\extra{Elephants}}
-\subimport{../topics/graphs/elephants/text/}{elephants.tex}
-\marginpar{\subimport{../topics/graphs/elephants/text/}{puzzle.tex}}
+\section{Feeling Out of Sorts?}
+
+\subimport{../topics/sorting/text/}{basic-sorts.tex}
+\subimport{../topics/sorting/runtime/}{basic.tex}
 \begin{questions}
-\subimport{../topics/graphs/elephants/easy/}{bfs-or-dfs.tex}
-\subimport{../topics/graphs/elephants/medium/}{solve.tex}
+\subimport{../topics/sorting/easy/}{insertion-sort-cases.tex}
+\subimport{../topics/sorting/easy/}{selection-vs-insertion-sort.tex}
+\subimport{../topics/sorting/easy/}{heapsort-intro.tex}
+\subimport{../topics/sorting/easy/}{heapsort-mech.tex}
+
+\end{questions}
+\clearpage
+
+
+\section{Vertigo}
+
+\begin{questions}
+\subimport{../topics/sorting/medium/}{inversions.tex}
 \end{questions}
 
 \end{document}

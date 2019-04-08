@@ -1,0 +1,16 @@
+\question Sort the following array using Heap Sort.
+[3, 2, 1, 5, 6, 8, 7]
+
+\begin{solution}[0.75in]
+%\begin{parts}
+ Heapify the array (may be easier to visualize with a tree structure) \newline 
+[3, 2, 1, 5, 6, 8, 7] \newline
+[3, 6, 1, 5, 2, 8, 7] \newline
+[3, 6, 8, 5, 2, 1, 7] \newline 
+[8, 6, 3, 5, 2, 1, 7] \newline 
+[8, 6, 7, 5, 2, 1, 3]\newline
+Then delete the largest element and place it at the back of the array. Do this until the array is sorted.
+[1, 2, 3, 5, 6, 7, 8]
+%\end{parts}
+\textbf{Meta}: Walkthrough heapification of the array when you go over solutions. No need to justify why/when we sink and swim nodes. Students should be comfortable with this already. Redirect students to the previous part when they answered why we use a max heap, and emphasize that we can do everything within one array.
+\end{solution}

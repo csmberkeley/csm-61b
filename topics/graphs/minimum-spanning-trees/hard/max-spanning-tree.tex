@@ -8,7 +8,7 @@ Negate all the edge weights and find the minimum spanning tree using Kruskal's a
 Similar logic applies for using Prim's algorithm with negated edge weights. 
 \end{solution}
 
-\part Can we use a similar approach to modify Djikstra's algorithm to find the Maximum Path between two nodes. 
+\part Can we use a similar approach to modify Djikstra's algorithm to find the Maximum Path between two nodes? 
 \begin{solution}[1.5in]
 No, because Djikstra's doesn't work with negative edge weights. This is because Djikstra's relies on the assumption that if all weights are non-negative, adding an edge can never make a path shorter. Therefore, we cannot simply negate edge weights and use Djikstra's to find the Maximum path. 
 \end{solution}
