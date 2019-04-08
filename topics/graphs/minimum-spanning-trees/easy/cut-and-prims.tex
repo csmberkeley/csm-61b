@@ -1,0 +1,19 @@
+\begin{blocksection}
+The cut property states that given any cut, the minimum weight crossing edge is in the MST. The converse is also true, that if an edge is in the MST, then it must be the minimum weight crossing edge across some cut. This property is a key idea behind Prim's algorithm.
+\question Describe Prim's algorithm.
+
+\begin{solution}[0.5in]
+Starting from any arbitrary source, repeatedly add the shortest edge that
+connects some node in the tree to some node outside the tree.
+
+Another way of thinking about Prim's algorithm is that it is basically just
+Dijktra's algorithm, but where we consider node in order of the distance from the
+\emph{entire tree}, rather than the distance from the start.
+\end{solution}
+
+\question We can use a binary heap priority queue to implement Prim's. What would be the runtime of Prim's using this implementation?  
+\begin{solution}[0.75in]
+In the worst case, we perform V insertions and deletions, each costing $O(\log V)$ time. We also decrease priorities E times, also costing $O(\log V)$ time. In total, assuming that E\textless  V, Prim's will take $O(E \log V)$ time to complete.
+
+\end{solution}
+\end{blocksection}

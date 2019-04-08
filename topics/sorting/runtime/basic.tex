@@ -1,0 +1,80 @@
+\ifprintanswers\else
+
+\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{12pt}
+\begin{tabularx}{\textwidth}{Xlll}
+Algorithm         & Best-case & Worst-case  \\\hline
+Selection Sort    &           &             \\
+Insertion Sort    &           &             \\
+Merge Sort        &           &             \\
+Heapsort          &           &                   
+\end{tabularx}
+
+\fi
+
+\begin{solution}
+\renewcommand{\arraystretch}{2}
+\setlength{\tabcolsep}{12pt}
+\begin{tabularx}{\textwidth}{Xlll}
+Algorithm         & Best-case          & Worst-case \\\hline
+Selection Sort    & $\Theta(N^2)$      & $\Theta(N^2)$\\
+Insertion Sort    & $\Theta(N)$        & $\Theta(N^2)$\\
+Merge Sort        & $\Theta(N \log N)$ & $\Theta(N \log N)$\\
+Heapsort          & $\Theta(N)$        & $\Theta(N \log N)$	 
+\end{tabularx}
+
+
+%\begin{description}
+[Selection Sort]
+In selection sort, we loop through the array to find the smallest element.
+Next, we swap the element at index-0 with the smallest element. Next, we repeat
+this procedure, but only looking at the array starting at index-1.
+
+
+\textit{Runtime, Best, Worst Case:} Since it takes $O(N)$ time to loop
+through the array, and we loop through the array $N$ times, this algorithm has
+a runtime of $\Theta(N^2)$. Note that even if the array is already sorted, we
+need to iterate through it to find the minimum, and then iterate through it
+again, and again, $N$ times.
+
+[Insertion Sort]
+This is the way an adult would normally sort a pack of cards. Iterating through
+the array, swapping each element left-wards.
+
+
+\textit{Best Case:} Given a sorted array, \lstinline${ 1, 2, 3, 4 }$,
+this algorithm would iterate through the array just once, and do 0 swaps, since
+all elements are already as left-wards as they can be.
+\textit{Worst Case:} Given a fully unsorted array,
+\lstinline${ 4, 3, 2, 1 }$, this algorithm would first swap $(3, 4)$, then to
+move 2 left-wards, it needs to do 2 swaps. Finally to move 1 left-wards, it
+needs to do 3 swaps. This is of the ordering of $O(n^2)$ swaps.
+
+[Merge Sort]
+Given an array, divide it into two equal halves, and call mergesort recursively
+on each half. Take the recursive leap of faith and assume that each half is now
+sorted. Merge the two sorted halves. Merging takes a single iteration through
+both arrays, and takes $O(N)$ time. The base case is if the input list is just
+1 element long, in which case, we return the list itself.
+
+
+\textit{Best case, Worst Case, Runtime:} Since the algorithm divides the
+array and recurses down, this takes $\Theta(N \log N)$ time, no matter what.
+
+[Heap Sort]
+Place all elements into a heap. Remove elements one by one from the heap, and
+place them in an array.
+
+
+\textit{Recall:} Creating a heap of $N$ elements takes $N \log N$ time,
+because we have to bubble-up elements. Removing an element from a heap takes
+$\log N$ time, also because of bubbling and sinking.
+\textit{Best Case:} Say that all the elements in the input array are
+equal. In this case, creating the heap only takes $O(N)$ time, since there is
+no bubbling-down to be done. Also, removing from the heap takes constant time
+for the same reason. Since we remove $N$ elements, and creating the heap takes
+$O(N)$ time, the overall runtime is $O(N)$.
+\textit{Worst Case:} Any general array would require creating the heap
+with bubbling which itself takes $N \log N$ time.
+%\end{description}
+\end{solution}
