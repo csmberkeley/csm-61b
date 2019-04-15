@@ -1,0 +1,37 @@
+\begin{blocksection}
+
+\begin{parts}
+\part Will the following code cause a compiler error, a runtime error, or no error at all? 
+
+\begin{lstlisting}
+public static void main(String args[]) {
+    ArrayList list = new ArrayList();
+    String str0 = "string";
+    list.add(str0);
+    String str1 = list.get(0);
+}
+\end{lstlisting}
+
+\begin{solution}[1.5in]
+Compiler error: Static type of str1 is String, but the static type of str0 is Object; Object cannot be converted to String.
+\end{solution}
+
+\part If there is an error, how can we resolve it by making a small addition to the code? 
+\begin{solution}[1.5in]
+We can cast list.get(0) to type String. str0 has dynamic type String, so casting its static type from Object to String is allowed. This will resolve the compilation error. We could also add a generic type parameter of String to our ArrayList to make it an ArrayList<String>. 
+\end{solution}
+
+\part Which of the solutions discussed in the previous part handles the following code most elegantly? Assume the code has been changed to include any modifications from the previous part, and that we generally prefer compilation errors to runtime errors.
+\begin{solution}[1.5in]
+\begin{lstlisting}
+public static void main(String args[]) {
+    ArrayList list = new ArrayList();
+    Integer int0 = new Integer(1);
+    list.add(int0);
+    String str1 = list.get(0);
+}
+\end{lstlisting}
+Adding the generic type parameter to our ArrayList allows for the compiler to detect that the object we are adding to our ArrayList is the wrong type, which will cause a compiler error. In the case where we cast list.get(0) to String, this will result in a ClassCastException at runtime when we attempt to convert an Integer object to a String object.  
+\end{solution}
+\end{parts}
+\end{blocksection}

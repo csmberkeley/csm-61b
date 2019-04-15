@@ -1,33 +1,55 @@
 \documentclass[11pt]{exam}
 \usepackage{../commonheader}
 
-\discnumber{13}
-\title{Graph Algorithms}
-\date{April 11, 2018}
+\discnumber{11}
+\title{More Sorting!}
+\date{April 15, 2019}
 
 \begin{document}
 \maketitle
 
-\section{Shortest Paths}
+\section{Stability}
+\subimport{../topics/sorting/text/}{stability.tex}
 \begin{questions}
-\subimport{../topics/graphs/shortest-paths/a-star/easy/}{s-a-d-g-revised.tex}
+\subimport{../topics/sorting/easy/}{stability.tex}
 \end{questions}
 
 \clearpage
 
-\section{Networking}
+\section{Even More Sorting}
+\subimport{../topics/sorting/runtime/}{basic-with-quicksort.tex}
 \begin{questions}
-\subimport{../topics/graphs/minimum-spanning-trees/easy/}{network.tex}
+\subimport{../topics/sorting/easy/}{quicksort.tex}
 \end{questions}
 
 \clearpage
 
-\section{\extra{Algorithms}}
-\subimport{../topics/graphs/text/}{algorithms.tex}
+\section{Pivot Choice}
 \begin{questions}
-\subimport{../topics/graphs/search/medium/}{greedy-dfs.tex}
-\subimport{../topics/graphs/minimum-spanning-trees/medium/}{weight-constrained.tex}
-\subimport{../topics/graphs/shortest-paths/dijkstras/hard/}{bfs-dijkstras.tex}
+\subimport{../topics/sorting/medium/}{pivot-choice.tex}
 \end{questions}
+
+\clearpage
+
+\section{Sorting Out My Head!}
+\begin{questions}
+\subimport{../topics/sorting/medium/}{which-sort.tex}
+\end{questions}
+
+\clearpage
+
+\section{QuickSort vs. Merge Sort}
+\begin{questions}
+\subimport{../topics/sorting/medium/}{quicksort-vs-merge-sort.tex}
+\end{questions}
+\clearpage
+
+
+\section{\extra{Cheapest Flights Within K Stops}}
+\begin{questions}
+\subimport{../topics/graphs/shortest-paths/dijkstras/hard/}{cheapest-flights-within-k-stops.tex}
+
+\end{questions}
+\clearpage
 
 \end{document}
