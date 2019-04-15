@@ -1,0 +1,21 @@
+\question  What is the difference between the minimum spanning tree and the shortest paths tree?
+
+\begin{solution}[0.5in]
+The minimum spanning tree is the tree with all the nodes in the original tree with the edges of minimum required weight. The shortest path tree to a goal v is a tree such that the path from v to any other vertex in the tree is the shortest path possible. 
+\end{solution}
+
+\question Why would one choose to use Prim’s algorithm over Kruskal’s algorithm when Kruskal’s seems easier to compute?
+\begin{solution}[0.75in]
+When you have more edges than vertices (a dense graph), Prim’s has better runtime(O(E + log V)) than Kruskal’s runtime(O(E log V)). This is because in each step of Prim’s algorithm, we are finding all the edges that connect the existing tree to new vertices, finding the minimum and adding it to the tree until we get a MST. However in Kruskal’s, we must sort all edges, and at each step we consider the next smallest edge(out of all edges, not just the ones connected to the existing tree) that doesn’t add a cycle to the MST. 
+
+\end{solution}
+
+\question Why does adding a constant value to each edge of the original tree not change the minimum spanning tree?
+\begin{solution}[0.75in]
+When we are comparing edges, Let’s say an edge of weight  A was smaller than an edge of weight B prior to the addition. After addition of weight x, edge of weight A + x is still smaller than edge of weight B + x. 
+\end{solution}
+
+\question Do Prim’s algorithm and Kruskal’s algorithm work if there are negative edges?
+\begin{solution}[0.75in]
+Yes! This is because of the property discussed in 1c. We can find the smallest negative weight and add the absolute value of that weight to all the edges in the graph. Then we are working with a graph of all positive edges. However, note that this is not required for the algorithms to work. We can just compare values as they are. We mention the conversion of all the weights to positive values for understanding purposes. 
+\end{solution}

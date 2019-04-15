@@ -1,0 +1,61 @@
+\begin{blocksection}
+\question The following code implements a Balloon class that takes in a generic type parameter of type Helium, which is a subclass of Gas. Modify the class such that it can take in any generic type which is a subclass of Gas. Assume all subclasses of Gas override toString() to print the name of the gas. 
+
+\begin{lstlisting}
+public abstract class Gas {
+    int mass = 0; 
+}
+
+public class Balloon<Helium> {
+    int limit;
+    int mass;
+    Helium myHelium = null;
+    public Balloon(int capacity) {
+        this.limit = capacity;
+        this.mass = 0;
+    }
+        
+    public void addGas(Helium h) {
+        if (this.myHelium == null) {
+	        this.myHelium = h;
+        }
+        this.mass += h.mass;
+        if (this.mass > this.capacity) {
+	        pop();
+        }
+    }
+
+    public void pop() {
+        System.out.println(“There was too much helium!”);
+    }
+}
+\end{lstlisting}
+
+\begin{solution}[1.5in]
+public class Balloon<T extends Gas> {
+    int limit;
+    int mass;
+    T myGas = null;
+    public Balloon(int capacity) {
+        this.limit = capacity;
+        this.mass = 0;
+    }
+    
+    public void addGas(T t) {
+        if (this.myGas == null) {
+	        this.myGas = t;
+        }
+        this.mass += t.mass;
+        if (this.mass > this.capacity) {
+	        pop();
+        }
+    }
+    private void pop() {
+        System.out.println(“There was too much “ + myGas.toString() + “!”);
+    }
+}
+
+\end{solution}
+
+
+\end{blocksection}
