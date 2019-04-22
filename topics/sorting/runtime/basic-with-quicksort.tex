@@ -30,6 +30,7 @@ Insertion Sort    & $\Theta(N)$        & $\Theta(N^2)$       & Yes    \\
 Merge Sort        & $\Theta(N \log N)$ & $\Theta(N \log N)$  & Yes    \\
 Heapsort          & $\Theta(N)$        & $\Theta(N \log N)$  & No	  \\
 Quicksort         & $\Theta(N \log N)$        & $\Theta(N^2)$       & Depends
+
 \end{tabularx}
 }
 
@@ -117,6 +118,7 @@ pivot. Recursively sort the first and second group.
 \begin{itemize}
 \item \textit{Runtime:} Analyzed in detail in the next question.
 \item \textit{Stability:} QuickSort is generally not implemented as a stable algorithm, assuming we are using Tony Hoare’s in-place partitioning implementation. It is not stable because the algorithm swaps non-adjacent elements.  However, if we use an extra space of $O(N)$, we can implement a stable QuickSort.
+
 \end{itemize}
 \end{description}
 \end{solution}
