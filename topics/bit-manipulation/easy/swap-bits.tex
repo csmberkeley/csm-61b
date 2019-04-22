@@ -1,0 +1,26 @@
+\question Write an expression that swaps the bits at the bit positions $a$ and $b$ of a given integer $n$. Note that the LSB is in bit position 0.
+
+\ifprintanswers\else
+\begin{lstlisting}
+static int swapBits(int n, int a, int b) {
+    
+    
+    
+    
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+Note that you can conveniently "toggle" a bit by XOR-ing it by 1 (e.g. 0 ^ 1 = 1 and 1 ^ 1 = 0). Thus, we know that we only need to "toggle" the bits at positions $a$ and $b$ if they are different.
+\begin{lstlisting}
+static int swapBits(int n, int a, int b) {
+    // Only "toggle" the bits if they are different
+    if (((n & (1 << a)) >> a) != ((n & (1 << b)) >> b)) {
+        n = n ^ (1 << a);
+        n = n ^ (1 << b);
+    }
+    return n;
+}
+\end{lstlisting}
+\end{solution}

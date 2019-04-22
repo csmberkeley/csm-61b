@@ -1,0 +1,26 @@
+\begin{blocksection}
+\begin{parts}
+\item Suppose I have a 2-3 tree, and I insert $N$ elements in random order. What is the worst case height \textit{exactly} in terms of $N$? Draw a small example ( $< 10$ elements) of this worst case. 
+
+\begin{solution}[2in]
+Because 2-3 trees are always balanced, the worst case height arises when all nodes have one element and 2 children (it reduces to the height of a regular binary tree). A simple example of this worst case height for a tree with 7 elements is as follows: %insert the tree here
+
+The worst case height in terms of $N$ is $H = log_{2}(N + 1) - 1 \approx log_{2}(N)$. 
+\end{solution}
+
+\item What is the best case height \textit{exactly} in terms of $N$? Again draw a small example of this case. 
+
+\begin{solution}[2in]
+One can think of the best case height as the 2-3 tree that is the most "densely packed" In this case, every node has its max of $2$ elements and $3$ children. A simple example with 8 elements is as follows: %insert tree here
+
+The best case height in terms of $N$ is $H = log_{3}(N + 1) - 1 \approx log_2(N)$
+\end{solution}
+
+\item Can you give a tight asymptotic bound on the height? If so, what is it? If not, give upper and lower bounds.
+
+\begin{solution}[2in]
+Because the best and worst case have the same order of growth, we can give a tight bound. Letting $H(N)$ be the height, we can say mathematically: $$H(N) \in O(logN) \land H(N) \in \Omega(N) \implies H(N) \in \Theta(N)$$
+\end{solution}
+\end{parts}
+
+\end{blocksection}

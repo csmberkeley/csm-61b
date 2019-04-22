@@ -2,7 +2,7 @@
   \question Web developers use many different sorts for the different types of lists that they might want to sort. For each of these, provide the best sorting algorithm amongst the following: Mergesort, Quicksort (with Hoare Partitioning), Insertion Sort, LSD Sort. Also, state the worst-case runtime.
 
 \begin{parts}
-  \part A list of $N$ packets received by a server over time. Each packet has the timestamp at which the sender sent it. Sort this list by that timestamp (sent time).
+  \part A list of $N$ packets received by a server over time. Each packet has the timestamp at which the sender sent it. However, some packets may be dropped or arrive out-of-order due to the faulty network. Sort this list by that timestamp (sent time).
 \begin{solution}[0.75in]
   Since we expect the list to be largely sorted by time already, with a few packets out of place, we should use insertion sort. Worst case runtime is $O(N^2)$.
 \end{solution}
