@@ -1,0 +1,15 @@
+\begin{blocksection}
+\begin{parts}
+\item Josh Hug approaches you and says that he has invented a new type of balanced tree, the Left-Leaning-Red-Black Hypertree, which supports $\Theta(1)$ amortized insertions and $O(log(N))$ deletions. Do you believe him? Why or why not?
+
+\begin{solution}[2in]
+The hypthetical tree mentioned above is theoretically impossible. Consider the following procedure. Given a list of length $N$, insert all elements into the hypertree. Then, run an in order traversal of the tree. This visits the elements in sorted order. Both of these operations take $O(N)$ time, meaning we just invented a $O(N)$ sorting procedure, which we know is impossible. This type of mental exercise is called a reduction, as we have shown that sorting reduces to inserting into a search tree, thus it cannot be done in faster than $NlogN$ time.
+\end{solution}
+
+\item John Denero says that he can do even better, and presents you the Natural-Language-Processing Tree. Using advanced \textit{Machine Learning} it supports both $O(1)$ insertions and $O(1)$ deletions. Do you believe him?
+
+\begin{solution}[2in]
+This is also impossible, and can be proven by the same argument as above.
+\end{solution}
+\end{parts}
+\end{blocksection}
