@@ -1,0 +1,195 @@
+\printanswers
+\begin{blocksection}
+
+\title{2-3 Tree Insertion}
+\question Draw what the 2-3 tree would look like after inserting 35, 23, and 41.
+
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=23mm/#1},level distance=34pt,baseline=(current bounding box.north)]
+\node[vertex,ellipse]{$15 \; 29$}
+child[sibling distance = 28mm] {
+    node[vertex]{$10$}
+    child[sibling distance = 12mm] {
+        node[vertex]{$5$}
+    }
+    child[sibling distance = 12mm] {
+        node[vertex]{$12$}
+    }
+}
+child[sibling distance = 28mm] {
+    node[vertex,ellipse]{$20 \; 25$}
+    child[sibling distance = 12mm] {
+        node[vertex]{$18$}
+    }
+     child[sibling distance = 12mm] {
+        node[vertex,ellipse]{$22 \; 24$}
+    }
+    child[sibling distance=12mm] {
+        node[vertex]{$27$}
+    }
+}
+child[sibling distance = 28mm] {
+    node[vertex]{$33$}
+    child[sibling distance = 12mm] {
+        node[vertex]{$32$}
+    }
+    child[sibling distance=12mm] {
+        node[vertex,ellipse]{$38 \; 40$}
+    }
+};
+\end{tikzpicture}
+\end{center}
+
+
+
+
+\begin{solution}[3in]
+\question Insert 35:
+\begin{center}
+
+
+\begin{tikzpicture}[very thick,level/.style={sibling distance=23mm/#1},level distance=34pt,baseline=(current bounding box.north)]
+\node[vertex,ellipse]{$15 \; 29$}
+child[sibling distance = 28mm] {
+    node[vertex]{$10$}
+    child[sibling distance = 10mm] {
+        node[vertex]{$5$}
+    }
+    child[sibling distance = 10mm] {
+        node[vertex]{$12$}
+    }
+}
+child[sibling distance = 28mm] {
+    node[vertex,ellipse]{$20 \; 25$}
+    child[sibling distance = 11mm] {
+        node[vertex]{$18$}
+    }
+     child[sibling distance = 11mm] {
+        node[vertex,ellipse]{$22 \; 24$}
+    }
+    child[sibling distance=11mm] {
+        node[vertex]{$27$}
+    }
+}
+child[sibling distance = 28mm] {
+    node[vertex,ellipse]{$33 \; 38$}
+    child[sibling distance = 9mm] {
+        node[vertex]{$32$}
+    }
+    child[sibling distance = 9mm] {
+        node[vertex]{$35$}
+    }
+    child[sibling distance=9mm] {
+        node[vertex]{$40$}
+    }
+};
+\end{tikzpicture}
+\end{center}
+\quad
+\question Insert 23:
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=23mm/#1},level distance=34pt,baseline=(current bounding box.north)]
+\node[vertex]{23}
+child[sibling distance = 43mm] {
+    node[vertex]{$15$}
+    child[sibling distance = 24mm] {
+    node[vertex]{$10$}
+        child[sibling distance = 10mm] {
+            node[vertex]{$5$}
+        }
+        child[sibling distance = 10mm] {
+            node[vertex]{$12$}
+        }
+    }
+    child[sibling distance = 24mm] {
+        node[vertex]{$20$}
+        child[sibling distance = 11mm] {
+            node[vertex]{$18$}
+        }
+        child[sibling distance = 11mm] {
+            node[vertex]{$22$}
+        }
+    }
+}
+child[sibling distance = 43mm] {
+    node[vertex]{$29$}
+    child[sibling distance = 24mm] {
+        node[vertex]{$25$}
+        child[sibling distance = 11mm] {
+            node[vertex]{$24$}
+        }
+        child[sibling distance = 11mm] {
+            node[vertex]{$27$}
+        }
+   }
+   child[sibling distance = 24mm] {
+        node[vertex,ellipse]{$33 \; 38$}
+        child[sibling distance = 9mm] {
+            node[vertex]{$32$}
+        }
+        child[sibling distance = 9mm] {
+            node[vertex]{$35$}
+        }
+        child[sibling distance=9mm] {
+            node[vertex]{$40$}
+        }
+    }
+};
+\end{tikzpicture}
+\end{center}
+
+\quad
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=23mm/#1},level distance=34pt,baseline=(current bounding box.north)]
+\node[vertex]{23}
+child[sibling distance = 43mm] {
+    node[vertex]{$15$}
+    child[sibling distance = 24mm] {
+    node[vertex]{$10$}
+        child[sibling distance = 10mm] {
+            node[vertex]{$5$}
+        }
+        child[sibling distance = 10mm] {
+            node[vertex]{$12$}
+        }
+    }
+    child[sibling distance = 24mm] {
+        node[vertex]{$20$}
+        child[sibling distance = 11mm] {
+            node[vertex]{$18$}
+        }
+        child[sibling distance = 11mm] {
+            node[vertex]{$22$}
+        }
+    }
+}
+child[sibling distance = 43mm] {
+    node[vertex]{$29$}
+    child[sibling distance = 24mm] {
+        node[vertex]{$25$}
+        child[sibling distance = 11mm] {
+            node[vertex]{$24$}
+        }
+        child[sibling distance = 11mm] {
+            node[vertex]{$27$}
+        }
+   }
+   child[sibling distance = 24mm] {
+        node[vertex,ellipse]{$33 \; 38$}
+        child[sibling distance = 9mm] {
+            node[vertex]{$32$}
+        }
+        child[sibling distance = 9mm] {
+            node[vertex]{$35$}
+        }
+        child[sibling distance=9mm] {
+            node[vertex,ellipse]{$40 \; 41$}
+        }
+    }
+};
+\end{tikzpicture}
+
+\end{center}
+\end{solution}
+\end{blocksection}
+\printanswers

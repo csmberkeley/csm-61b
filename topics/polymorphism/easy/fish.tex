@@ -1,0 +1,53 @@
+\begin{blocksection}
+\question
+\begin{lstlisting}
+class Fish {
+    void swimming(Fish f) {
+        System.out.println("swimming");
+    }
+}
+
+class Nemo extends Fish {
+    void swimming(Nemo n) {
+        System.out.println("just keep swimming");
+    }
+    void findDad(Fish f) {
+        System.out.println("I know where my dad is!");
+    }
+    void findDad(Nemo n) {
+        System.out.println("Where’s my dad?");
+    }
+}
+
+\end{lstlisting}
+
+What happens after these lines are executed in main function?
+
+\begin{verbatim}
+
+Fish Dory = new Fish(); 
+Nemo nemo = new Fish();  
+Nemo nemo = new Nemo();  
+Dory.swimming(nemo);  __________________
+Nemo.swimming(Dory);  __________________
+Dory.findDad(Nemo);   __________________
+Nemo.findDad(Dory);   __________________
+Nemo.findDad(Nemo);   __________________
+
+\end{verbatim}
+\newpage
+\begin{solution}
+\begin{verbatim}
+Fish Dory = new Fish(); // works A-okay
+Nemo nemo = new Fish();  //compilation error, point it out, act like its not there & solve problem without this nemo
+Nemo nemo = new Nemo();  // works A-okay
+Dory.swimming(nemo);  "swimming"
+Nemo.swimming(Dory);  "swimming"
+Dory.findDad(Nemo);   Compilation Error
+Nemo.findDad(Dory);   "I know where my dad is!"
+Nemo.findDad(Nemo);   "Where's my dad?"
+
+\end{verbatim}
+\end{solution}
+
+\end{blocksection}

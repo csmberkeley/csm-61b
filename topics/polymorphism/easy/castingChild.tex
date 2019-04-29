@@ -1,0 +1,80 @@
+\begin{blocksection}
+\question
+
+Child wants to access one of Grandparent's methods, but he is too young and naive and wrote incorrect code! Find the error and modify the error so that Child can correctly print all three statements!
+
+\begin{lstlisting}
+class Grandparent {
+    public void Print() {
+        System.out.println("I’m a Grandparent");
+    }
+}
+class Parent extends Grandparent {
+    public void Print() {
+        
+        System.out.println("I’m a Parent");
+    }
+}
+class Child extends Parent {
+    public void Print() {
+        super.super.Print();
+        System.out.println("I’m a Child");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Child c = new Child();
+        c.Print(); 
+        //should print out:
+        //I’m a Grandparent
+        //I’m a Parent
+        //I’m a Child
+    }
+}
+
+\end{lstlisting}
+\begin{verbatim}
+\end{verbatim}
+
+\newpage
+\begin{solution}
+\begin{verbatim}
+class Grandparent {
+    public void Print() {
+        System.out.println("I’m a Grandparent");
+    }
+}
+  
+class Parent extends Grandparent {
+    public void Print() {
+        super.Print();  // added this line!
+        System.out.println("I’m a Parent");
+    }
+}
+  
+class Child extends Parent {
+    public void Print() {
+        super.Print();  // removed one super
+        System.out.println("I’m a Child");
+    }
+}
+  
+public class Main {
+    public static void main(String[] args) {
+        Child c = new Child();
+        c.Print(); 
+        //should print out:
+        //I’m a Grandparent
+        //I’m a Parent
+        //I’m a Child
+    }
+}
+
+\end{verbatim}
+The result is actually a compilation error in the line with super.super.Print(). In Java, we are only allowed to access the methods and functions of the parent class, not the grandparent's class. So, we remove one "super" from the line in Child and add super.Print() in the Parent class to get around this!
+
+\end{solution}
+
+\end{blocksection}
+
+

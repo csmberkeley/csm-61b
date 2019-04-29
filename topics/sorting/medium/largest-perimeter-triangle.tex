@@ -1,0 +1,51 @@
+\question Given an array A of positive lengths, return the largest perimeter of a triangle with non-zero area, formed from 3 of these lengths. Recall the Triangle Inequality, which states that for any triangle, the sum of the lengths of any two sides must be greater than or equal to the length of the remaining side ($a + b > c$). If it is impossible to form any triangle of non-zero area, return 0.
+
+For example, A = [2, 1, 2] returns 5. A = [1, 2, 1] returns 0. A = [3, 2, 3, 4] returns 10.
+
+What is the runtime of your solution?
+
+\begin{verbatim}
+    public int largestPerimeter(int[] A) {
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+\end{verbatim}
+
+Note: this problem was adapted from LeetCode (https://leetcode.com/problems/largest-perimeter-triangle/).
+
+\begin{solution}[1in]
+Note: this solution was adapted from LeetCode (https://leetcode.com/problems/largest-perimeter-triangle/solution/).
+
+Without loss of generality, say the side lengths of the triangle are $a \leq b \leq c$. The necessary and sufficient condition for these lengths to form a triangle of non-zero area is $a + b > c$.
+
+Say we knew $c$ already. There is no reason not to choose the largest possible $a$ and $b$ from the array. If $a + b > c$, then it forms a triangle, otherwise it doesn't.
+
+This leads to a simple algorithm: sort the array. For any $c$ in the array, we choose the largest possible $a \leq b \leq c$: these are just the two values adjacent to $c$. If this forms a triangle, we return the answer. Else, we return $0$.
+
+Thus, we complete our function as follows:
+
+\begin{verbatim}
+    public int largestPerimeter(int[] A) {
+        Arrays.sort(A);
+        for (int i = A.length - 3; i >= 0; --i) {
+            if (A[i] + A[i+1] > A[i+2]) {
+                return A[i] + A[i+1] + A[i+2];
+            }
+        }
+        return 0;
+    }
+\end{verbatim}
+
+This function takes $O(N \log N)$ time to sort A and $O(N)$ time to iterate through the for loop. Thus, the overall runtime is given by $O(N \log N)$. 
+
+\end{solution}

@@ -1,0 +1,12 @@
+%CHRISTIAN WU SPRING 2019
+%VERY SIMILAR TO DIJKSTRA'S RUNTIME QUESTION -- DONT USE BOTH
+
+\question Suppose that our understanding of data structures has advanced such that we can now remove from a priority queue in constant time! How does this change A-star’s asymptotic run time?
+
+\begin{solution}
+
+This doesn’t change the run time of A-star’s, because we still have to update every edge in the priority queue. Because the cost of this update operation doesn’t change (it’s still $log(V)$), updating every edge will still take $Elog(V)$ time. 
+
+Instead of running in O(V log (V) + E log (V)), we now run in O(log(v) + E log (V)) which reduces to the "same" O(E log (V)).
+
+\end{solution}

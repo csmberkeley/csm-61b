@@ -1,0 +1,70 @@
+\begin{blocksection}
+\question
+\begin{lstlisting}
+class Insect {
+    public void stay() {
+        System.out.println("Staying...");
+    }
+    public void speak() {
+        System.out.println("I am an insect");
+    }
+}
+class Ant extends Insect {
+    @Override
+    public void speak() {
+        System.out.println("I am an ant");
+    }
+    public void attack() {
+        System.out.println("Ant attacked");
+    }
+}
+class Bee extends Insect {
+    @Override
+    public void speak() {
+        System.out.println("I am a bee");
+    }
+    public void move() {
+        System.out.println("Bee moved");
+    }
+}
+\end{lstlisting}
+
+What would Java display?
+
+\begin{verbatim}
+Insect i = new Insect();
+i.speak();
+Ant a = new Ant();
+a.speak();
+Bee b = new Bee();
+b.speak();
+i = new Ant();
+i.speak();
+i.attack();
+b = new Insect();
+b.speak();
+b.move();
+\end{verbatim}
+
+\newpage
+
+\begin{solution}
+\begin{verbatim}
+Insect i = new Insect();
+i.speak();                  "I am an Insect"
+Ant a = new Ant();
+a.speak();                  "I am an Ant"
+Bee b = new Bee();
+b.speak();                  "I am a Bee"
+i = new Ant();
+i.speak();                  "I am an Ant"
+i.attack();                 Compile Time Error
+((Ant) i).attack();           "Ant attacked"
+b = new Insect();           Compile Time Error
+b.speak();                  Not possible
+b.move();                   Not possible
+\end{verbatim}
+
+In the first six lines, the static and dynamic types of $i$, $a$, and $b$ are the same, so when they speak they just call the method in the dynamic class.  Once $i$ gets assigned to a new Ant(), it now has static type Insect and dynamic type Ant.  During compile time for i.speak(), Java look for the \lstinline$speak()$ method in \lstinline$Insect$.  Then during runtime, it'll execute the \lstinline$speak$ method in \lstinline$Ant$ class.  During compile time for i.attack(), Java will look for the \lstinline$attack()$ method in \lstinline$Insect$.  Since Java cannot find such method in \lstinline$Insect$, this will result in a compile time error.  By casting $i$ to an \lstinline$Ant$, Java will look at the \lstinline$Ant$ class during compile time and find the \lstinline$attack()$ method. Since $b$ is static type \lstinline$Bee$, it cannot be assigned to a new \lstinline$Insect$ because \lstinline$Bee$ is a subclass of \lstinline$Insect$.  The rest of the lines depend on the $b = new Insect()$ line, so they won't be possible.
+\end{solution}
+\end{blocksection}

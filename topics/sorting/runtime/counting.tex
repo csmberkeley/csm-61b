@@ -19,12 +19,12 @@ MSD Radix Sort    &                 &                     &
 Algorithm         & Best-case          & Worst-case          & Stable \\\hline
 Counting Sort     & $\Theta(N + R)$    & $\Theta(N + R)$     & Yes    \\
 LSD Radix Sort    & $\Theta(W(N + R))$ & $\Theta(W(N + R))$  & Yes    \\
-MSD Radix Sort    & $\Theta(N + R)$    & $\Theta(W(N + R))$  & Depends
+MSD Radix Sort    & $\Theta(N + R)$    & $\Theta(W(N + R))$  & Yes
 \end{tabularx}
 }
 
 Where $N$ is the length of the list, $R$ is the size of the alphabet (radix),
 and $W$ is the length of the longest word.
 
-MSD radix sort can be made stable with additional space for a buffer.
+Extra: MSD radix sort is stable when implemented with additional space for a buffer.
 \end{solution}

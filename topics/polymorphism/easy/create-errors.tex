@@ -1,0 +1,34 @@
+\begin{blocksection}
+\question
+\begin{lstlisting}
+class Seat {
+    public void stay() {
+        System.out.println("Seat is staying...");
+    }
+    public void sat() {
+        System.out.println("Sat on");
+    }
+}
+class Chair extends Seat {
+    public void roll() {
+        System.out.println("Chair is rollin");
+    }
+}
+\end{lstlisting}
+
+Write Java code using these classes that will throw a compile-time error. runtime error.
+
+\begin{Solution}
+Compile Time:
+\begin{verbatim}
+Chair c = new Seat();
+\end{verbatim}
+
+Runtime:
+\begin{verbatim}
+Chair c = (Chair) new Seat();
+\end{verbatim}
+
+\end{Solution}
+
+\end{blocksection}

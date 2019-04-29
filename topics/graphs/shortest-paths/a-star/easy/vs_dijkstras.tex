@@ -1,0 +1,15 @@
+%CHRISTIAN WU SPRING 2019
+
+\question 
+If Dijkstra’s and A* both have the same asymptotic run time ...\\
+\begin{enumerate}
+\item Is Dijkstra’s ever preferred? Why?
+\item Is A* ever preferred? Why?
+\end{enumerate}
+
+\begin{solution}[1in]
+\begin{enumerate}
+\item Dijkstra’s might be preferred if we have no heuristic. However, even if we know nothing about the data set, running A* with a heuristic that always returns zero will effectively run Dijkstra’s. Dijkstra's might be useful if we want to run shortest paths for all vertices, instead of just the 'target' that A star is set to.
+\item Yes, A* lets us use a heuristic so we do not check points that are unreasonable. Given a good heuristic, A* generally traverses the graph in the direction of the goal point, so we end up checking less vertices and edges than Dijkstra’s which travels in no direction whatsoever. Even though the asymptotic run times are the same, A* will run at least as fast as Dijkstra’s because it traverses less vertices.
+\end{enumerate}
+\end{solution}
