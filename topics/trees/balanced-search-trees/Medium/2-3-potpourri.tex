@@ -1,0 +1,50 @@
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+\begin{blocksection}
+\begin{parts}
+\item For a node in a 2-3 tree with n values, what are the possible numbers of children that each node can have? What if the node is not a leaf?
+
+\begin{solution}[2in]
+n = 1: [0,2]. n = 2: [0,3]. If the node is not a leaf, then for n = 1, the node must have exactly 2 children, and for n = 2, the node must have exactly 3 children.
+\end{solution}
+
+\item Instead of splitting an overstuffed node by moving middle value upwards in the tree, suppose we move the rightmost, third value of a node. Can we still guarantee the idea of a \textit{balanced} binary search tree with 2-3 trees using this splitting method?
+
+\begin{solution}[2in]
+We cannot guarantee a balanced tree. For example: 
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=20mm/#1},level distance=30pt]
+\node[vertex, ellipse]{$1 \; 2$};
+\end{tikzpicture}
+\end{center}
+\quad
+If we were to insert 3, we would get: 
+\begin{center}
+\begin{tikzpicture}
+
+\node[vertex]{$3$}
+child{
+    node[vertex, ellipse]{1 \; 2}};
+\end{tikzpicture}
+\end{center}
+
+On a more conceptual level, we choose to move the middle value upwards, because doing so splits nodes more symmetrically. In other words, being the middle value of the node, we know that there exists values both less than and greater than it. So, we can naturally create both left and right branches of the newly promoted middle value.
+\end{solution}
+
+\item What is the maximum height of a 2-3 tree with n values?
+
+\begin{solution}[2in]
+$log_2(n+1) - 1$, or $\floor{log_2(n)}. $ For a 2-3 tree of maximum height, our tree looks like a normal binary search tree, and all the nodes contain a single value.
+\end{solution}
+
+\item Is it possible for leaf nodes of a 2-3 tree to have differing distances to the root? If not, explain why. Otherwise, provide an example 2-3 tree that satisfies the condition.
+
+\begin{solution}[2in]
+No. Although our precise definition of "balance" checks that the maximum height difference between sub-trees is less than or equal to 1 (in addition to having both sub-trees be balanced), the 2-3-4 tree takes it a step even further by ensuring that each leaf node is the exact same distance to the root. This is because each value we insert into the tree either gets stuffed into a leaf node, moves upwards, and/or splits the node at the \textit{root} to increase the height of the overall tree -- thus, the branches of the tree never grow individually. In other words, whenever the distance from a leaf to the root increases, we know that this is because a value has been promoted at the root of the tree. And if a value at the root is promoted, then the distance from the root to \textit{every} leaf node is increased, so these distances will never be different.
+
+\end{solution}
+
+\end{parts}
+
+\end{blocksection}

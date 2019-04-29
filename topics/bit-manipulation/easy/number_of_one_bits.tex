@@ -1,0 +1,32 @@
+\question Write an function that counts the number of one bits.
+
+\ifprintanswers\else
+\begin{lstlisting}
+static int countOnes(int n) {
+    
+    
+    
+    
+}
+\end{lstlisting}
+\fi
+
+\begin{solution}
+Integral numbers represented by int and long primitive are represented as 2's complement binary format. Also worth knowing is size of int primitive is 32 bit and size of long is 64 bit. If we go with simplest way, we can check LSB(Least Significant Bit) of number by doing AND operation with 1. This can give us count of 1's if we shift bits on right direction. We can use right shift without sign operator for that. Here is sample code to count number of 1's in Java integers :
+
+
+\begin{lstlisting}
+static int countOnes(int n) {
+ int count = 0; 
+ for(int i =0; i<32; i++){ 
+    if( (number&1) == 1) 
+        { 
+          count++; 
+        } 
+    number = number >>> 1; 
+    } 
+  return count; 
+
+}
+\end{lstlisting}
+\end{solution}

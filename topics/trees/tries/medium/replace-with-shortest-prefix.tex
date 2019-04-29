@@ -1,0 +1,9 @@
+\begin{blocksection}
+\question Given a dictionary of $n$ prefix strings and a sentence, describe a procedure to replace each word in the sentence with the shortest prefix string that can be found in the dictionary. If no such prefix string exists in the dictionary, leave the word as is.
+\\ For example, say we have the following prefix strings in our dictionary: \lstinline$"bab"$, \lstinline$"bat"$, \lstinline$"rac"$, and \lstinline$"racco"$ and the sentence, \lstinline$"the baboons battled the raccoon"$. Our output should be \lstinline$"the bab bat the rac"$ 
+
+\begin{solution}[1in]
+We can put all the prefix strings in the dictionary into a trie. Then for every word in the given sentence, start searching for the word in the trie. Find the first matching prefix and replace it with the given word from our sentence. For example, if we are searching for the word \lstinline$"raccoon"$ in a trie made up of the prefix strings, \lstinline$"rac"$ and \lstinline$"racco"$, we traverse down the trie on the letters \lstinline$"r"$, \lstinline$"a"$, \lstinline$"c"$. Our trie indicates that \lstinline$"rac"$ is a word in the trie, so we stop searching and replace \lstinline$"rac"$ with \lstinline$"raccoon"$. We do not want to continue traversing the trie because the first matching prefix we find will be our shortest prefix string.
+\end{solution}
+
+\end{blocksection}

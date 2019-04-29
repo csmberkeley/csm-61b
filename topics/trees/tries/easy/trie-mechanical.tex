@@ -1,0 +1,48 @@
+\begin{blocksection}
+\question Draw the trie that results from inserting \lstinline$"bear"$,
+\lstinline$"bell"$, \lstinline$"bitter"$, and \lstinline$"bite"$.
+
+\begin{solution}[1.5in]
+\begin{center}
+\begin{tikzpicture}[very thick,level/.style={sibling distance=60mm/#1},level distance=40pt]
+\node[vertex]{}
+child {
+    node[vertex]{\lstinline$b$}
+    child {
+        node[vertex]{\lstinline$e$}
+        child[sibling distance=10mm] {
+            node[vertex]{\lstinline$a$}
+            child {
+                node[vertex]{\lstinline$r$}
+            }
+        }
+        child {
+            node[vertex]{\lstinline$l$}
+            child {
+                node[vertex]{\lstinline$l$}
+            }
+        }
+    }
+    child {
+        node[vertex]{\lstinline$i$}
+        child {
+            node[vertex]{\lstinline$t$}
+                child {
+                    node[vertex]{\lstinline$e$}
+                }
+            child {
+                node[vertex]{\lstinline$t$}
+                child {
+                    node[vertex]{\lstinline$e$}
+                    child {
+                        node[vertex]{\lstinline$r$}
+                    }
+                }
+            }
+        }
+    }
+};
+\end{tikzpicture}
+\end{center}
+\end{solution}
+\end{blocksection}

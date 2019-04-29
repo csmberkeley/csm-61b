@@ -1,0 +1,35 @@
+%CHRISTIAN WU SPRING 2019
+%REQUIRES Q/A ESPECIALLY ON SQRT PORTION
+
+\question Let’s say you have a graph where the edges correspond to street blocks, nodes correspond to intersections, and edge-weights correspond to distance (in meters). Are the following heuristics valid? Are the following heuristics good?
+
+\begin{enumerate}
+    \item return euclidean distance between points
+    \item return 0 for every pair of intersections
+    \item return 1 for every pair of intersections
+    \item return shortest distance through roads found by dijkstra's 
+    \item return sqrt(euclidean distance) between points
+    \item return number of lampposts between the intersections (found with a magical dataset stored in a hashmap)
+\end{enumerate}
+
+
+\begin{solution}
+
+\begin{enumerate}
+    \item This is admissible (distance is always going to be positive) 
+    \\ This is consistent (0 < 0 + d(x, y)), 
+    \\ This is not a very helpful heuristic (no estimation involved). 
+    \\ This is Dijkstra's basically.
+    \item This is not consistent (it overestimates distances less than 1).
+    \item This is admissible (distance will always be at least the shortest possible distance)
+    \\ This is consistent (d(a, x) <= d(a, x) + d(x, y))
+    \\ Good heuristic : ) (this is the 'classic' heuristic)
+    \item This works because it gives us perfect distances, but is horribly slow, as every update finds the shortest path. At this point we might as well just run Dijstra's.
+    %DOUBLE CHECK THIS ONE
+    \item This works! It is a monotonic function so it will keep the ordering.
+    \item This is admissible because it will underestimate unless there are more than 1 lamppost per meter. (which is very unrealistic).
+    \\ This is not consistent since the number of lampposts on a short road may be much larger than that on a long road.
+
+\end{enumerate}
+
+\end{solution}

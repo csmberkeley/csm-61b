@@ -20,5 +20,7 @@ int[] convoluted(int[] a, int[] b) {
 
 \begin{solution}[0.5in]
 $\Theta(N^2)$
+
+For the first iteration of the outer for loop, the inner loop will run once. The next iteration, the inner loop runs two times. Each subsequent iteration of the outer loop increases the number of iterations of the inner loop by 1. The total runtime is given by $\sum_{i=1}^N = \Theta(N^2)$
 \end{solution}
 \end{blocksection}

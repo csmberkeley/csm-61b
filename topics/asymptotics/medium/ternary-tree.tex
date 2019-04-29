@@ -12,5 +12,7 @@ int mystery(int N) {
 
 \begin{solution}[1in]
 $\Theta(N)$
+
+This is a recursive function with a branching factor of 3. If you draw a tree with all the recursive calls, there will be log(N) levels before the function terminates. There is 1 function call at the top level, 3 recursive calls at the next level, 9 recursive calls at the third level, and each subsequent level triples the number of recursive calls. Since each recursive call does constant work, the total runtime is $3^0 + 3^1 + 3^2 + ... + 3^{log(N)} = 1 + 3 + 9 + ... + N = \Theta(N)$
 \end{solution}
 \end{blocksection}

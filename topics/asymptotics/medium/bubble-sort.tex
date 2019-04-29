@@ -19,5 +19,7 @@ public static int[] mystery(int[] array) {
 \end{lstlisting}
 
 \begin{solution}[0.5in]
-This is bubble sort, an $O(N^2)$ sorting algorithm.
+This sorting algorithm, known as bubble sort, makes repeated passes through the array, swapping adjacent elements if they are out of order. The algorithm terminates if it completes a pass without swapping any elements. 
+
+Each pass must look through all elements of the array, and in the worse case, if the initial array is in reverse sorted order, makes N passes through the array. The runtime for this function is $O(N^2)$.
 \end{solution}
